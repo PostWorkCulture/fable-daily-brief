@@ -74,6 +74,7 @@
   .evm div{margin-bottom:3px}
   .evm div:last-child{margin-bottom:0}
   .evm b{color:var(--ink);font-weight:800}
+  #calendar .row .n{flex:0 0 42px;font-size:10.5px;letter-spacing:.02em}
   .fam{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:2px}
 
   /* markets */
@@ -207,6 +208,9 @@
   <!-- TABS -->
   <nav class="tabs">
     <button class="tab on" data-tab="brief">Brief</button>
+    <button class="tab" data-tab="local-news">Local News</button>
+    <button class="tab" data-tab="local-events">Local Events</button>
+    <button class="tab" data-tab="uk-news">UK News</button>
     <button class="tab" data-tab="markets">Markets</button>
     <button class="tab" data-tab="ai">AI</button>
     <button class="tab" data-tab="career">Career</button>
@@ -240,6 +244,48 @@
         </div>
       </div>
     </div>
+
+        <!-- CALENDAR -->
+    <div class="sec" id="calendar">
+      <div class="sec-h"><h2>Calendar</h2></div>
+      <div class="card">
+        <div class="row">
+          <div class="n">Fri</div>
+          <div class="b">
+            <h3>Fatou Boat</h3>
+            <div class="evm">
+              <div><b>When:</b> Today, Fri 10 Jul</div>
+              <div><b>Time:</b> 8:00 &ndash; 9:00am</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Sat</div>
+          <div class="b">
+            <h3>Kids</h3>
+            <div class="evm">
+              <div><b>When:</b> Tomorrow, Sat 11 Jul</div>
+              <div><b>Time:</b> 10:00am &ndash; 4:00pm</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Thu</div>
+          <div class="b">
+            <h3>Graduation</h3>
+            <div class="evm">
+              <div><b>When:</b> Thu 16 Jul</div>
+              <div><b>Time:</b> All day</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+  <!-- ================= LOCAL NEWS TAB ================= -->
+  <section class="panel" id="tab-local-news">
 
     <!-- LOCAL NEWS -->
     <div class="sec" id="local-news">
@@ -311,6 +357,11 @@
         </div>
       </div>
     </div>
+
+  </section>
+
+  <!-- ================= LOCAL EVENTS TAB ================= -->
+  <section class="panel" id="tab-local-events">
 
     <!-- LOCAL EVENTS -->
     <div class="sec">
@@ -422,6 +473,11 @@
         </div>
       </div>
     </div>
+
+  </section>
+
+  <!-- ================= UK NEWS TAB ================= -->
+  <section class="panel" id="tab-uk-news">
 
     <!-- UK HEADLINES -->
     <div class="sec" id="uk-headlines">
