@@ -29,9 +29,9 @@
 
   /* ---------- TABS ---------- */
   .tabs{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 10px;display:flex;gap:6px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-  .tab{border:1px solid var(--line);background:var(--card);color:var(--ink2);font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;cursor:pointer;transition:all .15s}
-  .tab:hover{border-color:var(--accent);color:var(--accent)}
-  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .tab{border:1px solid transparent;background:#f5f5f7;color:var(--ink2);font-size:14px;font-weight:600;padding:10px 18px;border-radius:14px;cursor:pointer;transition:all .15s}
+  .tab:hover{background:#ececef;color:var(--ink)}
+  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 1px 3px rgba(22,104,217,.28)}
   .panel{display:none;padding-top:20px}
   .panel.on{display:block}
 
@@ -214,6 +214,7 @@
     <button class="tab" data-tab="ai">AI</button>
     <button class="tab" data-tab="career">Career</button>
     <button class="tab" data-tab="education">School</button>
+    <button class="tab" data-tab="matches">WC Matches</button>
     <button class="tab" data-tab="bracket">WC Knockout</button>
   </nav>
 
@@ -507,7 +508,7 @@
         <div class="mkts">
           <div class="mkt">
             <div class="k">GBP / USD</div>
-            <div class="v">1.3407</div>
+            <div class="v">1.3431</div>
             <div class="c up">&#9650; +0.1%</div>
             <div class="note">Closed the week at a fresh one-year high above 1.34; a second straight weekly gain as the dollar stayed soft</div>
           </div>
@@ -526,7 +527,7 @@
       <div class="sec-h"><h2>GBP/USD &mdash; What&rsquo;s Moving the Pair</h2></div>
       <div class="card">
         <div class="kv">
-          <div><div class="k">Spot</div><div class="v">1.3407</div></div>
+          <div><div class="k">Spot</div><div class="v">1.3431</div></div>
           <div><div class="k">Bank Rate</div><div class="v">3.75%</div></div>
           <div><div class="k">Fed Funds</div><div class="v">3.50&ndash;3.75%</div></div>
           <div><div class="k">Next BoE</div><div class="v">Thu 30 Jul</div></div>
@@ -536,7 +537,7 @@
           <div class="n">1</div>
           <div class="b">
             <h3>Cable closes the week above 1.34 &mdash; a fresh one-year high</h3>
-            <p>Sterling rose for a third straight session to around 1.3407, a second consecutive weekly gain, as it found domestic support and the dollar lost its defensive appeal.</p>
+            <p>Sterling rose for a third straight session to around 1.3431, a second consecutive weekly gain, as it found domestic support and the dollar lost its defensive appeal.</p>
             <div class="src">Exchange Rates UK &middot; 10 Jul</div>
           </div>
         </div>
@@ -819,6 +820,48 @@
   </section>
 
   
+
+  <section class="panel" id="tab-matches">
+
+    <div class="banner">
+      <div class="bk">World Cup 2026 &middot; Semi-finalists set</div>
+      <h2>Bellingham&rsquo;s extra-time brace sends England through</h2>
+      <p>Jude Bellingham struck twice as England edged Norway 2&ndash;1 after extra time in Miami. Gareth Southgate&rsquo;s side now meet holders Argentina in the semi-final in Atlanta on Wednesday 15 July. Today is a rest day &mdash; the semi-finals begin Tuesday.</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>Today&rsquo;s Fixtures &mdash; Sun 12 Jul</h2></div>
+      <div class="card">
+        <div class="fx">
+          <div class="teams">
+            <div class="t">No World Cup matches today</div>
+            <div class="fx-g">Rest day between the quarter-finals and semi-finals. Next up: France Vs Spain, Tue 14 Jul (8:00pm BST, ITV1).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>Latest Results &mdash; Quarter-finals, Sat 11 Jul</h2></div>
+      <div class="card">
+        <div class="fx">
+          <div class="teams">
+            <div class="t">Norway <span class="vs">Vs</span> England</div>
+            <div class="fx-g">Schjelderup 36&rsquo; &middot; Bellingham 45+2&rsquo;, 93&rsquo; &mdash; Miami</div>
+          </div>
+          <div class="score"><div class="s">1&ndash;2</div><div class="st">AET</div></div>
+        </div>
+        <div class="fx">
+          <div class="teams">
+            <div class="t">Argentina <span class="vs">Vs</span> Switzerland</div>
+            <div class="fx-g">Mac Allister 10&rsquo;, &Aacute;lvarez 112&rsquo;, Mart&iacute;nez 120+1&rsquo; &middot; Ndoye 67&rsquo; &middot; Embolo sent off &mdash; Kansas City</div>
+          </div>
+          <div class="score"><div class="s">3&ndash;1</div><div class="st">AET</div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <section class="panel" id="tab-bracket">
     <div class="sec" id="wc-wallchart">

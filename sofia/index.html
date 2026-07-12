@@ -29,9 +29,9 @@
 
   /* ---------- TABS ---------- */
   .tabs{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 10px;display:flex;gap:6px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-  .tab{border:1px solid var(--line);background:var(--card);color:var(--ink2);font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;cursor:pointer;transition:all .15s}
-  .tab:hover{border-color:var(--accent);color:var(--accent)}
-  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .tab{border:1px solid transparent;background:#f5f5f7;color:var(--ink2);font-size:14px;font-weight:600;padding:10px 18px;border-radius:14px;cursor:pointer;transition:all .15s}
+  .tab:hover{background:#ececef;color:var(--ink)}
+  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 1px 3px rgba(22,104,217,.28)}
   .panel{display:none;padding-top:20px}
   .panel.on{display:block}
 
@@ -210,9 +210,9 @@
     <button class="tab" data-tab="local-events">Local Events</button>
     <button class="tab" data-tab="uk-news">UK News</button>
     <button class="tab" data-tab="education">School</button>
-    <button class="tab" data-tab="trains">Trains</button>
     <button class="tab" data-tab="sweden">Sweden</button>
     <button class="tab" data-tab="career">Career</button>
+    <button class="tab" data-tab="matches">WC Matches</button>
     <button class="tab" data-tab="bracket">WC Knockout</button>
     <button class="tab" data-tab="ai">AI</button>
   </nav>
@@ -230,6 +230,44 @@
         </div>
         <div class="wx-strip">
           <div class="wx-day today"><div class="d">Today</div><div class="dt">12 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">29&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">13 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">28&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Tue</div><div class="dt">14 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">30&deg;</div><div class="lo">19&deg;</div></div><div class="wx-day"><div class="d">Wed</div><div class="dt">15 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">30&deg;</div><div class="lo">20&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">16 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">31&deg;</div><div class="lo">20&deg;</div></div><div class="wx-day"><div class="d">Fri</div><div class="dt">17 Jul</div><svg class="wic"><use href="#i-storm"/></svg><div class="t">28&deg;</div><div class="lo">19&deg;</div></div>
+        </div>
+      </div>
+    </div>
+
+  
+
+    <div class="sec" id="calendar">
+      <div class="sec-h"><h2>Calendar</h2></div>
+      <div class="card">
+        <div class="row">
+          <div class="n">Tue</div>
+          <div class="b">
+            <h3>Nonna</h3>
+            <div class="evm">
+              <div><b>When:</b> Tue 14 Jul</div>
+              <div><b>Time:</b> All day</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Thu</div>
+          <div class="b">
+            <h3>Graduation</h3>
+            <div class="evm">
+              <div><b>When:</b> Thu 16 Jul</div>
+              <div><b>Time:</b> All day</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Sat</div>
+          <div class="b">
+            <h3>Callum</h3>
+            <div class="evm">
+              <div><b>When:</b> Sat 18 Jul</div>
+              <div><b>Time:</b> All day</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -504,26 +542,7 @@
       </div>
     </div>
   </section>
-  <section class="panel" id="tab-trains">
-
-    <div class="banner" id="trains-live-status">
-      <h2>Trains &mdash; this morning</h2>
-      <p><b>South Western Railway (Hampton Court &harr; Waterloo):</b> running on time, with a good service on the half-hourly Hampton Court line (one late-night 23:36 Waterloo departure is cancelled for a train-crew shortage, well after the commute). <b>Jubilee line (Waterloo &harr; London Bridge):</b> minor delays this morning due to a fire alert at Stratford &mdash; trains are running but allow a little extra time. Both legs should be back to normal for the ~5:30pm return; check again before you travel.</p>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>The Route</h2></div>
-      <div class="card">
-        <div class="kv">
-          <div><div class="k">Route</div><div class="v">Hampton Court &rarr; Waterloo &rarr; London Bridge (Jubilee)</div></div>
-          <div><div class="k">Journey time</div><div class="v">~55&ndash;65 min</div></div>
-          <div><div class="k">Frequency</div><div class="v">SWR every 30 min &middot; Jubilee every 2&ndash;4 min</div></div>
-        </div>
-        <div class="mkt-foot">Live status checked this morning via <a href="https://www.journeycheck.com/swr/search?from=WAT&amp;to=HMC" target="_blank">SWR JourneyCheck</a>, <a href="https://tubestatus.net/line/jubilee" target="_blank">Jubilee line status</a> and National Rail live departures. Times vary by service &mdash; always check live boards before travelling.</div>
-      </div>
-    </div>
-
-  </section>
+  
 
   <section class="panel" id="tab-sweden">
 
@@ -702,7 +721,49 @@
     </div>
 
   </section>
-<section class="panel" id="tab-bracket">
+<section class="panel" id="tab-matches">
+
+    <div class="banner">
+      <div class="bk">World Cup 2026 &middot; Semi-finalists set</div>
+      <h2>Bellingham&rsquo;s extra-time brace sends England through</h2>
+      <p>Jude Bellingham struck twice as England edged Norway 2&ndash;1 after extra time in Miami. Gareth Southgate&rsquo;s side now meet holders Argentina in the semi-final in Atlanta on Wednesday 15 July. Today is a rest day &mdash; the semi-finals begin Tuesday.</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>Today&rsquo;s Fixtures &mdash; Sun 12 Jul</h2></div>
+      <div class="card">
+        <div class="fx">
+          <div class="teams">
+            <div class="t">No World Cup matches today</div>
+            <div class="fx-g">Rest day between the quarter-finals and semi-finals. Next up: France Vs Spain, Tue 14 Jul (8:00pm BST, ITV1).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>Latest Results &mdash; Quarter-finals, Sat 11 Jul</h2></div>
+      <div class="card">
+        <div class="fx">
+          <div class="teams">
+            <div class="t">Norway <span class="vs">Vs</span> England</div>
+            <div class="fx-g">Schjelderup 36&rsquo; &middot; Bellingham 45+2&rsquo;, 93&rsquo; &mdash; Miami</div>
+          </div>
+          <div class="score"><div class="s">1&ndash;2</div><div class="st">AET</div></div>
+        </div>
+        <div class="fx">
+          <div class="teams">
+            <div class="t">Argentina <span class="vs">Vs</span> Switzerland</div>
+            <div class="fx-g">Mac Allister 10&rsquo;, &Aacute;lvarez 112&rsquo;, Mart&iacute;nez 120+1&rsquo; &middot; Ndoye 67&rsquo; &middot; Embolo sent off &mdash; Kansas City</div>
+          </div>
+          <div class="score"><div class="s">3&ndash;1</div><div class="st">AET</div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="panel" id="tab-bracket">
     <div class="sec" id="wc-wallchart">
       <div class="sec-h"><h2>Road to the Final</h2></div>
 
@@ -802,7 +863,7 @@
   </section>
 
   <footer class="foot">
-    Compiled Sunday 12 July 2026 &middot; Weather via Met Office (WillyWeather) &middot; Trains via SWR JourneyCheck &amp; Jubilee line status &middot; Str&ouml;mstad news via Str&ouml;mstads Tidning &middot; Sweden news via The Local &middot; Scores via ESPN/Sky Sports Football &amp; BBC Sport &middot; TV channels via live-footballontv.com<br>
+    Compiled Sunday 12 July 2026 &middot; Weather via Met Office (WillyWeather) &middot; Str&ouml;mstad news via Str&ouml;mstads Tidning &middot; Sweden news via The Local &middot; Scores via ESPN/Sky Sports Football &amp; BBC Sport &middot; TV channels via live-footballontv.com<br>
     <b>Tap any news or event card to open the source.</b> All kick-offs BST. Every World Cup game is free-to-air on BBC or ITV.
   </footer>
 
