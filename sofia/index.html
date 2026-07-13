@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sofia's Daily Brief &middot; Saturday 11 July 2026</title>
+<title>Sofia's Daily Brief &middot; Monday 13 July 2026</title>
 <style>
   :root{
     --bg:#f5f3ee; --card:#ffffff; --ink:#1c2024; --ink2:#5a626b; --ink3:#8a929b;
@@ -28,10 +28,10 @@
   .chip .wic{width:18px;height:18px}
 
   /* ---------- TABS ---------- */
-  .tabs{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 10px;display:flex;gap:6px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-  .tab{border:1px solid transparent;background:#f5f5f7;color:var(--ink2);font-size:14px;font-weight:600;padding:10px 18px;border-radius:14px;cursor:pointer;transition:all .15s}
-  .tab:hover{background:#ececef;color:var(--ink)}
-  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 1px 3px rgba(22,104,217,.28)}
+  .tabs{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-bottom:1px solid var(--line)}
+  .tab{border:1px solid var(--line);background:#fff;color:var(--ink2);font-size:14px;font-weight:600;padding:14px 12px;border-radius:16px;cursor:pointer;transition:all .15s;text-align:center}
+  .tab:hover{border-color:var(--accent);color:var(--accent)}
+  .tab.on{background:#fff;border-color:var(--accent);color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
   .panel{display:none;padding-top:20px}
   .panel.on{display:block}
 
@@ -75,6 +75,12 @@
   .evm div:last-child{margin-bottom:0}
   .evm b{color:var(--ink);font-weight:800}
   .fam{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:2px}
+
+  /* ---------- CALENDAR (subtle/grey) ---------- */
+  #calendar .card,#calendar-next .card{background:var(--wash)}
+  #calendar .row .n,#calendar-next .row .n{flex:0 0 42px;font-size:10.5px;letter-spacing:.02em;background:var(--line);color:var(--ink2)}
+  #calendar h3,#calendar-next h3{color:var(--ink2);font-weight:700}
+  #calendar .evm b,#calendar-next .evm b{color:var(--ink2);font-weight:800}
 
   /* markets */
   .mkts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line)}
@@ -201,20 +207,19 @@
 
   <header class="mast">
     <h1>Good morning, Sofia</h1>
-    <div class="sub">Sunday 12 July 2026</div>
+    <div class="sub">Monday 13 July 2026</div>
   </header>
 
   <nav class="tabs">
     <button class="tab on" data-tab="brief">Brief</button>
+    <button class="tab" data-tab="sweden">Sweden</button>
+    <button class="tab" data-tab="education">School</button>
     <button class="tab" data-tab="local-news">Local News</button>
     <button class="tab" data-tab="local-events">Local Events</button>
     <button class="tab" data-tab="uk-news">UK News</button>
-    <button class="tab" data-tab="education">School</button>
-    <button class="tab" data-tab="sweden">Sweden</button>
-    <button class="tab" data-tab="career">Career</button>
-    <button class="tab" data-tab="matches">WC Matches</button>
-    <button class="tab" data-tab="bracket">WC Knockout</button>
     <button class="tab" data-tab="ai">AI</button>
+    <button class="tab" data-tab="career">Career</button>
+    <button class="tab" data-tab="bracket">WC Knockout</button>
   </nav>
 <section class="panel on" id="tab-brief">
 
@@ -224,9 +229,9 @@
         <div class="pad wx">
           <div class="wx-now">
             <svg class="wic"><use href="#i-sun"/></svg>
-            <div class="wx-t">29<sup>&deg;C</sup></div>
+            <div class="wx-t">28<sup>&deg;C</sup></div>
           </div>
-          <div class="wx-d"><b>Today: sunny, 29&deg;C.</b> Hot, dry spell all week.</div>
+          <div class="wx-d"><b>Today: partly cloudy, 28&deg;C.</b> Hot and sunny through the weekend.</div>
         </div>
         <div class="wx-strip">
           <div class="wx-day today"><div class="d">Today</div><div class="dt">12 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">29&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">13 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">28&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Tue</div><div class="dt">14 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">30&deg;</div><div class="lo">19&deg;</div></div><div class="wx-day"><div class="d">Wed</div><div class="dt">15 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">30&deg;</div><div class="lo">20&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">16 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">31&deg;</div><div class="lo">20&deg;</div></div><div class="wx-day"><div class="d">Fri</div><div class="dt">17 Jul</div><svg class="wic"><use href="#i-storm"/></svg><div class="t">28&deg;</div><div class="lo">19&deg;</div></div>
@@ -237,7 +242,7 @@
   
 
     <div class="sec" id="calendar">
-      <div class="sec-h"><h2>Calendar</h2></div>
+      <div class="sec-h"><h2>Coming up this week</h2></div>
       <div class="card">
         <div class="row">
           <div class="n">Tue</div>
@@ -272,235 +277,196 @@
       </div>
     </div>
 
+    <div class="sec" id="calendar-next">
+      <div class="sec-h"><h2>Coming up next week</h2></div>
+      <div class="card">
+        <div class="row">
+          <div class="n">Mon</div>
+          <div class="b">
+            <h3>Kate</h3>
+            <div class="evm">
+              <div><b>When:</b> Mon 20 Jul</div>
+              <div><b>Time:</b> All day</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Mon</div>
+          <div class="b">
+            <h3>Fatou</h3>
+            <div class="evm">
+              <div><b>When:</b> Mon 20 &ndash; Thu 23 Jul</div>
+              <div><b>Time:</b> 08:00 Mon &ndash; 09:00 Thu</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Tue</div>
+          <div class="b">
+            <h3>Sample</h3>
+            <div class="evm">
+              <div><b>When:</b> Tue 21 Jul</div>
+              <div><b>Time:</b> 09:00&ndash;10:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Fri</div>
+          <div class="b">
+            <h3>Pete Off</h3>
+            <div class="evm">
+              <div><b>When:</b> Fri 24 Jul</div>
+              <div><b>Time:</b> 08:00&ndash;09:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
-<section class="panel" id="tab-local-news">
-    <div class="sec" id="local-news">
-      <div class="sec-h"><h2>Local News</h2></div>
+
+  <section class="panel" id="tab-sweden">
+
+    <div class="sec">
+      <div class="sec-h"><h2>Local News &mdash; Str&ouml;mstad</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/we-apologise-incorrectly-issued-parking-fines-and-will-refund-customers">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/nytt-lunchstalle-i-stromstad-med-smaker-fran-italien-.21aac021-e8fe-484f-a48c-c2f574a12377">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/we-apologise-incorrectly-issued-parking-fines-and-will-refund-customers" target="_blank">Elmbridge apologises for incorrectly issued parking fines</a></h3>
-            <p>The council has opened a refund scheme after admitting some parking penalty charge notices were issued in error.</p>
-            <div class="src">Elmbridge Borough Council &middot; 9 Jul</div>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/nytt-lunchstalle-i-stromstad-med-smaker-fran-italien-.21aac021-e8fe-484f-a48c-c2f574a12377" target="_blank">Nytt lunchst&auml;lle i Str&ouml;mstad &ndash; med smaker fr&aring;n Italien</a></h3>
+            <p>Stellan Nyberg has opened &ldquo;Il mackeria,&rdquo; a new Italian-style sandwich lunch spot on S&ouml;dra Hamngatan.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/help-prevent-wildfires-elmbridge">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/fran-traktorslalom-till-rakfest-har-ar-veckans-nojen-i-stromstad-tanum-.435b76b1-c6b7-4ef6-b30f-f011df9f53bd">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/help-prevent-wildfires-elmbridge" target="_blank">Help prevent wildfires across Elmbridge in the heat</a></h3>
-            <p>BBQs and naked flames are banned in parks, commons and open spaces under a Public Spaces Protection Order as hot, dry conditions raise the risk.</p>
-            <div class="src">Elmbridge Borough Council &middot; 8 Jul</div>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/fran-traktorslalom-till-rakfest-har-ar-veckans-nojen-i-stromstad-tanum-.435b76b1-c6b7-4ef6-b30f-f011df9f53bd" target="_blank">Fr&aring;n allsng till r&auml;kfest &ndash; veckans n&ouml;jen i norra Bohusl&auml;n</a></h3>
+            <p>This week&rsquo;s what&rsquo;s-on guide for Str&ouml;mstad and Tanum, including &ldquo;R&auml;kans dag,&rdquo; concerts and guided tours.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/residents-invited-help-shape-new-east-surrey-council-brand">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/cirkusgladje-nar-malte-knapp-intar-plagen.da453e1e-bd03-45b1-a16d-ad39a4083443">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/residents-invited-help-shape-new-east-surrey-council-brand" target="_blank">Residents invited to help shape the new East Surrey Council brand</a></h3>
-            <p>People across the borough can get involved in shaping the identity of the new East Surrey Council.</p>
-            <div class="src">Elmbridge Borough Council &middot; 7 Jul</div>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/cirkusgladje-nar-malte-knapp-intar-plagen.da453e1e-bd03-45b1-a16d-ad39a4083443" target="_blank">Cirkusgl&auml;dje n&auml;r Malte Knapp intar Plagen</a></h3>
+            <p>Malte Knapp&rsquo;s circus performed at Plagen, letting children try circus acts themselves afterwards.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/stay-water-aware-during-summer">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/stadsparken-kokade-nar-festen-drog-igang.8ee641c3-2f1e-45d1-aa46-9800f9296b29">
           <div class="n">4</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/stay-water-aware-during-summer" target="_blank">Stay water aware around the Thames this summer</a></h3>
-            <p>A reminder of the dangers of open water and how to stay safe near rivers and lakes during the warm weather.</p>
-            <div class="src">Elmbridge Borough Council &middot; 6 Jul</div>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/stadsparken-kokade-nar-festen-drog-igang.8ee641c3-2f1e-45d1-aa46-9800f9296b29" target="_blank">Stadsparken kokade n&auml;r festen drog ig&aring;ng</a></h3>
+            <p>Str&ouml;mstad&rsquo;s traditional &ldquo;Fest i stadsparken&rdquo; drew big crowds for bands including Kellermania and Dockstation.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/visit-oxshott-repair-cafe">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/upprustning-av-skurveskar-ett-lyft-for-stromstadsborna.691c8253-1a6c-4747-9cda-2e80acb53dca">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/visit-oxshott-repair-cafe" target="_blank">A visit to the Oxshott Repair Caf&eacute;</a></h3>
-            <p>Local volunteers are helping residents save money and cut waste by repairing everyday items and swapping unwanted goods.</p>
-            <div class="src">Elmbridge Borough Council &middot; 6 Jul</div>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/upprustning-av-skurveskar-ett-lyft-for-stromstadsborna.691c8253-1a6c-4747-9cda-2e80acb53dca" target="_blank">Skurvesk&auml;r i ny tappning &ndash; en succ&eacute; hos Str&ouml;mstadsborna</a></h3>
+            <p>The renovated Skurvesk&auml;r bathing spot has been a hit with locals, who say it&rsquo;s busier than before.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/planning-application-mill-road-depot">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/rakantennisen-lockar-spelare-fran-hela-landet-till-stromstad.5f1e2e77-489c-42bb-9fa7-5b6d64881f31">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/planning-application-mill-road-depot" target="_blank">Planning application update for the Mill Road depot</a></h3>
-            <p>A further application has been submitted to update some existing planning conditions for the Mill Road Depot.</p>
-            <div class="src">Elmbridge Borough Council &middot; 3 Jul</div>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/rakantennisen-lockar-spelare-fran-hela-landet-till-stromstad.5f1e2e77-489c-42bb-9fa7-5b6d64881f31" target="_blank">R&auml;kantennisen lockar spelare fr&aring;n hela landet</a></h3>
+            <p>Str&ouml;mstad TK&rsquo;s annual &ldquo;R&auml;kan&rdquo; tennis tournament is drawing players from across Sweden.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/enhanced-community-grants-programme">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/barca-academy-pa-plats-for-traning-i-stromstad-drom-att-spela-for-barcelona.a3b2573c-9339-4a2d-a723-b68735be4f7d">
           <div class="n">7</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/enhanced-community-grants-programme" target="_blank">Enhanced community grants programme launched</a></h3>
-            <p>The council is using an enhanced community grants programme to empower local organisations across the borough.</p>
-            <div class="src">Elmbridge Borough Council &middot; 2 Jul</div>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/barca-academy-pa-plats-for-traning-i-stromstad-drom-att-spela-for-barcelona.a3b2573c-9339-4a2d-a723-b68735be4f7d" target="_blank">Barca Academy p&aring; plats f&ouml;r tr&auml;ning i Str&ouml;mstad</a></h3>
+            <p>FC Barcelona coaches ran a four-day training camp for local children and teens.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/celebrate-local-love-elmbridge-awards-2026">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/tonstark-allsangspremiar-norrmannen-imponerades-av-showen.918d0371-0f92-4a47-9100-ec21f1670874">
           <div class="n">8</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/celebrate-local-love-elmbridge-awards-2026" target="_blank">Vote in the Love Elmbridge Awards 2026</a></h3>
-            <p>Residents can vote for their favourite independent retailer as part of this year&rsquo;s Love Elmbridge Awards.</p>
-            <div class="src">Elmbridge Borough Council &middot; 1 Jul</div>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/tonstark-allsangspremiar-norrmannen-imponerades-av-showen.918d0371-0f92-4a47-9100-ec21f1670874" target="_blank">Tonstark allsngspremi&auml;r i Str&ouml;mstad</a></h3>
+            <p>&ldquo;Allsång i parken&rdquo; sing-along returned with guest artists, impressing Norwegian visitors too.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/sol-och-varme-vantas-till-fest-i-stadsparken-i-stromstad-.ac12c08c-f59b-4f89-b6c7-5b3826aeeb14">
+          <div class="n">9</div>
+          <div class="b">
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/sol-och-varme-vantas-till-fest-i-stadsparken-i-stromstad-.ac12c08c-f59b-4f89-b6c7-5b3826aeeb14" target="_blank">Sol och v&auml;rme v&auml;ntas till Fest i stadsparken</a></h3>
+            <p>SMHI forecast high pressure and real summer warmth in time for the weekend park festival.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/det-blir-en-lordagsmorgon-i-stadsparken-fylld-av-dans-aerobics-och-gemenskap-.cbff6a6c-6ff2-42b3-ad1b-a08685c32500">
+          <div class="n">10</div>
+          <div class="b">
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/det-blir-en-lordagsmorgon-i-stadsparken-fylld-av-dans-aerobics-och-gemenskap-.cbff6a6c-6ff2-42b3-ad1b-a08685c32500" target="_blank">De kommer att leda morgongympan i stadsparken</a></h3>
+            <p>Therese Abrahamsson and Ter&eacute;se Lomg&aring;rd Lans will lead Saturday morning aerobics as part of the festival programme.</p>
           </div>
         </div>
       </div>
     </div>
-  </section><section class="panel" id="tab-local-events">
-    <div class="sec" id="local-events">
-      <div class="sec-h"><h2>Local Events</h2></div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>Sweden Headlines</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/henry-viiis-joust/">
+        <div class="row" data-url="https://www.thelocal.se/20260710/sweden-risks-water-shortages-in-coming-weeks-as-heat-set-to-return">
           <div class="n">1</div>
           <div class="b">
-            <h3>Henry VIII&rsquo;s Joust</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Today (Sun 12 Jul), then 18&ndash;19 Jul</div>
-              <div><b>Time:</b> In line with palace opening hours</div>
-              <div><b>Ages:</b> All ages</div>
-            </div>
+            <h3><a href="https://www.thelocal.se/20260710/sweden-risks-water-shortages-in-coming-weeks-as-heat-set-to-return" target="_blank">Sweden risks water shortages in coming weeks as heat set to return</a></h3>
+            <p>SMHI and local authorities are warning of water-shortage risk in several counties as high temperatures return.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/the-magic-garden/">
+        <div class="row" data-url="https://www.thelocal.se/20260710/train-traffic-between-stockholm-and-gothenburg-still-at-a-standstill">
           <div class="n">2</div>
           <div class="b">
-            <h3>The Magic Garden, maze &amp; gardens</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Open daily</div>
-              <div><b>Time:</b> In line with palace opening hours</div>
-              <div><b>Ages:</b> All ages (great for 4+)</div>
-            </div>
+            <h3><a href="https://www.thelocal.se/20260710/train-traffic-between-stockholm-and-gothenburg-still-at-a-standstill" target="_blank">Train traffic between Stockholm and Gothenburg still at a standstill</a></h3>
+            <p>Rail traffic has been halted since early morning after a driver ran a red light near Herrljunga.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/garden-history-tours/">
+        <div class="row" data-url="https://www.thelocal.se/20260710/acceptances-to-swedish-universities-go-out-today-but-many-may-be-disappointed">
           <div class="n">3</div>
           <div class="b">
-            <h3>Garden history tours (free walking tour)</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Today (Sun 12 Jul), then 16&ndash;18 Jul</div>
-              <div><b>Time:</b> Daytime, see listing</div>
-              <div><b>Ages:</b> 8+ / adults</div>
-            </div>
+            <h3><a href="https://www.thelocal.se/20260710/acceptances-to-swedish-universities-go-out-today-but-many-may-be-disappointed" target="_blank">Many students face disappointment as Swedish universities send out acceptance offers</a></h3>
+            <p>About 10,000 fewer students were accepted this year than in 2025 in the first admissions round.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/sophia-the-suffragette-princess-of-punjab/">
+        <div class="row" data-url="https://www.thelocal.se/20260709/i-love-sweden-but-im-disappointed-tech-worker-hit-as-citizenship-rejections-start-coming-in">
           <div class="n">4</div>
           <div class="b">
-            <h3>Sophia: The Suffragette Princess of Punjab</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Mon 13 Jul (runs until 17 Jul)</div>
-              <div><b>Time:</b> 11:15&ndash;15:15</div>
-              <div><b>Ages:</b> 8+ / all ages</div>
-            </div>
+            <h3><a href="https://www.thelocal.se/20260709/i-love-sweden-but-im-disappointed-tech-worker-hit-as-citizenship-rejections-start-coming-in" target="_blank">Tech worker hit as citizenship rejections start coming in</a></h3>
+            <p>A US tech worker is among applicants failing to meet Sweden&rsquo;s stricter citizenship rules introduced 6 June.</p>
           </div>
         </div>
-        <div class="row" data-url="http://moleseyregatta.org.uk/">
+        <div class="row" data-url="https://www.thelocal.se/20260709/lexbase-case-eu-court-tells-sweden-selling-criminal-records-online-violates-gdpr">
           <div class="n">5</div>
           <div class="b">
-            <h3>Molesey Regatta</h3>
-            <div class="evm">
-              <div><b>Where:</b> Riverside, West Molesey</div>
-              <div><b>When:</b> Sat 18 &ndash; Sun 19 Jul</div>
-              <div><b>Time:</b> From late morning</div>
-              <div><b>Ages:</b> All ages</div>
-            </div>
+            <h3><a href="https://www.thelocal.se/20260709/lexbase-case-eu-court-tells-sweden-selling-criminal-records-online-violates-gdpr" target="_blank">EU court tells Sweden selling criminal records online violates GDPR</a></h3>
+            <p>The EU&rsquo;s top court ruled that publishing criminal records online for payment isn&rsquo;t journalism and breaches data-protection rights.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/beano-havoc-at-hampton-court-palace/">
+        <div class="row" data-url="https://www.thelocal.se/20260709/sweden-aims-for-2027-launch-of-more-flexible-work-permit-rules">
           <div class="n">6</div>
           <div class="b">
-            <h3>Beano Havoc summer adventure</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> 25 Jul &ndash; 23 Aug</div>
-              <div><b>Time:</b> In line with palace opening hours</div>
-              <div><b>Ages:</b> Families (4&ndash;13)</div>
-            </div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/historic-cookery/">
-          <div class="n">7</div>
-          <div class="b">
-            <h3>Historic cookery in the Tudor kitchens</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Weekends from 25 Jul</div>
-              <div><b>Time:</b> 10:00&ndash;16:00</div>
-              <div><b>Ages:</b> All ages</div>
-            </div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/relaxed-mornings-in-the-magic-garden/">
-          <div class="n">8</div>
-          <div class="b">
-            <h3>Relaxed morning in the Magic Garden</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Mon 28 Jul</div>
-              <div><b>Time:</b> Morning, see listing</div>
-              <div><b>Ages:</b> All ages (quieter session)</div>
-            </div>
+            <h3><a href="https://www.thelocal.se/20260709/sweden-aims-for-2027-launch-of-more-flexible-work-permit-rules" target="_blank">Sweden aims for 2027 launch of more flexible work permit rules</a></h3>
+            <p>The government is moving forward with an EU directive easing rules for work permit holders who change or lose jobs.</p>
           </div>
         </div>
       </div>
     </div>
-  </section><section class="panel" id="tab-uk-news">
-    <div class="sec" id="uk-headlines">
-      <div class="sec-h"><h2>UK Headlines</h2></div>
+
+    <div class="sec">
       <div class="card">
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">1</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Air pollution plummets across Europe</a></h3>
-            <p>New Copernicus (CAMS) data shows sulphur- and nitrogen-oxide emissions falling 3&ndash;5% a year since 2010, with the biggest drops from industry and road transport.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">2</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">800 million people have gained electricity since 2010</a></h3>
-            <p>A WHO report highlights &ldquo;encouraging progress&rdquo; on global energy access, even as it urges faster action for those still without power.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">3</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Pioneering therapy could target the deadliest brain cancer</a></h3>
-            <p>King&rsquo;s College London researchers say CAR-T cell therapy eliminated detectable glioblastoma in preclinical models, opening a new treatment paradigm.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">4</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Glow-worms return to the South Downs</a></h3>
-            <p>Conservationists have released larvae into the national park&rsquo;s dark skies, with adult glow-worms expected to light up next year.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">5</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Heat-resistant Red Sea reef nominated for World Heritage status</a></h3>
-            <p>Jordan&rsquo;s Aqaba Marine Reserve, home to unusually heat-tolerant corals, is among five ecosystems put forward to Unesco by the IUCN.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">6</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Healthy diet linked with lower dementia risk</a></h3>
-            <p>A 15-year Swedish study found older adults on a low-inflammation diet had up to a 30% lower risk of developing dementia, even those at higher biological risk.</p>
-          </div>
-        </div>
+        <div class="mkt-foot">Str&ouml;mstad stories via <a href="https://www.stromstadstidning.se/nyheter/stromstad" target="_blank">Str&ouml;mstads Tidning</a> (may paywall past the opening paragraph); national headlines via <a href="https://www.thelocal.se/category/sweden-news" target="_blank">The Local Sweden</a>.</div>
       </div>
     </div>
-  </section><section class="panel" id="tab-education">
+
+  </section>
+
+  <section class="panel" id="tab-education">
     <div class="sec">
       <div class="sec-h"><h2>School &mdash; Updates</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/News/Newsletters/">
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/docs/newsletters/2025-26/Friday_10th_July_2026.pdf">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/News/Newsletters/" target="_blank">Latest newsletter published &mdash; Friday 3 July 2026</a></h3>
+            <h3><a href="https://www.orchard.surrey.sch.uk/docs/newsletters/2025-26/Friday_10th_July_2026.pdf" target="_blank">Latest newsletter published &mdash; Friday 10 July 2026</a></h3>
             <p>The most recent weekly newsletter is out, rounding up the last full stretch of the summer term.</p>
           </div>
         </div>
@@ -542,126 +508,309 @@
       </div>
     </div>
   </section>
-  
 
-  <section class="panel" id="tab-sweden">
-
-    <div class="sec">
-      <div class="sec-h"><h2>Local News &mdash; Str&ouml;mstad</h2></div>
+  <section class="panel" id="tab-local-news">
+    <div class="sec" id="local-news">
+      <div class="sec-h"><h2>Local News</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/cirkusgladje-nar-malte-knapp-intar-plagen.da453e1e-bd03-45b1-a16d-ad39a4083443">
+        <div class="row" data-url="https://newleatherheadliving.wordpress.com/2026/07/09/updated-elmbridge-bin-collection-delays-into-july/">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/cirkusgladje-nar-malte-knapp-intar-plagen.da453e1e-bd03-45b1-a16d-ad39a4083443" target="_blank">Cirkusgl&auml;dje n&auml;r Malte Knapp intar Plagen</a></h3>
-            <p>Circus fun comes to Plagen &mdash; &ldquo;the audience was absolutely fantastic&rdquo;.</p>
+            <h3><a href="https://newleatherheadliving.wordpress.com/2026/07/09/updated-elmbridge-bin-collection-delays-into-july/" target="_blank">Updated: Elmbridge bin collection delays continue into July</a></h3>
+            <p>Garden waste collections are running days behind across the borough due to hot weather and backlog, with bins uncollected in East and West Molesey since 6 July.</p>
+            <div class="src">East Surrey News/Leatherhead Living &middot; 9 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/stadsparken-kokade-nar-festen-drog-igang.8ee641c3-2f1e-45d1-aa46-9800f9296b29">
+        <div class="row" data-url="https://kingston.nub.news/news/local-news/kingston-recognises-volunteers-at-celebrating-communities-awards-2026-301119">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/stadsparken-kokade-nar-festen-drog-igang.8ee641c3-2f1e-45d1-aa46-9800f9296b29" target="_blank">Stadsparken kokade n&auml;r festen drog ig&aring;ng</a></h3>
-            <p>The town park buzzed as the summer festival kicked off &mdash; &ldquo;like a big after-work for everyone in Str&ouml;mstad&rdquo;.</p>
+            <h3><a href="https://kingston.nub.news/news/local-news/kingston-recognises-volunteers-at-celebrating-communities-awards-2026-301119" target="_blank">Kingston recognises volunteers at Celebrating Communities Awards 2026</a></h3>
+            <p>Kingston&rsquo;s third annual awards honoured more than 200 volunteers across 8 categories at a ceremony at All Saints Church.</p>
+            <div class="src">Kingston Nub News &middot; 6 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/upprustning-av-skurveskar-ett-lyft-for-stromstadsborna.691c8253-1a6c-4747-9cda-2e80acb53dca">
+        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/building-connected-community-help-more-people-elmbridge-live-well">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/upprustning-av-skurveskar-ett-lyft-for-stromstadsborna.691c8253-1a6c-4747-9cda-2e80acb53dca" target="_blank">Skurvesk&auml;r i ny tappning &ndash; en succ&eacute;</a></h3>
-            <p>The revamped Skurvesk&auml;r bathing spot is a hit with locals &mdash; &ldquo;it&rsquo;s wonderful here now&rdquo;.</p>
+            <h3><a href="https://www.elmbridge.gov.uk/news/2026/building-connected-community-help-more-people-elmbridge-live-well" target="_blank">Building a connected community to help more people in Elmbridge live well</a></h3>
+            <p>The council is working with St Peter&rsquo;s West Molesey to create a &ldquo;Molesey Hub&rdquo; with an affordable caf&eacute;, children&rsquo;s play space and activities for older residents.</p>
+            <div class="src">Elmbridge Borough Council &middot; 9 Jun</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/rakantennisen-lockar-spelare-fran-hela-landet-till-stromstad.5f1e2e77-489c-42bb-9fa7-5b6d64881f31">
+        <div class="row" data-url="https://www.moleseyresidentsassociation.org.uk/general-interest/may-2026-local-election-results/">
           <div class="n">4</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/rakantennisen-lockar-spelare-fran-hela-landet-till-stromstad.5f1e2e77-489c-42bb-9fa7-5b6d64881f31" target="_blank">R&auml;kantennisen lockar spelare fr&aring;n hela landet</a></h3>
-            <p>The quirky &ldquo;shrimp tennis&rdquo; tournament draws players from across the country to Str&ouml;mstad.</p>
+            <h3><a href="https://www.moleseyresidentsassociation.org.uk/general-interest/may-2026-local-election-results/" target="_blank">May 2026 local election results for Molesey</a></h3>
+            <p>The Molesey Residents Association has published the results of this year&rsquo;s local elections covering the Molesey wards.</p>
+            <div class="src">Molesey Residents Association &middot; 15 May</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/det-blir-en-lordagsmorgon-i-stadsparken-fylld-av-dans-aerobics-och-gemenskap-.cbff6a6c-6ff2-42b3-ad1b-a08685c32500">
+        <div class="row" data-url="https://www.moleseyresidentsassociation.org.uk/general-interest/mra-agm-22-may-2026/">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/det-blir-en-lordagsmorgon-i-stadsparken-fylld-av-dans-aerobics-och-gemenskap-.cbff6a6c-6ff2-42b3-ad1b-a08685c32500" target="_blank">De kommer att leda morgongympan i stadsparken</a></h3>
-            <p>Meet the pair leading Saturday-morning gymnastics in the park &mdash; &ldquo;it&rsquo;s about being together and feeling the atmosphere&rdquo;.</p>
+            <h3><a href="https://www.moleseyresidentsassociation.org.uk/general-interest/mra-agm-22-may-2026/" target="_blank">MRA AGM &mdash; 22 May 2026</a></h3>
+            <p>Notice and details of the Molesey Residents Association&rsquo;s Annual General Meeting.</p>
+            <div class="src">Molesey Residents Association &middot; 12 May</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/barca-academy-pa-plats-for-traning-i-stromstad-drom-att-spela-for-barcelona.a3b2573c-9339-4a2d-a723-b68735be4f7d">
+        <div class="row" data-url="https://radiojackie.com/molesey-community-centre-is-to-shut-later-this-month-for-refurbishment/">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/barca-academy-pa-plats-for-traning-i-stromstad-drom-att-spela-for-barcelona.a3b2573c-9339-4a2d-a723-b68735be4f7d" target="_blank">Barca Academy p&aring; plats f&ouml;r tr&auml;ning i Str&ouml;mstad</a></h3>
-            <p>Children got to train like their heroes as the Barcelona football academy visited town.</p>
+            <h3><a href="https://radiojackie.com/molesey-community-centre-is-to-shut-later-this-month-for-refurbishment/" target="_blank">Molesey Community Centre to shut for refurbishment</a></h3>
+            <p>The St Peter&rsquo;s West Church-based hub closed 17 April and reopened end of May, part of longer-term plans for a community hub with a caf&eacute; and activities for older residents.</p>
+            <div class="src">Radio Jackie &middot; 3 Apr</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/sol-och-varme-vantas-till-fest-i-stadsparken-i-stromstad-.ac12c08c-f59b-4f89-b6c7-5b3826aeeb14">
+        <div class="row" data-url="https://www.getsurrey.co.uk/news/surrey-news/new-surrey-tesco-express-can-33658061">
           <div class="n">7</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/sol-och-varme-vantas-till-fest-i-stadsparken-i-stromstad-.ac12c08c-f59b-4f89-b6c7-5b3826aeeb14" target="_blank">Gl&auml;djebeskedet: Sommarv&auml;rme h&auml;r f&ouml;r att stanna</a></h3>
-            <p>Good news: real high-summer warmth is forecast to settle in over the coming days.</p>
+            <h3><a href="https://www.getsurrey.co.uk/news/surrey-news/new-surrey-tesco-express-can-33658061" target="_blank">New Tesco Express in East Molesey can sell alcohol despite concerns</a></h3>
+            <p>Elmbridge&rsquo;s licensing sub-committee approved alcohol sales for the new Tesco Express on Bridge Road, opposite Hampton Court station, despite anti-social behaviour concerns.</p>
+            <div class="src">Surrey Live &middot; 25 Mar</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/nu-saljer-familjen-vattenrutschbanan-pa-selater.1017ac52-abe1-4c9e-a2ea-155c984517b2">
+        <div class="row" data-url="https://kingston.nub.news/news/local-news/david-lloyd-reveals-plans-for-luxury-health-club-and-outdoor-pool-in-east-molesey-287356">
           <div class="n">8</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/nu-saljer-familjen-vattenrutschbanan-pa-selater.1017ac52-abe1-4c9e-a2ea-155c984517b2" target="_blank">Efter 40 &aring;r &ndash; klassiska attraktionen till salu</a></h3>
-            <p>After 40 years, the family behind the classic Selater water slide is putting it up for sale.</p>
+            <h3><a href="https://kingston.nub.news/news/local-news/david-lloyd-reveals-plans-for-luxury-health-club-and-outdoor-pool-in-east-molesey-287356" target="_blank">David Lloyd reveals plans for luxury health club in East Molesey</a></h3>
+            <p>David Lloyd Clubs plans to transform the former Pavilion Club site on Hurst Lane into a premium family health club with pools and a spa, opening summer 2027, creating around 80 permanent jobs.</p>
+            <div class="src">Kingston Nub News &middot; 9 Feb</div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="sec">
-      <div class="sec-h"><h2>Sweden Headlines</h2></div>
+  <section class="panel" id="tab-local-events">
+    <div class="sec" id="local-events">
+      <div class="sec-h"><h2>Local Events</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234">
+        <div class="row" data-url="https://www.nationaltrust.org.uk/visit/surrey/claremont-landscape-garden/events">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234" target="_blank">Train service suspended between Stockholm and Gothenburg</a></h3>
-            <p>Services were halted after an incident at Herrljunga, with the transport authority working to reopen the line.</p>
+            <h3>Surrey Sculpture Society Exhibition</h3>
+            <div class="evm">
+              <div><b>Where:</b> Claremont Landscape Garden, Esher</div>
+              <div><b>When:</b> Today, Mon 13 Jul</div>
+              <div><b>Time:</b> 09:00&ndash;17:00</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
           </div>
         </div>
-        <div class="row" data-url="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234">
+        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/the-maze/">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234" target="_blank">Swedish gang member crashes car in Ireland en route to a contract killing</a></h3>
-            <p>Two Swedes are suspected of travelling to Ireland for a contract killing; one died in a car crash on the way, in what police call one of the strangest gang cases in years.</p>
+            <h3>Hampton Court Palace Maze</h3>
+            <div class="evm">
+              <div><b>Where:</b> Hampton Court Palace</div>
+              <div><b>When:</b> Open daily</div>
+              <div><b>Time:</b> 10:00&ndash;17:30 (summer hours)</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
           </div>
         </div>
-        <div class="row" data-url="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234">
+        <div class="row" data-url="https://www.royalparks.org.uk/visit/parks/bushy-park/things-to-do">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234" target="_blank">Summer heat returns to much of Sweden</a></h3>
-            <p>SMHI says the west coast and Sk&aring;ne could see 22&ndash;28&deg;C, with a possible heatwave if temperatures stay above 25&deg;C for five days.</p>
+            <h3>Bushy Park deer walk &amp; playgrounds</h3>
+            <div class="evm">
+              <div><b>Where:</b> Bushy Park, Hampton</div>
+              <div><b>When:</b> Open daily</div>
+              <div><b>Time:</b> Dawn to dusk &middot; free</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
           </div>
         </div>
-        <div class="row" data-url="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234">
+        <div class="row" data-url="https://goboat.co.uk/en/kingston">
           <div class="n">4</div>
           <div class="b">
-            <h3><a href="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234" target="_blank">Water-shortage risk across eleven counties</a></h3>
-            <p>Low groundwater and river levels have prompted SMHI warnings, with residents urged to save water for at least the next few weeks.</p>
+            <h3>GoBoat self-drive boat hire</h3>
+            <div class="evm">
+              <div><b>Where:</b> Kingston upon Thames</div>
+              <div><b>When:</b> Open daily (seasonal)</div>
+              <div><b>Time:</b> Bookable slots, see listing</div>
+              <div><b>Ages:</b> Driver 18+, all ages welcome as passengers</div>
+            </div>
           </div>
         </div>
-        <div class="row" data-url="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234">
+        <div class="row" data-url="https://www.nationaltrust.org.uk/visit/surrey/claremont-landscape-garden/events">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://www.thelocal.se/20260710/today-in-sweden-a-roundup-of-the-latest-news-on-friday-234" target="_blank">Tougher competition for university places this autumn</a></h3>
-            <p>Some 307,000 applicants were accepted &mdash; about 10,000 fewer than last year &mdash; as a record number applied but fewer places were offered.</p>
+            <h3>The Magic Faraway Tree family trail</h3>
+            <div class="evm">
+              <div><b>Where:</b> Claremont Landscape Garden, Esher</div>
+              <div><b>When:</b> 18 Jul &ndash; 31 Aug</div>
+              <div><b>Time:</b> 10:00&ndash;17:00 daily</div>
+              <div><b>Ages:</b> All ages, especially younger kids</div>
+            </div>
           </div>
         </div>
-        <div class="row" data-url="https://www.thelocal.se/category/sweden-news">
+        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/henry-viiis-joust/">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://www.thelocal.se/category/sweden-news" target="_blank">Swedish general election draws closer</a></h3>
-            <p>Voting cards are going out to more than 210,000 Swedes eligible to vote from abroad ahead of the autumn election.</p>
+            <h3>Henry VIII&rsquo;s Joust</h3>
+            <div class="evm">
+              <div><b>Where:</b> Hampton Court Palace</div>
+              <div><b>When:</b> Sat 18 &ndash; Sun 19 Jul</div>
+              <div><b>Time:</b> Shows at 11:00, 13:30 &amp; 16:00</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.nationaltrust.org.uk/visit/surrey/claremont-landscape-garden/events/2f0eeed1-42f6-4c18-9c1d-4607cf022193">
+          <div class="n">7</div>
+          <div class="b">
+            <h3>Claremont Live: The Tale of Peter Rabbit and Benjamin Bunny</h3>
+            <div class="evm">
+              <div><b>Where:</b> Claremont Landscape Garden, Esher</div>
+              <div><b>When:</b> Sat 25 Jul</div>
+              <div><b>Time:</b> Doors 17:00, show 18:00&ndash;19:30</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.rosetheatre.org/whats-on/ministry-of-science-live-science-saved-the-world-93z5">
+          <div class="n">8</div>
+          <div class="b">
+            <h3>Ministry of Science Live! Science Saved the World</h3>
+            <div class="evm">
+              <div><b>Where:</b> Rose Theatre, Kingston</div>
+              <div><b>When:</b> Mon 3 &ndash; Sun 9 Aug</div>
+              <div><b>Time:</b> See listing for showtimes</div>
+              <div><b>Ages:</b> Best for 12/13-year-olds, still fun for younger</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="sec">
+  <section class="panel" id="tab-uk-news">
+    <div class="sec" id="uk-headlines">
+      <div class="sec-h"><h2>UK Headlines</h2></div>
       <div class="card">
-        <div class="mkt-foot">Str&ouml;mstad stories via <a href="https://www.stromstadstidning.se/nyheter/stromstad" target="_blank">Str&ouml;mstads Tidning</a> (may paywall past the opening paragraph); national headlines via <a href="https://www.thelocal.se/category/sweden-news" target="_blank">The Local Sweden</a>.</div>
+        <div class="row" data-url="https://www.sheffield.gov.uk/news/2026/sheffield-leads-uk-new-pickleball-courts-city-parks">
+          <div class="n">1</div>
+          <div class="b">
+            <h3><a href="https://www.sheffield.gov.uk/news/2026/sheffield-leads-uk-new-pickleball-courts-city-parks" target="_blank">Sheffield leads the UK with new pickleball courts in city parks</a></h3>
+            <p>Sheffield now has 18 outdoor pickleball courts across seven parks &mdash; more than any other UK city &mdash; with free or low-cost sessions for beginners.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.londonambulance.nhs.uk/2026/07/02/always-ready-to-rescue-off-duty-paramedics-save-man-who-collapsed-at-tube-station/">
+          <div class="n">2</div>
+          <div class="b">
+            <h3><a href="https://www.londonambulance.nhs.uk/2026/07/02/always-ready-to-rescue-off-duty-paramedics-save-man-who-collapsed-at-tube-station/" target="_blank">Off-duty paramedics save man who collapsed at Tube station</a></h3>
+            <p>Three off-duty paramedics happened to be passing when a 49-year-old man went into cardiac arrest at Acton Town station; he&rsquo;s since been reunited with the crews who saved him.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.goodnewspost.co.uk/maidstone-special-school-earns-place-among-worlds-top-10/">
+          <div class="n">3</div>
+          <div class="b">
+            <h3><a href="https://www.goodnewspost.co.uk/maidstone-special-school-earns-place-among-worlds-top-10/" target="_blank">Maidstone special school shortlisted for World Education Prize</a></h3>
+            <p>Five Acre Wood School is in the global top 10 for the World&rsquo;s Best School Prize for Innovation, recognised for its hospitality-training caf&eacute;.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.goodnewspost.co.uk/first-wild-beaver-born-in-staffordshire-for-more-than-400-years/">
+          <div class="n">4</div>
+          <div class="b">
+            <h3><a href="https://www.goodnewspost.co.uk/first-wild-beaver-born-in-staffordshire-for-more-than-400-years/" target="_blank">First wild beaver born in Staffordshire for more than 400 years</a></h3>
+            <p>Staffordshire Wildlife Trust has confirmed a wild beaver kit &mdash; the first born in the county in four centuries &mdash; a milestone for nature recovery.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-28-of-2026/">
+          <div class="n">5</div>
+          <div class="b">
+            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-28-of-2026/" target="_blank">New blood test could spare women an invasive cancer exam</a></h3>
+            <p>The AI-driven &ldquo;PinPoint&rdquo; blood test, trialled on over 16,000 women across Yorkshire hospitals, showed 99% accuracy detecting or ruling out gynaecological cancers.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-28-of-2026/">
+          <div class="n">6</div>
+          <div class="b">
+            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-28-of-2026/" target="_blank">Malaria vaccine inventor wins top European award</a></h3>
+            <p>Oxford University&rsquo;s Sir Adrian Hill won the European Inventor Award 2026 for the R21/Matrix-M malaria vaccine, now rolled out in around 20 countries.</p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
+  <section class="panel" id="tab-ai">
+    <div class="sec">
+      <div class="sec-h"><h2>Top 10 in AI &mdash; Explained Simply</h2></div>
+      <div class="card">
+        <div class="row" data-url="https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html">
+          <div class="n">1</div>
+          <div class="b">
+            <h3>OpenAI lets everyone use its newest chatbot brain</h3>
+            <p>OpenAI (the company behind ChatGPT) had been told by the US government to only let a few big organisations use its newest AI model while officials checked it was safe from being used for cyberattacks. That check finished early, so now anyone can use it &mdash; and one version is just as smart as their best model but half the price.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.anthropic.com/news/claude-sonnet-5">
+          <div class="n">2</div>
+          <div class="b">
+            <h3>Claude gets a big free upgrade</h3>
+            <p>Anthropic (who makes Claude) released Claude Sonnet 5, a new version that&rsquo;s much better at planning tasks, writing code and reasoning through problems &mdash; and it&rsquo;s now the version most free and Pro users get by default.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html">
+          <div class="n">3</div>
+          <div class="b">
+            <h3>Chinese AI models are taking over almost half the market</h3>
+            <p>&ldquo;Open source&rdquo; means the AI is free for anyone to download and build on, instead of locked away by one company. Chinese open-source AI models are now used for nearly half of all business AI traffic in America, mostly because they&rsquo;re 60&ndash;90% cheaper to run than the big US ones.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost">
+          <div class="n">4</div>
+          <div class="b">
+            <h3>A free Chinese AI model beats the big paid ones at coding</h3>
+            <p>A Chinese company called Z.ai released a huge open-source (free for anyone to use) AI model that beat some of the best paid models at coding tests, and it was trained on Chinese-made computer chips instead of the usual American ones.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says">
+          <div class="n">5</div>
+          <div class="b">
+            <h3>DeepSeek is building its own AI computer chip</h3>
+            <p>DeepSeek, a well-known Chinese AI company, is reportedly designing its own special computer chip to run its AI, so it depends less on American chip-makers like Nvidia, which are restricted from selling their best chips to China.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion">
+          <div class="n">6</div>
+          <div class="b">
+            <h3>The first AI hacking attack with no human involved</h3>
+            <p>Security researchers found the first &ldquo;ransomware&rdquo; attack (where hackers lock your files and demand payment) that was run entirely by an AI &ldquo;agent&rdquo; &mdash; meaning an AI that can act on its own &mdash; with no person guiding it step by step. It broke in, found weaknesses and locked over a thousand files by itself.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://techcrunch.com/2026/03/30/ai-trust-adoption-poll-more-americans-adopt-tools-fewer-say-they-can-trust-the-results/">
+          <div class="n">7</div>
+          <div class="b">
+            <h3>More people use AI, but fewer people trust it</h3>
+            <p>Surveys show more people than ever are using AI tools like chatbots every day &mdash; but most say they only trust what those tools tell them &ldquo;sometimes&rdquo; or &ldquo;rarely&rdquo;. Most people also think AI is moving faster than governments can keep up with.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.theinformation.com/briefings/south-korea-invest-880-billion-chips-robotics-ai-10-years">
+          <div class="n">8</div>
+          <div class="b">
+            <h3>South Korea is spending huge money to become an AI and robot superpower</h3>
+            <p>South Korea&rsquo;s government announced an $880 billion, 10-year plan to build more computer chips, AI data centres and robots &mdash; including a goal to go from barely making any humanoid robots to making a fifth of the world&rsquo;s supply.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.local.gov.uk/case-studies/kingston-council-using-ai-adult-social-care-administration">
+          <div class="n">9</div>
+          <div class="b">
+            <h3>Your local council (Kingston) is already using AI at work</h3>
+            <p>Kingston Council, near where you live, now uses an AI tool called &ldquo;Magic Notes&rdquo; to help social workers write up notes after meetings. Work that used to take 2 hours now takes about 30 minutes, and it&rsquo;s reportedly accurate about 96% of the time.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/">
+          <div class="n">10</div>
+          <div class="b">
+            <h3>Elon Musk&rsquo;s company launched a new AI called Grok 4.5</h3>
+            <p>xAI (Elon Musk&rsquo;s AI company) released Grok 4.5, its first new model since buying the coding tool Cursor. Musk says it&rsquo;s as good as some of the best AI models out there, but faster and cheaper to run.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="panel" id="tab-career">
@@ -721,47 +870,6 @@
     </div>
 
   </section>
-<section class="panel" id="tab-matches">
-
-    <div class="banner">
-      <div class="bk">World Cup 2026 &middot; Semi-finalists set</div>
-      <h2>Bellingham&rsquo;s extra-time brace sends England through</h2>
-      <p>Jude Bellingham struck twice as England edged Norway 2&ndash;1 after extra time in Miami. Gareth Southgate&rsquo;s side now meet holders Argentina in the semi-final in Atlanta on Wednesday 15 July. Today is a rest day &mdash; the semi-finals begin Tuesday.</p>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>Today&rsquo;s Fixtures &mdash; Sun 12 Jul</h2></div>
-      <div class="card">
-        <div class="fx">
-          <div class="teams">
-            <div class="t">No World Cup matches today</div>
-            <div class="fx-g">Rest day between the quarter-finals and semi-finals. Next up: France Vs Spain, Tue 14 Jul (8:00pm BST, ITV1).</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>Latest Results &mdash; Quarter-finals, Sat 11 Jul</h2></div>
-      <div class="card">
-        <div class="fx">
-          <div class="teams">
-            <div class="t">Norway <span class="vs">Vs</span> England</div>
-            <div class="fx-g">Schjelderup 36&rsquo; &middot; Bellingham 45+2&rsquo;, 93&rsquo; &mdash; Miami</div>
-          </div>
-          <div class="score"><div class="s">1&ndash;2</div><div class="st">AET</div></div>
-        </div>
-        <div class="fx">
-          <div class="teams">
-            <div class="t">Argentina <span class="vs">Vs</span> Switzerland</div>
-            <div class="fx-g">Mac Allister 10&rsquo;, &Aacute;lvarez 112&rsquo;, Mart&iacute;nez 120+1&rsquo; &middot; Ndoye 67&rsquo; &middot; Embolo sent off &mdash; Kansas City</div>
-          </div>
-          <div class="score"><div class="s">3&ndash;1</div><div class="st">AET</div></div>
-        </div>
-      </div>
-    </div>
-
-  </section>
 
   <section class="panel" id="tab-bracket">
     <div class="sec" id="wc-wallchart">
@@ -784,86 +892,9 @@
       </div>
     </div>
   </section>
-  <section class="panel" id="tab-ai">
-    <div class="sec">
-      <div class="sec-h"><h2>Top 10 in AI &mdash; Explained Simply</h2></div>
-      <div class="card">
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-10-2026">
-          <div class="n">1</div>
-          <div class="b">
-            <h3>Anthropic is now earning more than OpenAI</h3>
-            <p>Anthropic (the company that makes Claude) is now bringing in more money than OpenAI (the maker of ChatGPT). It&rsquo;s a sign of how fast the race between AI companies is changing.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-10-2026">
-          <div class="n">2</div>
-          <div class="b">
-            <h3>The first AI virus that runs on its own</h3>
-            <p>Security experts found the first &ldquo;ransomware&rdquo; &mdash; a nasty program that locks your files &mdash; that an AI ran completely by itself, with no human controlling it. It&rsquo;s a warning about AI being misused.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-10-2026">
-          <div class="n">3</div>
-          <div class="b">
-            <h3>Five countries agree on safety rules for &lsquo;agent&rsquo; AIs</h3>
-            <p>The UK, US, Australia, Canada and New Zealand wrote shared advice for keeping &ldquo;agentic&rdquo; AI safe &mdash; that means AI that can take actions on its own, not just answer questions.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026">
-          <div class="n">4</div>
-          <div class="b">
-            <h3>China&rsquo;s cheap AI is catching up</h3>
-            <p>A Chinese AI called GLM-5.2 is nearly as good as the top US models but much cheaper. People are debating whether China is closing the gap in the AI race.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-10-2026">
-          <div class="n">5</div>
-          <div class="b">
-            <h3>A powerful new free AI called Kimi K2</h3>
-            <p>A Chinese company released Kimi K2, a big AI that&rsquo;s free for anyone to use and build on (that&rsquo;s what &ldquo;open&rdquo; means). It&rsquo;s built to carry out tasks, not just chat.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-6-2026">
-          <div class="n">6</div>
-          <div class="b">
-            <h3>Another free Chinese AI: Hunyuan 3.0</h3>
-            <p>Tencent, a huge Chinese tech company, shared a powerful AI that anyone can use for free. Releasing AI openly like this lets others learn from and improve it.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026">
-          <div class="n">7</div>
-          <div class="b">
-            <h3>DeepSeek&rsquo;s newest model is out</h3>
-            <p>DeepSeek, another Chinese lab, released the full version of its latest AI (V4) after a sneak-peek earlier this year. It keeps China among the leaders in free AI.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026">
-          <div class="n">8</div>
-          <div class="b">
-            <h3>Elon Musk&rsquo;s Grok tops the tests</h3>
-            <p>xAI&rsquo;s new Grok 4.5 scored top marks on several tests, including a tough one that checks how well an AI can do long coding jobs.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.computerweekly.com/news/366623119/Kingston-Council-taps-Boldyn-to-improve-digital-infrastructure">
-          <div class="n">9</div>
-          <div class="b">
-            <h3>A local London council is using AI</h3>
-            <p>Kingston Council (near us) is starting to use AI to work faster and improve services &mdash; a sign that even everyday local government is trying the technology.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026">
-          <div class="n">10</div>
-          <div class="b">
-            <h3>New EU cars must watch if you&rsquo;re distracted</h3>
-            <p>From 7 July, all brand-new cars in the EU must include AI that watches a driver&rsquo;s eyes and head to spot when they stop paying attention &mdash; a safety feature.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer class="foot">
-    Compiled Sunday 12 July 2026 &middot; Weather via Met Office (WillyWeather) &middot; Str&ouml;mstad news via Str&ouml;mstads Tidning &middot; Sweden news via The Local &middot; Scores via ESPN/Sky Sports Football &amp; BBC Sport &middot; TV channels via live-footballontv.com<br>
+    Compiled Monday 13 July 2026 &middot; Weather via Met Office (WillyWeather) &middot; Str&ouml;mstad news via Str&ouml;mstads Tidning &middot; Sweden news via The Local &middot; Scores via ESPN/Sky Sports Football &amp; BBC Sport &middot; TV channels via live-footballontv.com<br>
     <b>Tap any news or event card to open the source.</b> All kick-offs BST. Every World Cup game is free-to-air on BBC or ITV.
   </footer>
 

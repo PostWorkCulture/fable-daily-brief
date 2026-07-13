@@ -28,10 +28,10 @@
   .chip .wic{width:18px;height:18px}
 
   /* ---------- TABS ---------- */
-  .tabs{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 10px;display:flex;gap:6px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-  .tab{border:1px solid transparent;background:#f5f5f7;color:var(--ink2);font-size:14px;font-weight:600;padding:10px 18px;border-radius:14px;cursor:pointer;transition:all .15s}
-  .tab:hover{background:#ececef;color:var(--ink)}
-  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 1px 3px rgba(22,104,217,.28)}
+  .tabs{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-bottom:1px solid var(--line)}
+  .tab{border:1px solid var(--line);background:#fff;color:var(--ink2);font-size:14px;font-weight:600;padding:14px 12px;border-radius:16px;cursor:pointer;transition:all .15s;text-align:center}
+  .tab:hover{border-color:var(--accent);color:var(--accent)}
+  .tab.on{background:#fff;border-color:var(--accent);color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
   .panel{display:none;padding-top:20px}
   .panel.on{display:block}
 
@@ -77,6 +77,12 @@
   #calendar .row .n{flex:0 0 42px;font-size:10.5px;letter-spacing:.02em}
   .fam{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:2px}
 
+  /* ---------- CALENDAR (subtle/grey) ---------- */
+  #calendar .card,#calendar-next .card{background:var(--wash)}
+  #calendar .row .n,#calendar-next .row .n{flex:0 0 42px;font-size:10.5px;letter-spacing:.02em;background:var(--line);color:var(--ink2)}
+  #calendar h3,#calendar-next h3{color:var(--ink2);font-weight:700}
+  #calendar .evm b,#calendar-next .evm b{color:var(--ink2);font-weight:800}
+
   /* markets */
   .mkts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line)}
   .mkt{background:var(--card);padding:16px 20px}
@@ -94,12 +100,13 @@
   .prose b{color:var(--ink)}
   .prose p{margin-bottom:10px}
   .prose p:last-child{margin-bottom:0}
-  .prose h4{font-size:13px;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.08em;margin:14px 0 6px}
+  .prose h4{font-size:13px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin:14px 0 6px}
   .prose h4:first-child{margin-top:0}
   .prose a,.row .b a{color:var(--accent);font-weight:700;text-decoration:none}
   #local-news .row .b a{color:var(--ink)}
   #uk-headlines .row .b a{color:var(--ink)}
   #career-openings .row .b a{color:var(--ink)}
+  #career-openings .evm .dl{color:var(--ink);font-weight:800}
   .prose a:hover,.row .b a:hover{text-decoration:underline}
   .disc{padding:10px 20px;font-size:11.5px;color:var(--ink3);border-top:1px solid var(--line);background:var(--wash)}
 
@@ -202,19 +209,18 @@
 
   <header class="mast">
     <h1>Good morning, Pete</h1>
-    <div class="sub">Sunday 12 July 2026</div>
+    <div class="sub">Monday 13 July 2026</div>
   </header>
 
   <nav class="tabs">
     <button class="tab on" data-tab="brief">Brief</button>
+    <button class="tab" data-tab="career">Career</button>
+    <button class="tab" data-tab="education">School</button>
     <button class="tab" data-tab="local-news">Local News</button>
     <button class="tab" data-tab="local-events">Local Events</button>
     <button class="tab" data-tab="uk-news">UK News</button>
-    <button class="tab" data-tab="markets">Markets</button>
     <button class="tab" data-tab="ai">AI</button>
-    <button class="tab" data-tab="career">Career</button>
-    <button class="tab" data-tab="education">School</button>
-    <button class="tab" data-tab="matches">WC Matches</button>
+    <button class="tab" data-tab="markets">Markets</button>
     <button class="tab" data-tab="bracket">WC Knockout</button>
   </nav>
 
@@ -226,18 +232,18 @@
         <div class="pad wx">
           <div class="wx-now">
             <svg class="wic"><use href="#i-sun"/></svg>
-            <div class="wx-t">29<sup>&deg;C</sup></div>
+            <div class="wx-t">28<sup>&deg;C</sup></div>
           </div>
-          <div class="wx-d"><b>Today: sunny, 29&deg;C.</b> Hot, dry spell all week.</div>
+          <div class="wx-d"><b>Today: partly cloudy, 28&deg;C.</b> Hot and sunny through the weekend.</div>
         </div>
         <div class="wx-strip">
-          <div class="wx-day today"><div class="d">Today</div><div class="dt">12 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">29&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">13 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">28&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Tue</div><div class="dt">14 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">30&deg;</div><div class="lo">19&deg;</div></div><div class="wx-day"><div class="d">Wed</div><div class="dt">15 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">30&deg;</div><div class="lo">20&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">16 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">31&deg;</div><div class="lo">20&deg;</div></div><div class="wx-day"><div class="d">Fri</div><div class="dt">17 Jul</div><svg class="wic"><use href="#i-storm"/></svg><div class="t">28&deg;</div><div class="lo">19&deg;</div></div>
+          <div class="wx-day today"><div class="d">Today</div><div class="dt">13 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">28&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">14 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">31&deg;</div><div class="lo">18&deg;</div></div><div class="wx-day"><div class="d">Wed</div><div class="dt">15 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">29&deg;</div><div class="lo">18&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">16 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">29&deg;</div><div class="lo">18&deg;</div></div><div class="wx-day"><div class="d">Fri</div><div class="dt">17 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">27&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Sat</div><div class="dt">18 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">26&deg;</div><div class="lo">16&deg;</div></div>
         </div>
       </div>
     </div>
 
     <div class="sec" id="calendar">
-      <div class="sec-h"><h2>Calendar</h2></div>
+      <div class="sec-h"><h2>Coming up this week</h2></div>
       <div class="card">
         <div class="row">
           <div class="n">Tue</div>
@@ -272,422 +278,62 @@
       </div>
     </div>
 
-  </section>
-
-  <section class="panel" id="tab-local-news">
-    <div class="sec" id="local-news">
-      <div class="sec-h"><h2>Local News</h2></div>
+    <div class="sec" id="calendar-next">
+      <div class="sec-h"><h2>Coming up next week</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/we-apologise-incorrectly-issued-parking-fines-and-will-refund-customers">
-          <div class="n">1</div>
+        <div class="row">
+          <div class="n">Mon</div>
           <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/we-apologise-incorrectly-issued-parking-fines-and-will-refund-customers" target="_blank">Elmbridge apologises for incorrectly issued parking fines</a></h3>
-            <p>The council has opened a refund scheme after admitting some parking penalty charge notices were issued in error.</p>
-            <div class="src">Elmbridge Borough Council &middot; 9 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/help-prevent-wildfires-elmbridge">
-          <div class="n">2</div>
-          <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/help-prevent-wildfires-elmbridge" target="_blank">Help prevent wildfires across Elmbridge in the heat</a></h3>
-            <p>BBQs and naked flames are banned in parks, commons and open spaces under a Public Spaces Protection Order as hot, dry conditions raise the risk.</p>
-            <div class="src">Elmbridge Borough Council &middot; 8 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/residents-invited-help-shape-new-east-surrey-council-brand">
-          <div class="n">3</div>
-          <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/residents-invited-help-shape-new-east-surrey-council-brand" target="_blank">Residents invited to help shape the new East Surrey Council brand</a></h3>
-            <p>People across the borough can get involved in shaping the identity of the new East Surrey Council.</p>
-            <div class="src">Elmbridge Borough Council &middot; 7 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/stay-water-aware-during-summer">
-          <div class="n">4</div>
-          <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/stay-water-aware-during-summer" target="_blank">Stay water aware around the Thames this summer</a></h3>
-            <p>A reminder of the dangers of open water and how to stay safe near rivers and lakes during the warm weather.</p>
-            <div class="src">Elmbridge Borough Council &middot; 6 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/visit-oxshott-repair-cafe">
-          <div class="n">5</div>
-          <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/visit-oxshott-repair-cafe" target="_blank">A visit to the Oxshott Repair Caf&eacute;</a></h3>
-            <p>Local volunteers are helping residents save money and cut waste by repairing everyday items and swapping unwanted goods.</p>
-            <div class="src">Elmbridge Borough Council &middot; 6 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/planning-application-mill-road-depot">
-          <div class="n">6</div>
-          <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/planning-application-mill-road-depot" target="_blank">Planning application update for the Mill Road depot</a></h3>
-            <p>A further application has been submitted to update some existing planning conditions for the Mill Road Depot.</p>
-            <div class="src">Elmbridge Borough Council &middot; 3 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/enhanced-community-grants-programme">
-          <div class="n">7</div>
-          <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/enhanced-community-grants-programme" target="_blank">Enhanced community grants programme launched</a></h3>
-            <p>The council is using an enhanced community grants programme to empower local organisations across the borough.</p>
-            <div class="src">Elmbridge Borough Council &middot; 2 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/celebrate-local-love-elmbridge-awards-2026">
-          <div class="n">8</div>
-          <div class="b">
-            <h3><a href="https://www.elmbridge.gov.uk/news/2026/celebrate-local-love-elmbridge-awards-2026" target="_blank">Vote in the Love Elmbridge Awards 2026</a></h3>
-            <p>Residents can vote for their favourite independent retailer as part of this year&rsquo;s Love Elmbridge Awards.</p>
-            <div class="src">Elmbridge Borough Council &middot; 1 Jul</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" id="tab-local-events">
-    <div class="sec" id="local-events">
-      <div class="sec-h"><h2>Local Events</h2></div>
-      <div class="card">
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/henry-viiis-joust/">
-          <div class="n">1</div>
-          <div class="b">
-            <h3>Henry VIII&rsquo;s Joust</h3>
+            <h3>Kate</h3>
             <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Today (Sun 12 Jul), then 18&ndash;19 Jul</div>
-              <div><b>Time:</b> In line with palace opening hours</div>
-              <div><b>Ages:</b> All ages</div>
+              <div><b>When:</b> Mon 20 Jul</div>
+              <div><b>Time:</b> All day</div>
             </div>
           </div>
         </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/the-magic-garden/">
-          <div class="n">2</div>
+        <div class="row">
+          <div class="n">Mon</div>
           <div class="b">
-            <h3>The Magic Garden, maze &amp; gardens</h3>
+            <h3>Fatou</h3>
             <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Open daily</div>
-              <div><b>Time:</b> In line with palace opening hours</div>
-              <div><b>Ages:</b> All ages (great for 4+)</div>
+              <div><b>When:</b> Mon 20 &ndash; Thu 23 Jul</div>
+              <div><b>Time:</b> 08:00 Mon &ndash; 09:00 Thu</div>
             </div>
           </div>
         </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/garden-history-tours/">
-          <div class="n">3</div>
+        <div class="row">
+          <div class="n">Tue</div>
           <div class="b">
-            <h3>Garden history tours (free walking tour)</h3>
+            <h3>Sample</h3>
             <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Today (Sun 12 Jul), then 16&ndash;18 Jul</div>
-              <div><b>Time:</b> Daytime, see listing</div>
-              <div><b>Ages:</b> 8+ / adults</div>
+              <div><b>When:</b> Tue 21 Jul</div>
+              <div><b>Time:</b> 09:00&ndash;10:00</div>
             </div>
           </div>
         </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/sophia-the-suffragette-princess-of-punjab/">
-          <div class="n">4</div>
+        <div class="row">
+          <div class="n">Fri</div>
           <div class="b">
-            <h3>Sophia: The Suffragette Princess of Punjab</h3>
+            <h3>Pete Off</h3>
             <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Mon 13 Jul (runs until 17 Jul)</div>
-              <div><b>Time:</b> 11:15&ndash;15:15</div>
-              <div><b>Ages:</b> 8+ / all ages</div>
+              <div><b>When:</b> Fri 24 Jul</div>
+              <div><b>Time:</b> 08:00&ndash;09:00</div>
             </div>
           </div>
         </div>
-        <div class="row" data-url="http://moleseyregatta.org.uk/">
-          <div class="n">5</div>
+        <div class="row">
+          <div class="n">Sat</div>
           <div class="b">
-            <h3>Molesey Regatta</h3>
+            <h3>Kids</h3>
             <div class="evm">
-              <div><b>Where:</b> Riverside, West Molesey</div>
-              <div><b>When:</b> Sat 18 &ndash; Sun 19 Jul</div>
-              <div><b>Time:</b> From late morning</div>
-              <div><b>Ages:</b> All ages</div>
-            </div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/beano-havoc-at-hampton-court-palace/">
-          <div class="n">6</div>
-          <div class="b">
-            <h3>Beano Havoc summer adventure</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> 25 Jul &ndash; 23 Aug</div>
-              <div><b>Time:</b> In line with palace opening hours</div>
-              <div><b>Ages:</b> Families (4&ndash;13)</div>
-            </div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/historic-cookery/">
-          <div class="n">7</div>
-          <div class="b">
-            <h3>Historic cookery in the Tudor kitchens</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Weekends from 25 Jul</div>
+              <div><b>When:</b> Sat 25 Jul</div>
               <div><b>Time:</b> 10:00&ndash;16:00</div>
-              <div><b>Ages:</b> All ages</div>
-            </div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/relaxed-mornings-in-the-magic-garden/">
-          <div class="n">8</div>
-          <div class="b">
-            <h3>Relaxed morning in the Magic Garden</h3>
-            <div class="evm">
-              <div><b>Where:</b> Hampton Court Palace</div>
-              <div><b>When:</b> Mon 28 Jul</div>
-              <div><b>Time:</b> Morning, see listing</div>
-              <div><b>Ages:</b> All ages (quieter session)</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="panel" id="tab-uk-news">
-    <div class="sec" id="uk-headlines">
-      <div class="sec-h"><h2>UK Headlines</h2></div>
-      <div class="card">
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">1</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Air pollution plummets across Europe</a></h3>
-            <p>New Copernicus (CAMS) data shows sulphur- and nitrogen-oxide emissions falling 3&ndash;5% a year since 2010, with the biggest drops from industry and road transport.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">2</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">800 million people have gained electricity since 2010</a></h3>
-            <p>A WHO report highlights &ldquo;encouraging progress&rdquo; on global energy access, even as it urges faster action for those still without power.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">3</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Pioneering therapy could target the deadliest brain cancer</a></h3>
-            <p>King&rsquo;s College London researchers say CAR-T cell therapy eliminated detectable glioblastoma in preclinical models, opening a new treatment paradigm.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">4</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Glow-worms return to the South Downs</a></h3>
-            <p>Conservationists have released larvae into the national park&rsquo;s dark skies, with adult glow-worms expected to light up next year.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">5</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Heat-resistant Red Sea reef nominated for World Heritage status</a></h3>
-            <p>Jordan&rsquo;s Aqaba Marine Reserve, home to unusually heat-tolerant corals, is among five ecosystems put forward to Unesco by the IUCN.</p>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/">
-          <div class="n">6</div>
-          <div class="b">
-            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-27-of-2026/" target="_blank">Healthy diet linked with lower dementia risk</a></h3>
-            <p>A 15-year Swedish study found older adults on a low-inflammation diet had up to a 30% lower risk of developing dementia, even those at higher biological risk.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" id="tab-markets">
-
-    <div class="sec">
-      <div class="sec-h"><h2>Market Snapshot</h2></div>
-      <div class="card">
-        <div class="mkts">
-          <div class="mkt">
-            <div class="k">GBP / USD</div>
-            <div class="v">1.3431</div>
-            <div class="c up">&#9650; +0.1%</div>
-            <div class="note">Closed the week at a fresh one-year high above 1.34; a second straight weekly gain as the dollar stayed soft</div>
-          </div>
-          <div class="mkt">
-            <div class="k">BTC / USD</div>
-            <div class="v">$63,800</div>
-            <div class="c dn">&#9660; -0.4%</div>
-            <div class="note">Holding around $63,800, little changed as traders look ahead to the 28&ndash;29 July Fed meeting</div>
-          </div>
-        </div>
-        <div class="mkt-foot"><b>The bigger picture:</b> GBP/USD ended the week at its highest in a year, and most of the move is a softer US dollar &mdash; safe-haven demand has faded as Middle East tensions cool, and analysts read the dollar&rsquo;s slide as unwinding positioning rather than weaker US fundamentals. Sterling is also earning its own support: markets now fully price a 25bp BoE rate hike by year-end, and services inflation stuck at 3.7% keeps the Bank cautious about easing. Against that, a cooling labour market and April&rsquo;s 0.1% GDP dip cap the upside. Expect a 1.3350&ndash;1.3450 range into Tuesday&rsquo;s final Q1 GDP data and the Fed (29 Jul) and BoE (30 Jul) meetings, with a Middle East flare-up or stronger US data the main downside risks for cable.</div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>GBP/USD &mdash; What&rsquo;s Moving the Pair</h2></div>
-      <div class="card">
-        <div class="kv">
-          <div><div class="k">Spot</div><div class="v">1.3431</div></div>
-          <div><div class="k">Bank Rate</div><div class="v">3.75%</div></div>
-          <div><div class="k">Fed Funds</div><div class="v">3.50&ndash;3.75%</div></div>
-          <div><div class="k">Next BoE</div><div class="v">Thu 30 Jul</div></div>
-          <div><div class="k">Next Fed</div><div class="v">Wed 29 Jul</div></div>
-        </div>
-        <div class="row" data-url="https://www.exchangerates.org.uk/news/46459/2026-07-10-pound-to-dollar-price-news-forecast-gbp-breaks-above-1-34-resistance.html">
-          <div class="n">1</div>
-          <div class="b">
-            <h3>Cable closes the week above 1.34 &mdash; a fresh one-year high</h3>
-            <p>Sterling rose for a third straight session to around 1.3431, a second consecutive weekly gain, as it found domestic support and the dollar lost its defensive appeal.</p>
-            <div class="src">Exchange Rates UK &middot; 10 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.exchangerates.org.uk/news/46459/2026-07-10-pound-to-dollar-price-news-forecast-gbp-breaks-above-1-34-resistance.html">
-          <div class="n">2</div>
-          <div class="b">
-            <h3>Dollar stays on the back foot as Middle East risk premium eases</h3>
-            <p>A tentative easing in US&ndash;Iran tensions has trimmed safe-haven demand for the dollar; MUFG and Scotiabank read the softness as position-unwinding rather than a change in US fundamentals.</p>
-            <div class="src">Exchange Rates UK &middot; 10 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.poundsterlinglive.com/">
-          <div class="n">3</div>
-          <div class="b">
-            <h3>Markets now fully price a 25bp BoE rate hike by year-end</h3>
-            <p>Money markets price at least one hike (most likely December) and a 25% chance of a second &mdash; a hawkish repricing that keeps the pound underpinned.</p>
-            <div class="src">Pound Sterling Live</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.poundsterlinglive.com/">
-          <div class="n">4</div>
-          <div class="b">
-            <h3>Sticky UK services inflation keeps the BoE cautious</h3>
-            <p>Services CPI at 3.7% &mdash; the measure the MPC watches most closely &mdash; sits well above headline CPI of 2.8% and argues against near-term easing.</p>
-            <div class="src">Pound Sterling Live</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.poundsterlinglive.com/">
-          <div class="n">5</div>
-          <div class="b">
-            <h3>UK labour market is cooling on almost every measure</h3>
-            <p>Payrolled employees fell 138,000 over the year to April, unemployment edged up to 4.9%, vacancies dropped to 707,000 and regular pay growth eased to 3.4%.</p>
-            <div class="src">Pound Sterling Live</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.poundsterlinglive.com/">
-          <div class="n">6</div>
-          <div class="b">
-            <h3>Q1 GDP confirmed at +0.6%, top of the G7 &mdash; but April dipped</h3>
-            <p>First-quarter growth was confirmed at 0.6% (best in the G7), though monthly GDP contracted 0.1% in April as services output slipped.</p>
-            <div class="src">Pound Sterling Live</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.exchangerates.org.uk/news/46459/2026-07-10-pound-to-dollar-price-news-forecast-gbp-breaks-above-1-34-resistance.html">
-          <div class="n">7</div>
-          <div class="b">
-            <h3>Brent crude at two-week highs feeds into sterling</h3>
-            <p>Oil firmed on renewed US&ndash;Iran tensions; with the UK a net energy importer, sterling remains sensitive to swings in the oil price.</p>
-            <div class="src">Exchange Rates UK &middot; 10 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.poundsterlinglive.com/">
-          <div class="n">8</div>
-          <div class="b">
-            <h3>Data and central banks in focus into month-end</h3>
-            <p>Attention turns to Tuesday&rsquo;s final Q1 GDP estimate plus industrial and manufacturing production, then the Fed (28&ndash;29 Jul) and BoE (30 Jul) decisions.</p>
-            <div class="src">Pound Sterling Live</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="panel" id="tab-ai">
-    <div class="sec">
-      <div class="sec-h"><h2>Top 10 in AI</h2></div>
-      <div class="card">
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-10-2026">
-          <div class="n">1</div>
-          <div class="b">
-            <h3>Anthropic overtakes OpenAI on revenue</h3>
-            <p>Anthropic reported a $47bn annualised revenue run-rate as of May 2026, ahead of OpenAI&rsquo;s most recent $25&ndash;33bn disclosure &mdash; a notable shift in the frontier-lab pecking order.</p>
-            <div class="src">AI News &middot; 10 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-10-2026">
-          <div class="n">2</div>
-          <div class="b">
-            <h3>First fully autonomous AI ransomware documented</h3>
-            <p>Security firm Sysdig published analysis of JADEPUFFER, described as the first fully autonomous AI ransomware attack &mdash; 600 payloads deployed with no human at the keyboard.</p>
-            <div class="src">AI News &middot; 10 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-10-2026">
-          <div class="n">3</div>
-          <div class="b">
-            <h3>Five nations issue joint guidance on securing agentic AI</h3>
-            <p>The US, UK, Australia, Canada and New Zealand jointly published guidance identifying five categories of risk in agentic AI systems.</p>
-            <div class="src">AI News &middot; 10 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026">
-          <div class="n">4</div>
-          <div class="b">
-            <h3>China&rsquo;s cheap, capable models fuel a &lsquo;catch-up&rsquo; debate</h3>
-            <p>Z.ai&rsquo;s GLM-5.2 has become the centrepiece of debate over whether China is closing the gap, offering frontier-comparable performance at low cost.</p>
-            <div class="src">AI News &middot; 7 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-10-2026">
-          <div class="n">5</div>
-          <div class="b">
-            <h3>Moonshot releases Kimi K2</h3>
-            <p>Kimi K2 landed as a huge open Mixture-of-Experts model focused on &ldquo;agentic intelligence&rdquo; &mdash; the latest in a fast run of Chinese open-weight releases.</p>
-            <div class="src">AI News &middot; 12 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-6-2026">
-          <div class="n">6</div>
-          <div class="b">
-            <h3>Tencent open-sources Hunyuan 3.0</h3>
-            <p>Tencent released Hy3, a 295-billion-parameter Mixture-of-Experts model with a 256K-token context window, under the permissive Apache 2.0 licence.</p>
-            <div class="src">AI News &middot; 6 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026">
-          <div class="n">7</div>
-          <div class="b">
-            <h3>DeepSeek V4 rolls out after its spring preview</h3>
-            <p>DeepSeek&rsquo;s mixture-of-experts flagship V4, previewed in late April, moved to a wider mid-July release, keeping Chinese labs among the open-weight leaders.</p>
-            <div class="src">AI News &middot; 7 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026">
-          <div class="n">8</div>
-          <div class="b">
-            <h3>Grok 4.5 tops several benchmarks</h3>
-            <p>xAI&rsquo;s Grok 4.5 claimed the number-one spot on multiple benchmarks, including the long-horizon SWE marathon software-engineering test.</p>
-            <div class="src">AI News &middot; 7 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.computerweekly.com/news/366623119/Kingston-Council-taps-Boldyn-to-improve-digital-infrastructure">
-          <div class="n">9</div>
-          <div class="b">
-            <h3>Kingston Council leans into AI for public services</h3>
-            <p>The London borough is adopting AI tools to boost productivity and is partnering with TfL, the GLA and Boldyn Networks to attract digital-infrastructure investment.</p>
-            <div class="src">Computer Weekly</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026">
-          <div class="n">10</div>
-          <div class="b">
-            <h3>EU makes AI driver-distraction detection mandatory</h3>
-            <p>From 7 July, all newly registered cars in the EU must include a system that analyses a driver&rsquo;s gaze and head movements to detect inattention.</p>
-            <div class="src">AI News &middot; 7 Jul</div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <section class="panel" id="tab-career">
@@ -696,72 +342,54 @@
       <div class="sec-h"><h2>This Week&rsquo;s Signal</h2></div>
       <div class="card">
         <div class="prose">
-          <p><b>Two live deadlines land this weekend.</b> The <a href="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=2001657" target="_blank">Cabinet Office&rsquo;s &pound;100k&ndash;&pound;163k &ldquo;AI and Innovation Director&rdquo;</a> role &mdash; a persuasion-and-adoption brief reporting into the Future Civil Service programme, no engineering required &mdash; closes <b>tomorrow, Monday 13 July</b>. And <a href="https://www.governance.ai/opportunities" target="_blank">GovAI&rsquo;s Winter Fellowship</a> (both the Applied and Research tracks) closes <b>tonight, Sunday 12 July at 23:59 BST</b> &mdash; a fast, low-commitment on-ramp into AI governance.</p>
-          <p>The wider signal remains that the public sector&rsquo;s AI hiring is concentrated in <b>adoption, governance, assurance and policy</b> &mdash; roles about helping people use AI well, not writing the code. That plays directly to non-technical strengths.</p>
+          <h4>Cabinet Office deadline tonight</h4>
+          <p>The <a href="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=2001657" target="_blank">AI and Innovation Director, Future Civil Service</a> role closes tonight at 23:55 &mdash; a persuasion-and-adoption brief reporting into the Cabinet Secretary, no engineering required.</p>
+          <h4>Two i.AI roles close Sunday</h4>
+          <p>The government&rsquo;s AI incubator (i.AI) has a Senior Strategy Manager and a Senior Talent Partner role both closing 19 July &mdash; strategy and hiring positions, not coding.</p>
         </div>
       </div>
     </div>
 
     <div class="sec" id="career-openings">
-      <div class="sec-h"><h2>Career Openings &amp; Roles &mdash; Within an Hour&rsquo;s Drive, Non-Coding AI</h2></div>
+      <div class="sec-h"><h2>Interesting roles</h2></div>
       <div class="card">
         <div class="row" data-url="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=2001657">
           <div class="n">1</div>
           <div class="b">
             <h3><a href="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=2001657" target="_blank">AI and Innovation Director, Future Civil Service</a></h3>
-            <div class="evm"><b>Organisation:</b> Civil Service (Cabinet Office &middot; Future Civil Service programme) &nbsp;&middot;&nbsp; <b>Salary:</b> &pound;100,000&ndash;&pound;163,000 + Civil Service pension &nbsp;&middot;&nbsp; <b>Location:</b> Whitehall, London &middot; hybrid &middot; within an hour&rsquo;s drive</div>
+            <div class="evm">
+              <div><b>Company:</b> Civil Service &mdash; Cabinet Office, Future Civil Service programme</div>
+              <div><b>Salary:</b> &pound;100,000&ndash;&pound;163,000 + Civil Service pension</div>
+              <div><b>Location:</b> Whitehall, London &middot; hybrid &middot; within an hour&rsquo;s drive</div>
+              <div><b>Deadline:</b> <span class="dl">Today, Monday 13 July 2026, 23:55</span></div>
+            </div>
             <p>Reports to the Director General, Future Civil Service and works with the Cabinet Secretary to drive AI adoption, workforce reform and an &ldquo;AI-first culture&rdquo; across government &mdash; an influencer/adoption brief, not a coding role.</p>
-            <div class="src"><b>Deadline:</b> <b>Monday 13 July 2026</b> &nbsp;&middot;&nbsp; <a href="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=2001657" target="_blank">Apply on Civil Service Jobs</a></div>
           </div>
         </div>
-        <div class="row" data-url="https://www.governance.ai/post/winter-fellowship-2027-applied-track">
+        <div class="row" data-url="https://job-boards.eu.greenhouse.io/iai/jobs/4903329101">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.governance.ai/post/winter-fellowship-2027-applied-track" target="_blank">UK Winter Fellowship 2027 &mdash; Applied Track</a></h3>
-            <div class="evm"><b>Organisation:</b> Centre for the Governance of AI (GovAI) &nbsp;&middot;&nbsp; <b>Salary:</b> Funded three-month fellowship &nbsp;&middot;&nbsp; <b>Location:</b> London &middot; within an hour&rsquo;s drive</div>
-            <p>A three-month, non-research track working on applied AI-governance projects pitched by GovAI and partners (past partners include the UK AI Security Institute) &mdash; suited to policy, comms, operations and programme backgrounds.</p>
-            <div class="src"><b>Deadline:</b> <b>Sunday 12 July 2026, 23:59 BST</b> &nbsp;&middot;&nbsp; <a href="https://www.governance.ai/post/winter-fellowship-2027-applied-track" target="_blank">Apply on governance.ai</a></div>
+            <h3><a href="https://job-boards.eu.greenhouse.io/iai/jobs/4903329101" target="_blank">G7 &ndash; Senior Strategy Manager, Incubator for AI (i.AI)</a></h3>
+            <div class="evm">
+              <div><b>Company:</b> Incubator for AI (i.AI), Department for Science, Innovation and Technology</div>
+              <div><b>Salary:</b> &pound;56,850&ndash;&pound;68,570</div>
+              <div><b>Location:</b> London &middot; SC clearance required &middot; within an hour&rsquo;s drive</div>
+              <div><b>Deadline:</b> <span class="dl">Sunday 19 July 2026, 23:59</span></div>
+            </div>
+            <p>Shapes the long-term vision for public-sector AI adoption and runs quarterly portfolio reviews with the Government Chief AI Officer &mdash; a strategy and policy role, not coding.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.governance.ai/post/winter-fellowship-2027-research-track">
+        <div class="row" data-url="https://job-boards.eu.greenhouse.io/iai/jobs/4911753101">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.governance.ai/post/winter-fellowship-2027-research-track" target="_blank">UK Winter Fellowship 2027 &mdash; Research Track</a></h3>
-            <div class="evm"><b>Organisation:</b> Centre for the Governance of AI (GovAI) &nbsp;&middot;&nbsp; <b>Salary:</b> Funded three-month fellowship &nbsp;&middot;&nbsp; <b>Location:</b> London &middot; within an hour&rsquo;s drive</div>
-            <p>A three-month fellowship producing an AI-governance research project of your choice, with expert Q&amp;As and a seminar series &mdash; open to early-career and experienced applicants alike.</p>
-            <div class="src"><b>Deadline:</b> <b>Sunday 12 July 2026, 23:59 BST</b> &nbsp;&middot;&nbsp; <a href="https://www.governance.ai/post/winter-fellowship-2027-research-track" target="_blank">Apply on governance.ai</a></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="n">4</div>
-          <div class="b">
-            <h3>AI Adoption / Change Lead &mdash; public sector</h3>
-            <p>Help a council, NHS body or agency roll out AI tools to teams &mdash; identifying use cases, running pilots and tracking impact. A change-management brief, not engineering.</p>
-            <div class="evm"><b>Location:</b> within an hour&rsquo;s drive of KT8</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="n">5</div>
-          <div class="b">
-            <h3>AI Governance &amp; Assurance Officer</h3>
-            <p>Set assurance standards, risk tiering and sign-off forums for responsible AI use in a public body &mdash; the fastest-growing non-coding AI niche in government.</p>
-            <div class="evm"><b>Location:</b> within an hour&rsquo;s drive of KT8</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="n">6</div>
-          <div class="b">
-            <h3>AI Policy Adviser</h3>
-            <p>Shape AI policy at a department, regulator or think tank &mdash; turning technical developments into workable guidance and briefings.</p>
-            <div class="evm"><b>Location:</b> within an hour&rsquo;s drive of KT8</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="n">7</div>
-          <div class="b">
-            <h3>AI Training &amp; Capability Lead</h3>
-            <p>Design and deliver AI-literacy training for staff in a public-sector L&amp;D role &mdash; building confident, safe everyday use.</p>
-            <div class="evm"><b>Location:</b> within an hour&rsquo;s drive of KT8</div>
+            <h3><a href="https://job-boards.eu.greenhouse.io/iai/jobs/4911753101" target="_blank">Senior Talent Partner, i.AI</a></h3>
+            <div class="evm">
+              <div><b>Company:</b> Incubator for AI (i.AI), Department for Science, Innovation and Technology</div>
+              <div><b>Salary:</b> &pound;47,355&ndash;&pound;52,090 (24-month fixed-term contract)</div>
+              <div><b>Location:</b> London &middot; within an hour&rsquo;s drive</div>
+              <div><b>Deadline:</b> <span class="dl">Sunday 19 July 2026, 23:59</span></div>
+            </div>
+            <p>Recruits researchers, engineers and policy staff into government&rsquo;s AI incubator &mdash; an HR/talent role, AI-adjacent but non-coding.</p>
           </div>
         </div>
       </div>
@@ -773,10 +401,10 @@
     <div class="sec">
       <div class="sec-h"><h2>School &mdash; Updates</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/News/Newsletters/">
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/docs/newsletters/2025-26/Friday_10th_July_2026.pdf">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/News/Newsletters/" target="_blank">Latest newsletter published &mdash; Friday 3 July 2026</a></h3>
+            <h3><a href="https://www.orchard.surrey.sch.uk/docs/newsletters/2025-26/Friday_10th_July_2026.pdf" target="_blank">Latest newsletter published &mdash; Friday 10 July 2026</a></h3>
             <p>The most recent weekly newsletter is out, rounding up the last full stretch of the summer term.</p>
           </div>
         </div>
@@ -819,44 +447,416 @@
     </div>
   </section>
 
-  
-
-  <section class="panel" id="tab-matches">
-
-    <div class="banner">
-      <div class="bk">World Cup 2026 &middot; Semi-finalists set</div>
-      <h2>Bellingham&rsquo;s extra-time brace sends England through</h2>
-      <p>Jude Bellingham struck twice as England edged Norway 2&ndash;1 after extra time in Miami. Gareth Southgate&rsquo;s side now meet holders Argentina in the semi-final in Atlanta on Wednesday 15 July. Today is a rest day &mdash; the semi-finals begin Tuesday.</p>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>Today&rsquo;s Fixtures &mdash; Sun 12 Jul</h2></div>
+  <section class="panel" id="tab-local-news">
+    <div class="sec" id="local-news">
+      <div class="sec-h"><h2>Local News</h2></div>
       <div class="card">
-        <div class="fx">
-          <div class="teams">
-            <div class="t">No World Cup matches today</div>
-            <div class="fx-g">Rest day between the quarter-finals and semi-finals. Next up: France Vs Spain, Tue 14 Jul (8:00pm BST, ITV1).</div>
+        <div class="row" data-url="https://newleatherheadliving.wordpress.com/2026/07/09/updated-elmbridge-bin-collection-delays-into-july/">
+          <div class="n">1</div>
+          <div class="b">
+            <h3><a href="https://newleatherheadliving.wordpress.com/2026/07/09/updated-elmbridge-bin-collection-delays-into-july/" target="_blank">Updated: Elmbridge bin collection delays continue into July</a></h3>
+            <p>Garden waste collections are running days behind across the borough due to hot weather and backlog, with bins uncollected in East and West Molesey since 6 July.</p>
+            <div class="src">East Surrey News/Leatherhead Living &middot; 9 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://kingston.nub.news/news/local-news/kingston-recognises-volunteers-at-celebrating-communities-awards-2026-301119">
+          <div class="n">2</div>
+          <div class="b">
+            <h3><a href="https://kingston.nub.news/news/local-news/kingston-recognises-volunteers-at-celebrating-communities-awards-2026-301119" target="_blank">Kingston recognises volunteers at Celebrating Communities Awards 2026</a></h3>
+            <p>Kingston&rsquo;s third annual awards honoured more than 200 volunteers across 8 categories at a ceremony at All Saints Church.</p>
+            <div class="src">Kingston Nub News &middot; 6 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.elmbridge.gov.uk/news/2026/building-connected-community-help-more-people-elmbridge-live-well">
+          <div class="n">3</div>
+          <div class="b">
+            <h3><a href="https://www.elmbridge.gov.uk/news/2026/building-connected-community-help-more-people-elmbridge-live-well" target="_blank">Building a connected community to help more people in Elmbridge live well</a></h3>
+            <p>The council is working with St Peter&rsquo;s West Molesey to create a &ldquo;Molesey Hub&rdquo; with an affordable caf&eacute;, children&rsquo;s play space and activities for older residents.</p>
+            <div class="src">Elmbridge Borough Council &middot; 9 Jun</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.moleseyresidentsassociation.org.uk/general-interest/may-2026-local-election-results/">
+          <div class="n">4</div>
+          <div class="b">
+            <h3><a href="https://www.moleseyresidentsassociation.org.uk/general-interest/may-2026-local-election-results/" target="_blank">May 2026 local election results for Molesey</a></h3>
+            <p>The Molesey Residents Association has published the results of this year&rsquo;s local elections covering the Molesey wards.</p>
+            <div class="src">Molesey Residents Association &middot; 15 May</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.moleseyresidentsassociation.org.uk/general-interest/mra-agm-22-may-2026/">
+          <div class="n">5</div>
+          <div class="b">
+            <h3><a href="https://www.moleseyresidentsassociation.org.uk/general-interest/mra-agm-22-may-2026/" target="_blank">MRA AGM &mdash; 22 May 2026</a></h3>
+            <p>Notice and details of the Molesey Residents Association&rsquo;s Annual General Meeting.</p>
+            <div class="src">Molesey Residents Association &middot; 12 May</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://radiojackie.com/molesey-community-centre-is-to-shut-later-this-month-for-refurbishment/">
+          <div class="n">6</div>
+          <div class="b">
+            <h3><a href="https://radiojackie.com/molesey-community-centre-is-to-shut-later-this-month-for-refurbishment/" target="_blank">Molesey Community Centre to shut for refurbishment</a></h3>
+            <p>The St Peter&rsquo;s West Church-based hub closed 17 April and reopened end of May, part of longer-term plans for a community hub with a caf&eacute; and activities for older residents.</p>
+            <div class="src">Radio Jackie &middot; 3 Apr</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.getsurrey.co.uk/news/surrey-news/new-surrey-tesco-express-can-33658061">
+          <div class="n">7</div>
+          <div class="b">
+            <h3><a href="https://www.getsurrey.co.uk/news/surrey-news/new-surrey-tesco-express-can-33658061" target="_blank">New Tesco Express in East Molesey can sell alcohol despite concerns</a></h3>
+            <p>Elmbridge&rsquo;s licensing sub-committee approved alcohol sales for the new Tesco Express on Bridge Road, opposite Hampton Court station, despite anti-social behaviour concerns.</p>
+            <div class="src">Surrey Live &middot; 25 Mar</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://kingston.nub.news/news/local-news/david-lloyd-reveals-plans-for-luxury-health-club-and-outdoor-pool-in-east-molesey-287356">
+          <div class="n">8</div>
+          <div class="b">
+            <h3><a href="https://kingston.nub.news/news/local-news/david-lloyd-reveals-plans-for-luxury-health-club-and-outdoor-pool-in-east-molesey-287356" target="_blank">David Lloyd reveals plans for luxury health club in East Molesey</a></h3>
+            <p>David Lloyd Clubs plans to transform the former Pavilion Club site on Hurst Lane into a premium family health club with pools and a spa, opening summer 2027, creating around 80 permanent jobs.</p>
+            <div class="src">Kingston Nub News &middot; 9 Feb</div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="panel" id="tab-local-events">
+    <div class="sec" id="local-events">
+      <div class="sec-h"><h2>Local Events</h2></div>
+      <div class="card">
+        <div class="row" data-url="https://www.nationaltrust.org.uk/visit/surrey/claremont-landscape-garden/events">
+          <div class="n">1</div>
+          <div class="b">
+            <h3>Surrey Sculpture Society Exhibition</h3>
+            <div class="evm">
+              <div><b>Where:</b> Claremont Landscape Garden, Esher</div>
+              <div><b>When:</b> Today, Mon 13 Jul</div>
+              <div><b>Time:</b> 09:00&ndash;17:00</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/the-maze/">
+          <div class="n">2</div>
+          <div class="b">
+            <h3>Hampton Court Palace Maze</h3>
+            <div class="evm">
+              <div><b>Where:</b> Hampton Court Palace</div>
+              <div><b>When:</b> Open daily</div>
+              <div><b>Time:</b> 10:00&ndash;17:30 (summer hours)</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.royalparks.org.uk/visit/parks/bushy-park/things-to-do">
+          <div class="n">3</div>
+          <div class="b">
+            <h3>Bushy Park deer walk &amp; playgrounds</h3>
+            <div class="evm">
+              <div><b>Where:</b> Bushy Park, Hampton</div>
+              <div><b>When:</b> Open daily</div>
+              <div><b>Time:</b> Dawn to dusk &middot; free</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://goboat.co.uk/en/kingston">
+          <div class="n">4</div>
+          <div class="b">
+            <h3>GoBoat self-drive boat hire</h3>
+            <div class="evm">
+              <div><b>Where:</b> Kingston upon Thames</div>
+              <div><b>When:</b> Open daily (seasonal)</div>
+              <div><b>Time:</b> Bookable slots, see listing</div>
+              <div><b>Ages:</b> Driver 18+, all ages welcome as passengers</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.nationaltrust.org.uk/visit/surrey/claremont-landscape-garden/events">
+          <div class="n">5</div>
+          <div class="b">
+            <h3>The Magic Faraway Tree family trail</h3>
+            <div class="evm">
+              <div><b>Where:</b> Claremont Landscape Garden, Esher</div>
+              <div><b>When:</b> 18 Jul &ndash; 31 Aug</div>
+              <div><b>Time:</b> 10:00&ndash;17:00 daily</div>
+              <div><b>Ages:</b> All ages, especially younger kids</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/henry-viiis-joust/">
+          <div class="n">6</div>
+          <div class="b">
+            <h3>Henry VIII&rsquo;s Joust</h3>
+            <div class="evm">
+              <div><b>Where:</b> Hampton Court Palace</div>
+              <div><b>When:</b> Sat 18 &ndash; Sun 19 Jul</div>
+              <div><b>Time:</b> Shows at 11:00, 13:30 &amp; 16:00</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.nationaltrust.org.uk/visit/surrey/claremont-landscape-garden/events/2f0eeed1-42f6-4c18-9c1d-4607cf022193">
+          <div class="n">7</div>
+          <div class="b">
+            <h3>Claremont Live: The Tale of Peter Rabbit and Benjamin Bunny</h3>
+            <div class="evm">
+              <div><b>Where:</b> Claremont Landscape Garden, Esher</div>
+              <div><b>When:</b> Sat 25 Jul</div>
+              <div><b>Time:</b> Doors 17:00, show 18:00&ndash;19:30</div>
+              <div><b>Ages:</b> All ages</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.rosetheatre.org/whats-on/ministry-of-science-live-science-saved-the-world-93z5">
+          <div class="n">8</div>
+          <div class="b">
+            <h3>Ministry of Science Live! Science Saved the World</h3>
+            <div class="evm">
+              <div><b>Where:</b> Rose Theatre, Kingston</div>
+              <div><b>When:</b> Mon 3 &ndash; Sun 9 Aug</div>
+              <div><b>Time:</b> See listing for showtimes</div>
+              <div><b>Ages:</b> Best for 12/13-year-olds, still fun for younger</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="tab-uk-news">
+    <div class="sec" id="uk-headlines">
+      <div class="sec-h"><h2>UK Headlines</h2></div>
+      <div class="card">
+        <div class="row" data-url="https://www.sheffield.gov.uk/news/2026/sheffield-leads-uk-new-pickleball-courts-city-parks">
+          <div class="n">1</div>
+          <div class="b">
+            <h3><a href="https://www.sheffield.gov.uk/news/2026/sheffield-leads-uk-new-pickleball-courts-city-parks" target="_blank">Sheffield leads the UK with new pickleball courts in city parks</a></h3>
+            <p>Sheffield now has 18 outdoor pickleball courts across seven parks &mdash; more than any other UK city &mdash; with free or low-cost sessions for beginners.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.londonambulance.nhs.uk/2026/07/02/always-ready-to-rescue-off-duty-paramedics-save-man-who-collapsed-at-tube-station/">
+          <div class="n">2</div>
+          <div class="b">
+            <h3><a href="https://www.londonambulance.nhs.uk/2026/07/02/always-ready-to-rescue-off-duty-paramedics-save-man-who-collapsed-at-tube-station/" target="_blank">Off-duty paramedics save man who collapsed at Tube station</a></h3>
+            <p>Three off-duty paramedics happened to be passing when a 49-year-old man went into cardiac arrest at Acton Town station; he&rsquo;s since been reunited with the crews who saved him.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.goodnewspost.co.uk/maidstone-special-school-earns-place-among-worlds-top-10/">
+          <div class="n">3</div>
+          <div class="b">
+            <h3><a href="https://www.goodnewspost.co.uk/maidstone-special-school-earns-place-among-worlds-top-10/" target="_blank">Maidstone special school shortlisted for World Education Prize</a></h3>
+            <p>Five Acre Wood School is in the global top 10 for the World&rsquo;s Best School Prize for Innovation, recognised for its hospitality-training caf&eacute;.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.goodnewspost.co.uk/first-wild-beaver-born-in-staffordshire-for-more-than-400-years/">
+          <div class="n">4</div>
+          <div class="b">
+            <h3><a href="https://www.goodnewspost.co.uk/first-wild-beaver-born-in-staffordshire-for-more-than-400-years/" target="_blank">First wild beaver born in Staffordshire for more than 400 years</a></h3>
+            <p>Staffordshire Wildlife Trust has confirmed a wild beaver kit &mdash; the first born in the county in four centuries &mdash; a milestone for nature recovery.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-28-of-2026/">
+          <div class="n">5</div>
+          <div class="b">
+            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-28-of-2026/" target="_blank">New blood test could spare women an invasive cancer exam</a></h3>
+            <p>The AI-driven &ldquo;PinPoint&rdquo; blood test, trialled on over 16,000 women across Yorkshire hospitals, showed 99% accuracy detecting or ruling out gynaecological cancers.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-28-of-2026/">
+          <div class="n">6</div>
+          <div class="b">
+            <h3><a href="https://www.positive.news/society/good-news-stories-from-week-28-of-2026/" target="_blank">Malaria vaccine inventor wins top European award</a></h3>
+            <p>Oxford University&rsquo;s Sir Adrian Hill won the European Inventor Award 2026 for the R21/Matrix-M malaria vaccine, now rolled out in around 20 countries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="tab-ai">
+    <div class="sec">
+      <div class="sec-h"><h2>Top 10 in AI</h2></div>
+      <div class="card">
+        <div class="row" data-url="https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html">
+          <div class="n">1</div>
+          <div class="b">
+            <h3>OpenAI opens GPT-5.6 family to the public</h3>
+            <p>General availability of the Sol/Terra/Luna model family began 9 July, after the US government had initially restricted release pending a Commerce Department safety review focused on cyber-offense capability; the review cleared early and Terra now offers roughly GPT-5.5-class performance at half the cost.</p>
+            <div class="src">CNBC &middot; 8 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.anthropic.com/news/claude-sonnet-5">
+          <div class="n">2</div>
+          <div class="b">
+            <h3>Claude Sonnet 5 becomes Anthropic&rsquo;s default free/Pro model</h3>
+            <p>Released 30 June, Sonnet 5 is Anthropic&rsquo;s most agentic Sonnet yet, with performance close to Opus 4.8 and gains in coding, tool use and reasoning; introductory pricing runs through 31 August.</p>
+            <div class="src">Anthropic &middot; 30 Jun</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html">
+          <div class="n">3</div>
+          <div class="b">
+            <h3>Chinese AI models now take up to 46% of US enterprise API usage</h3>
+            <p>A CNBC investigation found Chinese-origin models have held at least 30% of enterprise token volume on OpenRouter every week since February, up from just 4.5% in H1 2025, as Chinese open-source models run 60&ndash;90% cheaper than Western equivalents.</p>
+            <div class="src">CNBC &middot; 7 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost">
+          <div class="n">4</div>
+          <div class="b">
+            <h3>Z.ai releases GLM-5.2 as a fully open-weight model</h3>
+            <p>The 753B-parameter, MIT-licensed model was released 16 June with no regional restrictions, trained on Huawei hardware rather than Nvidia GPUs, and topped several long-horizon coding benchmarks with the fastest adoption of any model Vercel tracked in 2026.</p>
+            <div class="src">VentureBeat &middot; 16 Jun</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says">
+          <div class="n">5</div>
+          <div class="b">
+            <h3>DeepSeek reportedly developing its own AI inference chip</h3>
+            <p>Reuters reporting relayed by Bloomberg says the Chinese lab is building a chip optimised for inference workloads, reducing its reliance on export-restricted Nvidia hardware.</p>
+            <div class="src">Bloomberg &middot; 7 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion">
+          <div class="n">6</div>
+          <div class="b">
+            <h3>First fully autonomous &ldquo;agentic&rdquo; ransomware documented</h3>
+            <p>Sysdig&rsquo;s threat research team documented an end-to-end extortion campaign run by an LLM-driven agent rather than a human operator, which independently handled reconnaissance, credential theft and encryption of 1,342 database configuration items.</p>
+            <div class="src">Sysdig &middot; Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://techcrunch.com/2026/03/30/ai-trust-adoption-poll-more-americans-adopt-tools-fewer-say-they-can-trust-the-results/">
+          <div class="n">7</div>
+          <div class="b">
+            <h3>Public trust in AI is falling even as usage rises</h3>
+            <p>Surveys show a widening &ldquo;adoption-trust gap&rdquo;: more Americans than ever use AI tools daily, yet 76% say they trust AI results only rarely or sometimes, and most age groups now believe AI is moving too fast.</p>
+            <div class="src">TechCrunch &middot; Stanford HAI 2026 AI Index</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.theinformation.com/briefings/south-korea-invest-880-billion-chips-robotics-ai-10-years">
+          <div class="n">8</div>
+          <div class="b">
+            <h3>South Korea unveils $880bn, 10-year AI and robotics investment plan</h3>
+            <p>The government-backed plan funds chip fabrication, AI data centres targeting 8.4GW capacity by 2029, and a push to grow South Korea&rsquo;s share of the global humanoid-robot market from 1% to 20%.</p>
+            <div class="src">The Information &middot; 29 Jun&ndash;5 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.local.gov.uk/case-studies/kingston-council-using-ai-adult-social-care-administration">
+          <div class="n">9</div>
+          <div class="b">
+            <h3>Kingston Council rolls out AI tool for social workers</h3>
+            <p>Kingston&rsquo;s &ldquo;Magic Notes&rdquo; tool, built with Beam, transcribes and drafts case notes from social worker meetings; write-ups that took 2 hours now take about 30 minutes, with a reported 96% accuracy score.</p>
+            <div class="src">Local Government Association &middot; case study</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/">
+          <div class="n">10</div>
+          <div class="b">
+            <h3>xAI publicly launches Grok 4.5</h3>
+            <p>Released 8 July as xAI&rsquo;s first model since acquiring Cursor, Grok 4.5 is pitched as a coding and agentic-work tool that Musk describes as &ldquo;Opus-class, but faster and lower cost,&rdquo; priced at $2/$6 per million input/output tokens.</p>
+            <div class="src">TechCrunch &middot; 8 Jul</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="tab-markets">
 
     <div class="sec">
-      <div class="sec-h"><h2>Latest Results &mdash; Quarter-finals, Sat 11 Jul</h2></div>
+      <div class="sec-h"><h2>Market Snapshot</h2></div>
       <div class="card">
-        <div class="fx">
-          <div class="teams">
-            <div class="t">Norway <span class="vs">Vs</span> England</div>
-            <div class="fx-g">Schjelderup 36&rsquo; &middot; Bellingham 45+2&rsquo;, 93&rsquo; &mdash; Miami</div>
+        <div class="mkts">
+          <div class="mkt">
+            <div class="k">GBP / USD</div>
+            <div class="v">1.3390</div>
+            <div class="c dn">&#9660; -0.1%</div>
+            <div class="note">Holding just below 1.3400 as US-Iran tensions lift the safe-haven dollar, pulling back from Friday&rsquo;s near four-week high around 1.3450</div>
           </div>
-          <div class="score"><div class="s">1&ndash;2</div><div class="st">AET</div></div>
+          <div class="mkt">
+            <div class="k">BTC / USD</div>
+            <div class="v">$64,251</div>
+            <div class="c up">&#9650; +0.7%</div>
+            <div class="note">Sitting around $64,250, up slightly on the day, with traders eyeing this week&rsquo;s US CPI print and the Fed/BoE meetings later in the month</div>
+          </div>
         </div>
-        <div class="fx">
-          <div class="teams">
-            <div class="t">Argentina <span class="vs">Vs</span> Switzerland</div>
-            <div class="fx-g">Mac Allister 10&rsquo;, &Aacute;lvarez 112&rsquo;, Mart&iacute;nez 120+1&rsquo; &middot; Ndoye 67&rsquo; &middot; Embolo sent off &mdash; Kansas City</div>
+        <div class="mkt-foot"><b>The bigger picture:</b> GBP/USD is stuck just under 1.3400, caught between two UK-specific supports &mdash; political stability after Andy Burnham&rsquo;s succession as PM, and firming odds of a BoE hike by year-end &mdash; and one dominant external shock: escalating US-Iran tensions around the Strait of Hormuz, which has driven Brent crude above $74 and revived safe-haven demand for the dollar. With BoE (30 Jul) and Fed (29 Jul) policy rates almost level, the rate differential isn&rsquo;t what&rsquo;s moving the pair right now &mdash; geopolitics and Tuesday&rsquo;s US CPI print are. Expect cable to stay range-bound roughly 1.3300&ndash;1.3450 unless the Middle East situation de-escalates or the CPI print surprises.</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>GBP/USD &mdash; What&rsquo;s Moving the Pair</h2></div>
+      <div class="card">
+        <div class="kv">
+          <div><div class="k">Spot</div><div class="v">1.3390</div></div>
+          <div><div class="k">Bank Rate</div><div class="v">3.75%</div></div>
+          <div><div class="k">Fed Funds</div><div class="v">3.50&ndash;3.75%</div></div>
+          <div><div class="k">Next BoE</div><div class="v">Thu 30 Jul</div></div>
+          <div><div class="k">Next Fed</div><div class="v">Wed 29 Jul</div></div>
+        </div>
+        <div class="row" data-url="https://www.fxstreet.com/news/british-pound-remains-depressed-below-13400-as-escalating-us-iran-tensions-underpin-usd-202607130103">
+          <div class="n">1</div>
+          <div class="b">
+            <h3>US-Iran tensions escalate, Strait of Hormuz closed</h3>
+            <p>Iran&rsquo;s IRGC closed the Strait of Hormuz and fired on a commercial vessel; the US launched fresh strikes over the weekend, boosting safe-haven dollar demand and capping GBP/USD upside.</p>
+            <div class="src">FXStreet &middot; 13 Jul</div>
           </div>
-          <div class="score"><div class="s">3&ndash;1</div><div class="st">AET</div></div>
+        </div>
+        <div class="row" data-url="https://www.fxstreet.com/news/wti-surges-above-7400-as-us-iran-strikes-reignite-hormuz-risks-202607130052">
+          <div class="n">2</div>
+          <div class="b">
+            <h3>Oil surges above $74 a barrel on Hormuz risk</h3>
+            <p>WTI crude jumped around 4% on the weekend escalation, reviving inflation fears that feed into Fed rate-hike bets and dollar strength.</p>
+            <div class="src">FXStreet &middot; 13 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.investing.com/analysis/fx-outlook-warsh-should-keep-the-dollar-supported-200683101">
+          <div class="n">3</div>
+          <div class="b">
+            <h3>Hawkish Fed pricing keeps the dollar supported</h3>
+            <p>Fed Chair Kevin Warsh&rsquo;s first meeting held rates at 3.50&ndash;3.75% in June, but the dot plot signalled a possible hike later this year, keeping USD broadly bid.</p>
+            <div class="src">Investing.com &middot; 10 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.fxstreet.com/news/british-pound-surrenders-early-gains-as-us-dollar-regains-ground-202607100903">
+          <div class="n">4</div>
+          <div class="b">
+            <h3>US CPI due Tuesday is the week&rsquo;s key catalyst</h3>
+            <p>June core CPI is expected around 2.9% year-on-year; the print will steer near-term Fed expectations and is the dollar&rsquo;s main event risk this week.</p>
+            <div class="src">FXStreet &middot; 10 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.fxstreet.com/analysis/week-ahead-us-cpi-and-warsh-testimony-to-take-centre-stage-boc-eyed-too-202607101135">
+          <div class="n">5</div>
+          <div class="b">
+            <h3>Kevin Warsh testifies to Congress this week</h3>
+            <p>The Fed Chair&rsquo;s testimony is flagged as a second headline event for the dollar alongside Tuesday&rsquo;s CPI print.</p>
+            <div class="src">FXStreet &middot; 10 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://hoa.org.uk/news/interest-rate-predictions-2/">
+          <div class="n">6</div>
+          <div class="b">
+            <h3>Markets lean towards a BoE hike by year-end</h3>
+            <p>A Reuters poll of 65 economists found around 40% expect at least one BoE hike by end-2026, against only six expecting a cut &mdash; a prop for sterling even as the Bank has held at 3.75% all year.</p>
+            <div class="src">HomeOwners Alliance &middot; Reuters poll</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.fxstreet.com/news/british-pound-remains-depressed-below-13400-as-escalating-us-iran-tensions-underpin-usd-202607130103">
+          <div class="n">7</div>
+          <div class="b">
+            <h3>UK political transition eases the risk premium</h3>
+            <p>Following Keir Starmer&rsquo;s resignation in late June, Andy Burnham has secured backing from a majority of Labour MPs to become the next PM, easing UK political uncertainty and supporting the pound.</p>
+            <div class="src">FXStreet &middot; 13 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.exchangerates.org.uk/news/46462/2026-07-10-the-number-that-could-move-the-pound-uk-gdp-preview.html">
+          <div class="n">8</div>
+          <div class="b">
+            <h3>UK data calendar builds towards the 30 Jul BoE decision</h3>
+            <p>Final Q1 GDP, manufacturing/industrial production and trade balance figures are due this week, with UK CPI (22 Jul) and further jobs data also in play before the Bank meets.</p>
+            <div class="src">Exchange Rates UK &middot; 10 Jul</div>
+          </div>
         </div>
       </div>
     </div>
@@ -886,7 +886,7 @@
   </section>
 
   <footer class="foot">
-    Compiled Sunday 12 July 2026 &middot; Weather via Met Office (WillyWeather) &middot; Scores &amp; results via ESPN/Sky Sports Football &amp; BBC Sport &middot; TV channels via live-footballontv.com &middot; Markets via Exchange Rates UK, Pound Sterling Live, BoE &amp; Federal Reserve<br>
+    Compiled Monday 13 July 2026 &middot; Weather via Met Office (WillyWeather) &middot; Scores &amp; results via ESPN/Sky Sports Football &amp; BBC Sport &middot; TV channels via live-footballontv.com &middot; Markets via Exchange Rates UK, Pound Sterling Live, BoE &amp; Federal Reserve<br>
     <b>Tap any news or event card to open the source.</b> All kick-offs BST. Every World Cup game is free-to-air on BBC or ITV. Weather strip covers 6 verified forward days this run (day 7 not yet published by the Met Office at time of writing).
   </footer>
 
