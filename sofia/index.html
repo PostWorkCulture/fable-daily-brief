@@ -145,21 +145,6 @@
   table.st tr.out td{color:var(--ink3)}
   table.st tr.out td.tm{color:var(--ink3);font-weight:600}
 
-  /* Google-style knockout bracket */
-  .bracket{display:flex;gap:20px;overflow-x:auto;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;align-items:flex-start}
-  .brc{flex:0 0 250px}
-  .brc h4{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);margin:0 0 10px 4px}
-  .bkm{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin-bottom:10px;overflow:hidden}
-  .bkt{display:flex;align-items:center;gap:8px;padding:9px 12px}
-  .bkt + .bkt{border-top:1px solid var(--line)}
-  .bkt .flg{width:22px;height:15px;margin-right:2px}
-  .bkt .nm{flex:1;font-size:13.5px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bkt .sc{font-size:14px;font-weight:800;min-width:20px;text-align:right}
-  .bkt.lose .nm,.bkt.lose .sc{color:var(--ink3);font-weight:600}
-  .bkt.win .nm,.bkt.win .sc{color:var(--ink)}
-  .bkt .pen{font-size:10.5px;color:var(--ink3);font-weight:700;margin-left:4px}
-  .bkm-meta{padding:7px 12px;font-size:11px;color:var(--ink3);font-weight:600;background:var(--wash);border-top:1px solid var(--line)}
-  .bkt .tbd{color:var(--ink3);font-weight:600;font-style:italic}
   .bkt .live{color:#b8770f;font-weight:800;font-style:normal}
 
   .foot{margin-top:34px;text-align:center;font-size:12px;color:var(--ink3)}
@@ -219,8 +204,7 @@
     <button class="tab" data-tab="uk-news">UK News</button>
     <button class="tab" data-tab="ai">AI</button>
     <button class="tab" data-tab="career">Career</button>
-    <button class="tab" data-tab="bracket">WC Knockout</button>
-  </nav>
+      </nav>
 
   <section class="panel on" id="tab-brief">
 
@@ -232,15 +216,13 @@
             <svg class="wic"><use href="#i-sun"/></svg>
             <div class="wx-t">29<sup>&deg;C</sup></div>
           </div>
-          <div class="wx-d"><b>Today: sunny, 29&deg;C.</b> Cooling to the low-20s by Sunday.</div>
+          <div class="wx-d"><b>Today: sunny, 29&deg;C.</b> Cooling to the low-20s by Sunday &mdash; entropy always wins in the end.</div>
         </div>
         <div class="wx-strip"><div class="wx-day today"><div class="d">Today</div><div class="dt">17 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">29&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">18 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">25&deg;</div><div class="lo">14&deg;</div></div><div class="wx-day"><div class="d">Sun</div><div class="dt">19 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">23&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Mon</div><div class="dt">20 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Tue</div><div class="dt">21 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Wed</div><div class="dt">22 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">23 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">27&deg;</div><div class="lo">17&deg;</div></div></div>
       </div>
     </div>
-
-
     <div class="sec" id="calendar">
-      <div class="sec-h"><h2>Calendar</h2></div>
+      <div class="sec-h"><h2>Coming up this week</h2></div>
       <div class="card">
         <div class="row">
           <div class="n">Sat</div>
@@ -252,6 +234,12 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="sec" id="calendar-next">
+      <div class="sec-h"><h2>Rest of the month</h2></div>
+      <div class="card">
         <div class="row">
           <div class="n">Mon</div>
           <div class="b">
@@ -282,10 +270,41 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="n">Sat</div>
+          <div class="b">
+            <h3 style="color:#4986e7">Kids</h3>
+            <div class="evm">
+              <div><b>When:</b> Sat 25 &ndash; Sun 26 Jul</div>
+              <div><b>Time:</b> 10:00 Sat 25 Jul &ndash; 16:00 Sun 26 Jul</div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="n">Mon</div>
+          <div class="b">
+            <h3 style="color:#ff887c">Fatou</h3>
+            <div class="evm">
+              <div><b>When:</b> Mon 27 &ndash; Thu 30 Jul</div>
+              <div><b>Time:</b> 08:00 Mon 27 Jul &ndash; 09:00 Thu 30 Jul</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Fri</div>
+          <div class="b">
+            <h3 style="color:#7ae7bf">Patrick</h3>
+            <div class="evm">
+              <div><b>When:</b> Fri 31 Jul &ndash; Sun 02 Aug</div>
+              <div><b>Time:</b> 08:00 Fri 31 Jul &ndash; 09:00 Sun 02 Aug</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="sec" id="uk-dates">
+<div class="sec" id="uk-dates">
       <div class="sec-h"><h2>Bank Holidays</h2></div>
       <div class="card">
         <div class="row">
@@ -777,105 +796,59 @@
     <section class="panel" id="tab-career">
 
     <div class="sec">
-      <div class="sec-h"><h2>Getting Started with AI</h2></div>
+      <div class="sec-h"><h2>AI: Try &amp; Read</h2></div>
       <div class="card">
-        <div class="prose">
-          <p>You don&rsquo;t need any technical background to start understanding AI &mdash; and you don&rsquo;t need to learn to code. The best way in is simply to try a couple of short, free courses and to play with the tools yourself. Go at your own pace; a little curiosity is all it takes.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>Free Courses to Try</h2></div>
-      <div class="card">
-        <div class="row" data-url="https://www.elementsofai.com/">
+        <div class="row" data-url="https://gemini.google.com/">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.elementsofai.com/" target="_blank">Elements of AI</a></h3>
-            <p>A free, friendly online course from the University of Helsinki &mdash; no maths or programming. Over 2 million people have taken it. Great first step.</p>
+            <h3><a href="https://gemini.google.com/" target="_blank">Ask Gemini to explain a video</a></h3>
+            <p>Paste a YouTube link into Gemini and ask it to summarise the video, list key vocabulary, and suggest follow-up questions &mdash; a quick way to turn watching into learning.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.coursera.org/learn/ai-for-everyone">
+        <div class="row" data-url="https://gemini.google.com/">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank">AI For Everyone (Coursera)</a></h3>
-            <p>Andrew Ng&rsquo;s short, non-technical course explaining what AI can and can&rsquo;t do. You can enrol and watch all the videos for free (audit).</p>
+            <h3><a href="https://gemini.google.com/" target="_blank">Get step-by-step homework help</a></h3>
+            <p>Gemini can walk through a multi-step maths problem or explain a tricky science concept one step at a time, instead of just handing over the answer.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.coursera.org/learn/generative-ai-for-everyone">
+        <div class="row" data-url="https://gemini.google.com/">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.coursera.org/learn/generative-ai-for-everyone" target="_blank">Generative AI for Everyone (Coursera)</a></h3>
-            <p>A plain-English course on tools like ChatGPT &mdash; how to write good prompts and use AI in everyday tasks. Free to audit.</p>
+            <h3><a href="https://gemini.google.com/" target="_blank">Build something in Canvas</a></h3>
+            <p>Use Gemini&rsquo;s Canvas tool to turn a set of notes into a quiz, infographic, or short web page &mdash; try &ldquo;make a quiz about the topic I&rsquo;m revising&rdquo; and see what it builds in under two minutes.</p>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>Learn by Doing</h2></div>
-      <div class="card">
-        <div class="prose">
-          <p>The fastest way to learn is to use AI for a small real task. Ask <a href="https://claude.ai" target="_blank">claude.ai</a> or <a href="https://chatgpt.com" target="_blank">chatgpt.com</a> to help draft an email, plan a trip, or explain something you&rsquo;re curious about. For a fun, visual taste of how AI &ldquo;learns&rdquo;, try <a href="https://teachablemachine.withgoogle.com/" target="_blank">Teachable Machine</a> &mdash; you can train a model to recognise things using just your webcam, no code needed.</p>
+        <div class="row" data-url="https://gemini.google.com/">
+          <div class="n">4</div>
+          <div class="b">
+            <h3><a href="https://gemini.google.com/" target="_blank">Restyle a photo</a></h3>
+            <p>Upload a photo and ask Gemini to redraw it in a different art style &mdash; a fun, low-stakes way to see what image generation can do.</p>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>A Simple Way to Pace It</h2></div>
-      <div class="card">
-        <div class="prose">
-          <p><b>Week 1:</b> Start Elements of AI &mdash; just the first part. <b>Week 2:</b> Try AI For Everyone and use a chatbot for one real task. <b>Week 3:</b> Watch Generative AI for Everyone and practise writing clearer prompts. <b>Week 4:</b> Play with Teachable Machine and finish whichever course you enjoyed most. That&rsquo;s a solid, no-pressure introduction in a month.</p>
+        <div class="row" data-url="https://tldr.tech/ai">
+          <div class="n">5</div>
+          <div class="b">
+            <h3><a href="https://tldr.tech/ai" target="_blank">TLDR AI</a></h3>
+            <p>A free daily newsletter that sums up AI news and breakthroughs in about 5 minutes &mdash; short enough to read over breakfast.</p>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.therundown.ai/subscribe">
+          <div class="n">6</div>
+          <div class="b">
+            <h3><a href="https://www.therundown.ai/subscribe" target="_blank">The Rundown AI</a></h3>
+            <p>Another free, beginner-friendly daily AI newsletter &mdash; sign up and it gives you a short personalised learning plan to follow at your own pace.</p>
+          </div>
         </div>
       </div>
     </div>
 
   </section>
 
-  <section class="panel" id="tab-bracket">
-    <div class="sec">
-      <div class="sec-h"><h2>WC Knockout</h2></div>
-      <div class="card">
-        <div class="pad">
-          <div class="bracket">
-            <div class="brc">
-              <h4>Semi-Finals</h4>
-              <div class="bkm">
-                <div class="bkt win"><img class="flg" src="https://flagcdn.com/es.svg" width="24" height="17" loading="eager" alt=""><span class="nm">Spain</span><span class="sc">2</span></div>
-                <div class="bkt lose"><img class="flg" src="https://flagcdn.com/fr.svg" width="24" height="17" loading="eager" alt=""><span class="nm">France</span><span class="sc">0</span></div>
-                <div class="bkm-meta">Dallas Stadium &middot; Sun 14 Jul &middot; Oyarzabal 22&prime; (pen), Porro 58&prime;</div>
-              </div>
-              <div class="bkm">
-                <div class="bkt win"><img class="flg" src="https://flagcdn.com/ar.svg" width="24" height="17" loading="eager" alt=""><span class="nm">Argentina</span><span class="sc">2</span></div>
-                <div class="bkt lose"><img class="flg" src="https://flagcdn.com/gb-eng.svg" width="24" height="17" loading="eager" alt=""><span class="nm">England</span><span class="sc">1</span></div>
-                <div class="bkm-meta">Mercedes-Benz Stadium, Atlanta &middot; Mon 15 Jul &middot; Gordon 11&prime; (Eng), Fern&aacute;ndez 85&prime;, Mart&iacute;nez 90+2&prime;</div>
-              </div>
-            </div>
-            <div class="brc">
-              <h4>Final</h4>
-              <div class="bkm">
-                <div class="bkt"><img class="flg" src="https://flagcdn.com/es.svg" width="24" height="17" loading="eager" alt=""><span class="nm">Spain</span><span class="sc">&ndash;</span></div>
-                <div class="bkt"><img class="flg" src="https://flagcdn.com/ar.svg" width="24" height="17" loading="eager" alt=""><span class="nm">Argentina</span><span class="sc">&ndash;</span></div>
-                <div class="bkm-meta">MetLife Stadium, East Rutherford NJ &middot; Sun 19 Jul, 8:00pm BST</div>
-              </div>
-            </div>
-            <div class="brc">
-              <h4>3rd Place Play-off</h4>
-              <div class="bkm">
-                <div class="bkt"><img class="flg" src="https://flagcdn.com/fr.svg" width="24" height="17" loading="eager" alt=""><span class="nm">France</span><span class="sc">&ndash;</span></div>
-                <div class="bkt"><img class="flg" src="https://flagcdn.com/gb-eng.svg" width="24" height="17" loading="eager" alt=""><span class="nm">England</span><span class="sc">&ndash;</span></div>
-                <div class="bkm-meta">Hard Rock Stadium, Miami &middot; Tomorrow, Sat 18 Jul, 10:00pm BST</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer class="foot">
     Compiled Friday 17 July 2026 &middot; shared sections sourced as in Pete&rsquo;s brief &middot; Sweden via Str&ouml;mstads Tidning &amp; The Local Sweden<br>
-    <b>Tap any news or event card to open the source.</b> All kick-offs BST. Every World Cup game is free-to-air on BBC or ITV.
+    <b>Tap any news or event card to open the source.</b>
   </footer>
 
 </div>

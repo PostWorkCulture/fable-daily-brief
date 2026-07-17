@@ -148,21 +148,6 @@
   table.st tr.out td{color:var(--ink3)}
   table.st tr.out td.tm{color:var(--ink3);font-weight:600}
 
-  /* Google-style knockout bracket */
-  .bracket{display:flex;gap:20px;overflow-x:auto;padding:6px 2px 18px;-webkit-overflow-scrolling:touch;align-items:flex-start}
-  .brc{flex:0 0 250px}
-  .brc h4{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);margin:0 0 10px 4px}
-  .bkm{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin-bottom:10px;overflow:hidden}
-  .bkt{display:flex;align-items:center;gap:8px;padding:9px 12px}
-  .bkt + .bkt{border-top:1px solid var(--line)}
-  .bkt .flg{width:22px;height:15px;margin-right:2px}
-  .bkt .nm{flex:1;font-size:13.5px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bkt .sc{font-size:14px;font-weight:800;min-width:20px;text-align:right}
-  .bkt.lose .nm,.bkt.lose .sc{color:var(--ink3);font-weight:600}
-  .bkt.win .nm,.bkt.win .sc{color:var(--ink)}
-  .bkt .pen{font-size:10.5px;color:var(--ink3);font-weight:700;margin-left:4px}
-  .bkm-meta{padding:7px 12px;font-size:11px;color:var(--ink3);font-weight:600;background:var(--wash);border-top:1px solid var(--line)}
-  .bkt .tbd{color:var(--ink3);font-weight:600;font-style:italic}
 
   .foot{margin-top:34px;text-align:center;font-size:12px;color:var(--ink3)}
   .foot b{color:var(--ink2)}
@@ -221,8 +206,7 @@
     <button class="tab" data-tab="uk-news">UK News</button>
     <button class="tab" data-tab="ai">AI</button>
     <button class="tab" data-tab="markets">Markets</button>
-    <button class="tab" data-tab="bracket">WC Knockout</button>
-  </nav>
+      </nav>
 
   <section class="panel on" id="tab-brief">
 
@@ -234,15 +218,13 @@
             <svg class="wic"><use href="#i-sun"/></svg>
             <div class="wx-t">29<sup>&deg;C</sup></div>
           </div>
-          <div class="wx-d"><b>Today: sunny, 29&deg;C.</b> Cooling to the low-20s by Sunday.</div>
+          <div class="wx-d"><b>Today: sunny, 29&deg;C.</b> Cooling to the low-20s by Sunday &mdash; entropy always wins in the end.</div>
         </div>
         <div class="wx-strip"><div class="wx-day today"><div class="d">Today</div><div class="dt">17 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">29&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">18 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">25&deg;</div><div class="lo">14&deg;</div></div><div class="wx-day"><div class="d">Sun</div><div class="dt">19 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">23&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Mon</div><div class="dt">20 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Tue</div><div class="dt">21 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Wed</div><div class="dt">22 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">23 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">27&deg;</div><div class="lo">17&deg;</div></div></div>
       </div>
     </div>
-
-
     <div class="sec" id="calendar">
-      <div class="sec-h"><h2>Calendar</h2></div>
+      <div class="sec-h"><h2>Coming up this week</h2></div>
       <div class="card">
         <div class="row">
           <div class="n">Sat</div>
@@ -254,6 +236,12 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="sec" id="calendar-next">
+      <div class="sec-h"><h2>Rest of the month</h2></div>
+      <div class="card">
         <div class="row">
           <div class="n">Mon</div>
           <div class="b">
@@ -284,10 +272,41 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="n">Sat</div>
+          <div class="b">
+            <h3 style="color:#4986e7">Kids</h3>
+            <div class="evm">
+              <div><b>When:</b> Sat 25 &ndash; Sun 26 Jul</div>
+              <div><b>Time:</b> 10:00 Sat 25 Jul &ndash; 16:00 Sun 26 Jul</div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="n">Mon</div>
+          <div class="b">
+            <h3 style="color:#ff887c">Fatou</h3>
+            <div class="evm">
+              <div><b>When:</b> Mon 27 &ndash; Thu 30 Jul</div>
+              <div><b>Time:</b> 08:00 Mon 27 Jul &ndash; 09:00 Thu 30 Jul</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">Fri</div>
+          <div class="b">
+            <h3 style="color:#7ae7bf">Patrick</h3>
+            <div class="evm">
+              <div><b>When:</b> Fri 31 Jul &ndash; Sun 02 Aug</div>
+              <div><b>Time:</b> 08:00 Fri 31 Jul &ndash; 09:00 Sun 02 Aug</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-        <div class="sec" id="uk-dates">
+<div class="sec" id="uk-dates">
       <div class="sec-h"><h2>Bank Holidays</h2></div>
       <div class="card">
         <div class="row">
@@ -844,50 +863,10 @@
 
   </section>
 
-  <section class="panel" id="tab-bracket">
-    <div class="sec">
-      <div class="sec-h"><h2>WC Knockout</h2></div>
-      <div class="card">
-        <div class="pad">
-          <div class="bracket">
-            <div class="brc">
-              <h4>Semi-Finals</h4>
-              <div class="bkm">
-                <div class="bkt win"><img class="flg" src="https://flagcdn.com/es.svg" width="24" height="17" loading="eager" alt=""><span class="nm">Spain</span><span class="sc">2</span></div>
-                <div class="bkt lose"><img class="flg" src="https://flagcdn.com/fr.svg" width="24" height="17" loading="eager" alt=""><span class="nm">France</span><span class="sc">0</span></div>
-                <div class="bkm-meta">Dallas Stadium &middot; Sun 14 Jul &middot; Oyarzabal 22&prime; (pen), Porro 58&prime;</div>
-              </div>
-              <div class="bkm">
-                <div class="bkt win"><img class="flg" src="https://flagcdn.com/ar.svg" width="24" height="17" loading="eager" alt=""><span class="nm">Argentina</span><span class="sc">2</span></div>
-                <div class="bkt lose"><img class="flg" src="https://flagcdn.com/gb-eng.svg" width="24" height="17" loading="eager" alt=""><span class="nm">England</span><span class="sc">1</span></div>
-                <div class="bkm-meta">Mercedes-Benz Stadium, Atlanta &middot; Mon 15 Jul &middot; Gordon 11&prime; (Eng), Fern&aacute;ndez 85&prime;, Mart&iacute;nez 90+2&prime;</div>
-              </div>
-            </div>
-            <div class="brc">
-              <h4>Final</h4>
-              <div class="bkm">
-                <div class="bkt"><img class="flg" src="https://flagcdn.com/es.svg" width="24" height="17" loading="eager" alt=""><span class="nm">Spain</span><span class="sc">&ndash;</span></div>
-                <div class="bkt"><img class="flg" src="https://flagcdn.com/ar.svg" width="24" height="17" loading="eager" alt=""><span class="nm">Argentina</span><span class="sc">&ndash;</span></div>
-                <div class="bkm-meta">MetLife Stadium, East Rutherford NJ &middot; Sun 19 Jul, 8:00pm BST</div>
-              </div>
-            </div>
-            <div class="brc">
-              <h4>3rd Place Play-off</h4>
-              <div class="bkm">
-                <div class="bkt"><img class="flg" src="https://flagcdn.com/fr.svg" width="24" height="17" loading="eager" alt=""><span class="nm">France</span><span class="sc">&ndash;</span></div>
-                <div class="bkt"><img class="flg" src="https://flagcdn.com/gb-eng.svg" width="24" height="17" loading="eager" alt=""><span class="nm">England</span><span class="sc">&ndash;</span></div>
-                <div class="bkm-meta">Hard Rock Stadium, Miami &middot; Tomorrow, Sat 18 Jul, 10:00pm BST</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer class="foot">
-    Compiled Friday 17 July 2026 &middot; Weather via WillyWeather (Met Office data), blended with AccuWeather for day 7 &middot; Scores &amp; results via FIFA, ESPN &middot; Markets via FXStreet, CoinDesk, exchangerates.org.uk &amp; Bank of England<br>
-    <b>Tap any news or event card to open the source.</b> All kick-offs BST. Every World Cup game is free-to-air on BBC or ITV.
+    Compiled Friday 17 July 2026 &middot; Weather via WillyWeather (Met Office data), blended with AccuWeather for day 7 &middot; Markets via FXStreet, CoinDesk, exchangerates.org.uk &amp; Bank of England<br>
+    <b>Tap any news or event card to open the source.</b>
   </footer>
 
 </div>
