@@ -8,13 +8,13 @@
   :root{
     --bg:#f5f3ee; --card:#ffffff; --ink:#1c2024; --ink2:#5a626b; --ink3:#8a929b;
     --accent:#1668d9; --accent2:#0f4fa8; --gold:#1668d9; --line:#e7e3da;
-    --chipbg:#e8effb; --up:#5fae78; --down:#d97b7b; --wash:#faf9f6;
+    --chipbg:#e8effb; --up:#5fae78; --down:#d97b7b; --wash:#faf9f6; --hoverY:#fdf1c7;
     --shadow:0 1px 2px rgba(28,32,36,.05),0 6px 20px rgba(28,32,36,.06);
     --r:14px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:860px;margin:0 auto;padding:0 18px 64px}
+  .wrap{max-width:860px;margin:0 auto;padding:0 18px 64px;position:relative;z-index:1}
 
   /* ---------- MASTHEAD ---------- */
   .mast{padding:30px 0 18px}
@@ -28,7 +28,7 @@
   .chip .wic{width:18px;height:18px}
 
   /* ---------- TABS ---------- */
-  .tabs{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-bottom:1px solid var(--line)}
+  .tabs{position:sticky;top:0;z-index:20;background:rgba(245,243,238,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:12px 0 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-bottom:1px solid var(--line)}
   .tab{border:1px solid var(--line);background:#fff;color:var(--ink2);font-size:14px;font-weight:600;padding:14px 12px;border-radius:16px;cursor:pointer;transition:all .15s;text-align:center}
   .tab:hover{border-color:var(--accent);color:var(--accent)}
   .tab.on{background:#fff;border-color:var(--accent);color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
@@ -50,7 +50,7 @@
   .wx-now .wic{width:56px;height:56px}
   .wx-t{font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1}
   .wx-t sup{font-size:22px;color:var(--ink2);font-weight:700}
-  .wx-d{font-size:14px;color:var(--ink2);max-width:420px}
+  .wx-d{font-size:clamp(11px,3.4vw,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1 1 auto;min-width:0}
   .wx-d b{color:var(--ink)}
   .wx-strip{display:flex;gap:8px;overflow-x:auto;padding:14px 20px 16px;border-top:1px solid var(--line);background:var(--wash);-webkit-overflow-scrolling:touch}
   .wx-day{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 2px 8px;text-align:center;flex:1 0 86px;min-width:86px}
@@ -65,7 +65,7 @@
   .row{display:flex;gap:14px;padding:15px 20px;border-top:1px solid var(--line);cursor:default}
   .row:first-child{border-top:none}
   .row[data-url]{cursor:pointer;transition:background .12s}
-  .row[data-url]:hover{background:var(--wash)}
+  .row[data-url]:hover{background:var(--hoverY)}
   .row .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--chipbg);color:var(--accent);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px}
   .row .b h3{font-size:15px;font-weight:700;line-height:1.35}
   .row .b p{font-size:13.5px;color:var(--ink2);margin-top:3px}
@@ -78,7 +78,7 @@
   .fam{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:2px}
 
   /* ---------- CALENDAR (subtle/grey) ---------- */
-  #calendar .card,#calendar-next .card{background:var(--wash)}
+  #calendar .card,#calendar-next .card{background:#fff}
   #calendar .row .n,#calendar-next .row .n{flex:0 0 42px;font-size:10.5px;letter-spacing:.02em;background:var(--line);color:var(--ink2)}
   #calendar h3,#calendar-next h3{color:var(--ink2);font-weight:700}
   #calendar .evm b,#calendar-next .evm b{color:var(--ink2);font-weight:800}
@@ -115,8 +115,75 @@
     h1{font-size:26px}
     .bm .when{display:none}
   }
+
+  .bg-fx{position:fixed;inset:0;z-index:0;width:100vw;height:100vh;pointer-events:none;display:block}
 </style>
 <body>
+<canvas class="bg-fx" aria-hidden="true"></canvas>
+<script>
+(function(){
+  var cv = document.querySelector("canvas.bg-fx");
+  if(!cv || !cv.getContext) return;
+  var ctx = cv.getContext("2d");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var W, H, pts, N = 80, LINK = 160, SPEED = .2;
+  var PAL = ["22,104,217","124,111,224","47,208,200","221,102,178","240,150,90"];
+  function size(){ W = cv.width = window.innerWidth; H = cv.height = window.innerHeight; }
+  function init(){
+    size();
+    pts = [];
+    for (var i=0;i<N;i++){
+      pts.push({
+        x: Math.random()*W, y: Math.random()*H,
+        vx: (Math.random()-.5)*SPEED, vy: (Math.random()-.5)*SPEED,
+        r: 1.6 + Math.random()*2.4, ph: Math.random()*6.28,
+        c: PAL[(Math.random()*PAL.length)|0]
+      });
+    }
+  }
+  var mastEl = null, mastR = null;
+  function frame(t){
+    ctx.clearRect(0,0,W,H);
+    if (!mastEl) mastEl = document.querySelector("header.mast h1");
+    if (mastEl) mastR = mastEl.getBoundingClientRect();
+    for (var i=0;i<pts.length;i++){
+      var p = pts[i];
+      if(!reduce){
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -20) p.x = W+20; if (p.x > W+20) p.x = -20;
+        if (p.y < -20) p.y = H+20; if (p.y > H+20) p.y = -20;
+      }
+      for (var j=i+1;j<pts.length;j++){
+        var q = pts[j];
+        var dx = p.x-q.x, dy = p.y-q.y;
+        var d = Math.sqrt(dx*dx+dy*dy);
+        if (d < LINK){
+          ctx.strokeStyle = "rgba(" + p.c + "," + (0.32*(1-d/LINK)) + ")";
+          ctx.lineWidth = 1.2;
+          ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
+        }
+      }
+    }
+    for (var k=0;k<pts.length;k++){
+      var s = pts[k];
+      var tw = reduce ? .85 : (0.65 + 0.35*Math.sin((t||0)/900 + s.ph));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, 6.2832);
+      ctx.fillStyle = "rgba(" + s.c + "," + (0.75*tw) + ")";
+      ctx.fill();
+    }
+    if (mastR){
+      var pad = 28;
+      ctx.clearRect(mastR.left-pad, mastR.top-pad, mastR.width+pad*2, mastR.height+pad*2);
+    }
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  init();
+  window.onresize = init;
+  requestAnimationFrame(frame);
+})();
+</script>
+
 
 <!-- Weather icon set (inline SVG symbols) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -153,13 +220,14 @@
 
   <nav class="tabs">
     <button class="tab on" data-tab="brief">Brief</button>
-    <button class="tab" data-tab="career">Career</button>
-    <button class="tab" data-tab="education">School</button>
+    <button class="tab" data-tab="tv">TV</button>
+    <button class="tab" data-tab="ai">AI</button>
     <button class="tab" data-tab="local-news">Local News</button>
     <button class="tab" data-tab="local-events">Local Events</button>
     <button class="tab" data-tab="uk-news">UK News</button>
-    <button class="tab" data-tab="ai">AI</button>
+    <button class="tab" data-tab="education">School</button>
     <button class="tab" data-tab="markets">Markets</button>
+    <button class="tab" data-tab="career">Career</button>
   </nav>
 
   <section class="panel on" id="tab-brief">
@@ -273,58 +341,41 @@
 
   </section>
 
-  <section class="panel" id="tab-career">
+  <section class="panel" id="tab-tv">
 
-    <div class="sec" id="career-openings">
-      <div class="sec-h"><h2>Roles</h2></div>
+    <div class="sec" id="tv">
+      <div class="sec-h"><h2>What to Watch</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=1888492">
-          <div class="n">1</div>
+        <div class="row" data-url="https://www.netflix.com/title/81923353">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3><a href="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=1888492" target="_blank">SEO Policy Adviser &mdash; AI Policy (AI Growth Zones), 4 posts</a></h3>
-            <div class="evm">
-              <div><b>Organisation:</b> Department for Science, Innovation &amp; Technology (DSIT)</div>
-              <div><b>Salary:</b> &pound;47,355 &ndash; &pound;52,090 (London)</div>
-              <div><b>Location:</b> Central London &mdash; within an hour&rsquo;s drive</div>
-              <div><b>Deadline:</b> <span class="dl">No closing date published in accessible sources &mdash; check the listing</span></div>
-            </div>
-            <p>Details of the role: shaping and delivering policy frameworks for the AI Growth Zones programme &mdash; the government&rsquo;s flagship AI infrastructure initiative &mdash; driving cross-government coordination and ensuring the zones deliver strategic outcomes. Policy, not coding. Civil Service pension with 28.97% employer contribution.</p>
+            <h3><a href="https://www.netflix.com/title/81923353" target="_blank">A Toxic Love Story</a></h3>
+            <p>Threatening emails escalate into a revenge plot involving a newlywed and his ex &mdash; a scandal of deception and betrayal in a wealthy California suburb.</p>
+            <div class="src">Netflix &middot; premieres 22 Jul</div>
           </div>
         </div>
-        <div class="row">
-          <div class="n">2</div>
+        <div class="row" data-url="https://tv.apple.com/us/show/silo/umc.cmc.3yksgc857px0k0rqe5zd4jice">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3>AI adoption / change lead &mdash; local government</h3>
-            <div class="evm">
-              <div><b>Organisation:</b> Councils across London and Surrey (digital &amp; transformation teams)</div>
-              <div><b>Location:</b> Within an hour&rsquo;s drive</div>
-              <div><b>Deadline:</b> <span class="dl">Role-type to watch &mdash; openings appear on council career pages</span></div>
-            </div>
-            <p>Details of the role: helping council teams adopt AI tools safely &mdash; process mapping, training, vendor assessment and rollout. Strong fit for policy-plus-communication backgrounds.</p>
+            <h3><a href="https://tv.apple.com/us/show/silo/umc.cmc.3yksgc857px0k0rqe5zd4jice" target="_blank">Silo &mdash; Season 3</a></h3>
+            <p>Next new episode: Friday 24 Jul (episode 4 of 10). Season finale lands 4 Sep.</p>
+            <div class="src">Apple TV+ &middot; verified 19 Jul</div>
           </div>
         </div>
-        <div class="row">
-          <div class="n">3</div>
+        <div class="row" data-url="https://tv.apple.com/us/show/lucky/umc.cmc.5qo7t3nngb2vj0m9dxkwebw1o">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3>AI governance &amp; assurance roles &mdash; public bodies and regulators</h3>
-            <div class="evm">
-              <div><b>Organisation:</b> DSIT, regulators and arm&rsquo;s-length bodies (AISI listed no open roles this run)</div>
-              <div><b>Location:</b> Within an hour&rsquo;s drive</div>
-              <div><b>Deadline:</b> <span class="dl">Role-type to watch &mdash; check civilservicejobs weekly</span></div>
-            </div>
-            <p>Details of the role: assurance frameworks, risk registers and responsible-AI standards for public-sector AI deployments &mdash; non-technical, governance-first work.</p>
+            <h3><a href="https://tv.apple.com/us/show/lucky/umc.cmc.5qo7t3nngb2vj0m9dxkwebw1o" target="_blank">Lucky</a></h3>
+            <p>New Apple TV+ series &mdash; Anya Taylor-Joy as a con artist on the run from the FBI and a crime boss. Next new episode: Wednesday 22 Jul, weekly through 19 Aug.</p>
+            <div class="src">Apple TV+ &middot; verified 19 Jul</div>
           </div>
         </div>
-        <div class="row">
-          <div class="n">4</div>
+        <div class="row" data-url="https://www.apple.com/tv-pr/news/2026/07/apple-tvs-thrilling-new-crime-drama-nocturne-starring-liev-schreiber-zazie-beetz-and-stephen-graham-to-make-global-debut-on-friday-october-30/">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3>AI training &amp; enablement lead &mdash; public sector</h3>
-            <div class="evm">
-              <div><b>Organisation:</b> Government departments and NHS trusts building AI literacy programmes</div>
-              <div><b>Location:</b> Within an hour&rsquo;s drive</div>
-              <div><b>Deadline:</b> <span class="dl">Role-type to watch</span></div>
-            </div>
-            <p>Details of the role: designing and running AI upskilling for non-technical staff &mdash; a growing need given fewer than two in five civil servants currently find AI empowering.</p>
+            <h3><a href="https://www.apple.com/tv-pr/news/2026/07/apple-tvs-thrilling-new-crime-drama-nocturne-starring-liev-schreiber-zazie-beetz-and-stephen-graham-to-make-global-debut-on-friday-october-30/" target="_blank">Nocturne</a></h3>
+            <p>New Apple TV+ crime drama with Liev Schreiber, Zazie Beetz and Stephen Graham. Premieres Friday 30 Oct.</p>
+            <div class="src">Apple TV Press &middot; verified 19 Jul</div>
           </div>
         </div>
       </div>
@@ -332,51 +383,89 @@
 
   </section>
 
-  <section class="panel" id="tab-education">
+  <section class="panel" id="tab-ai">
 
-    <div class="sec" id="school-updates">
-      <div class="sec-h"><h2>Updates</h2></div>
+    <div class="sec" id="ai-news">
+      <div class="sec-h"><h2>Top 10 in AI</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/docs/newsletters/2025-26/Friday_10th_July_2026.pdf">
+        <div class="row" data-url="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/docs/newsletters/2025-26/Friday_10th_July_2026.pdf" target="_blank">Latest newsletter: Friday 10 July 2026</a></h3>
-            <p>The most recent weekly newsletter is available to download as a PDF.</p>
+            <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank">China flags a &lsquo;backdoor&rsquo; claim against Claude Code</a></h3>
+            <p>China&rsquo;s industry ministry warned Claude Code could send user location and identity to a remote server; Anthropic said the code exists to detect unauthorised &lsquo;distillation&rsquo; (copying a model by training on its outputs).</p>
+            <div class="src">Tech Startups &middot; 17 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
+        <div class="row" data-url="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">End of term: Wednesday 22 July, 1:45pm pick-up</a></h3>
-            <p>Summer 2 finishes with an early 1:45pm pick-up on the last day.</p>
+            <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank">Apple sues OpenAI over poached hardware staff</a></h3>
+            <p>Apple alleges OpenAI recruited former hardware employees and encouraged them to bring confidential designs, prototypes and supplier data.</p>
+            <div class="src">Tech Startups &middot; 17 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
+        <div class="row" data-url="https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/07/17/ai-tech-brief-chinas-moonshot-ai/">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Autumn term starts Wednesday 2 September</a></h3>
-            <p>Children return on 2 September; Tuesday 1 September is an INSET day.</p>
+            <h3><a href="https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/07/17/ai-tech-brief-chinas-moonshot-ai/" target="_blank">UK government lab finds universal jailbreaks in GPT-5.6&rsquo;s cyber safeguards</a></h3>
+            <p>The sharpest safety story of the week: testing after GPT-5.6&rsquo;s public release found its cybersecurity guardrails could be reliably bypassed.</p>
+            <div class="src">Washington Post &middot; 17 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
+        <div class="row" data-url="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/">
           <div class="n">4</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Autumn half term: Monday 19 &ndash; Friday 30 October</a></h3>
-            <p>A full two-week half term this year &mdash; worth planning ahead for.</p>
+            <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank">Google delays Gemini 3.5 Pro by months</a></h3>
+            <p>Internal testing reportedly showed the flagship model falling short on coding and long-horizon reasoning, pushing back its broader release.</p>
+            <div class="src">Tech Startups &middot; 17 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
+        <div class="row" data-url="https://www.openaccessgovernment.org/key-takeaways-from-the-public-sector-ai-adoption-index-2026/204838/">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Full 2026/27 term dates now published</a></h3>
-            <p>Spring term runs 5 January &ndash; 25 March 2027 (INSET 4 January); Summer term 12 April &ndash; 23 July 2027.</p>
+            <h3><a href="https://www.openaccessgovernment.org/key-takeaways-from-the-public-sector-ai-adoption-index-2026/204838/" target="_blank">UK ranks sixth of ten on the Public Sector AI Adoption Index 2026</a></h3>
+            <p>Scoring 47/100 despite big strategic ambitions; fewer than two in five civil servants describe AI as empowering, and 88.9% of public sector workers say their organisation can&rsquo;t fully leverage it.</p>
+            <div class="src">Open Access Government</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
+        <div class="row" data-url="https://www.gov.uk/government/publications/ai-opportunities-action-plan-one-year-on/ai-opportunities-action-plan-one-year-on">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Subscribe to the school calendar</a></h3>
-            <p>Diary dates can be added straight to Google, Outlook or iPhone calendars via the school&rsquo;s feed.</p>
+            <h3><a href="https://www.gov.uk/government/publications/ai-opportunities-action-plan-one-year-on/ai-opportunities-action-plan-one-year-on" target="_blank">AI Opportunities Action Plan: five Growth Zones, &pound;28.2bn investment</a></h3>
+            <p>The government&rsquo;s progress report counts five designated AI Growth Zones across Great Britain, 15,000+ jobs and &pound;5m of targeted adoption funding per zone.</p>
+            <div class="src">GOV.UK</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.gov.uk/government/publications/ai-adoption-plan-financial-services/financial-services-ai-adoption-plan">
+          <div class="n">7</div>
+          <div class="b">
+            <h3><a href="https://www.gov.uk/government/publications/ai-adoption-plan-financial-services/financial-services-ai-adoption-plan" target="_blank">City leads UK AI adoption: ~75% of financial firms now use AI</a></h3>
+            <p>FCA and Bank of England survey data show finance far ahead of the wider economy &mdash; the government&rsquo;s new Financial Services AI Adoption Plan aims to push further.</p>
+            <div class="src">GOV.UK</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html">
+          <div class="n">8</div>
+          <div class="b">
+            <h3><a href="https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html" target="_blank">China&rsquo;s Moonshot unveils Kimi K3 &mdash; its biggest model yet</a></h3>
+            <p>The 2.8-trillion-parameter model tops Arena.ai&rsquo;s Frontend Code Arena with a 76% pairwise win rate, ahead of Anthropic&rsquo;s Claude Fable 5 and OpenAI&rsquo;s GPT-5.6 Sol on that benchmark.</p>
+            <div class="src">CNBC &middot; 17 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.axios.com/2026/07/18/china-ai-open-source-kimi-anthropic-openai">
+          <div class="n">9</div>
+          <div class="b">
+            <h3><a href="https://www.axios.com/2026/07/18/china-ai-open-source-kimi-anthropic-openai" target="_blank">The AI race splits in two: China&rsquo;s open-weight insurgency</a></h3>
+            <p>Ten weeks after Anthropic&rsquo;s CEO put China 6&ndash;12 months behind, Moonshot shipped a rival model with open weights and lower prices &mdash; a different playbook to the closed US frontier labs.</p>
+            <div class="src">Axios &middot; 18 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html">
+          <div class="n">10</div>
+          <div class="b">
+            <h3><a href="https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html" target="_blank">Chinese models win US business as frontier prices surge</a></h3>
+            <p>US companies are increasingly testing Chinese open-weight models as OpenAI and Anthropic usage costs climb.</p>
+            <div class="src">CNBC &middot; 7 Jul</div>
           </div>
         </div>
       </div>
@@ -592,94 +681,80 @@
             <div class="src">Positive News &middot; 17 Jul</div>
           </div>
         </div>
+        <div class="row" data-url="https://www.gov.uk/government/news/every-baby-in-england-to-get-life-saving-genetic-test-from-birth">
+          <div class="n">4</div>
+          <div class="b">
+            <h3><a href="https://www.gov.uk/government/news/every-baby-in-england-to-get-life-saving-genetic-test-from-birth" target="_blank">Every baby in England to be screened for a rare genetic condition</a></h3>
+            <p>Newborn screening for spinal muscular atrophy (SMA) is being rolled out nationwide from October, giving babies the best chance of treatment before symptoms appear.</p>
+            <div class="src">GOV.UK &middot; 16 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.lta.org.uk/fan-zone/wimbledon-championships/news/henry-patten-and-harri-heliovaara-win-second-mens-doubles-title-at-wimbledon/">
+          <div class="n">5</div>
+          <div class="b">
+            <h3><a href="https://www.lta.org.uk/fan-zone/wimbledon-championships/news/henry-patten-and-harri-heliovaara-win-second-mens-doubles-title-at-wimbledon/" target="_blank">British pair make Wimbledon doubles history</a></h3>
+            <p>Henry Patten &amp; Harri Heliovaara won their second Wimbledon men&rsquo;s doubles title, making Patten the first British player to win it more than once in the Open Era.</p>
+            <div class="src">LTA &middot; 11 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://www.sharecast.com/news/international-economic/imf-lifts-uk-growth-forecast-for-2026-trims-global-projection--22957000.html">
+          <div class="n">6</div>
+          <div class="b">
+            <h3><a href="https://www.sharecast.com/news/international-economic/imf-lifts-uk-growth-forecast-for-2026-trims-global-projection--22957000.html" target="_blank">IMF upgrades UK&rsquo;s 2026 growth forecast</a></h3>
+            <p>The IMF lifted the UK&rsquo;s 2026 growth forecast to 1.0%, putting it third among G7 economies behind only the US and Canada.</p>
+            <div class="src">Sharecast &middot; 8 Jul</div>
+          </div>
+        </div>
       </div>
     </div>
 
   </section>
 
-  <section class="panel" id="tab-ai">
+  <section class="panel" id="tab-education">
 
-    <div class="sec" id="ai-news">
-      <div class="sec-h"><h2>Top 10 in AI</h2></div>
+    <div class="sec" id="school-updates">
+      <div class="sec-h"><h2>Updates</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html">
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/docs/newsletters/2025-26/Friday_10th_July_2026.pdf">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html" target="_blank">China&rsquo;s Moonshot unveils Kimi K3 &mdash; its biggest model yet</a></h3>
-            <p>The 2.8-trillion-parameter model tops Arena.ai&rsquo;s Frontend Code Arena with a 76% pairwise win rate, ahead of Anthropic&rsquo;s Claude Fable 5 and OpenAI&rsquo;s GPT-5.6 Sol on that benchmark.</p>
-            <div class="src">CNBC &middot; 17 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/docs/newsletters/2025-26/Friday_10th_July_2026.pdf" target="_blank">Latest newsletter: Friday 10 July 2026</a></h3>
+            <p>The most recent weekly newsletter is available to download as a PDF.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.axios.com/2026/07/18/china-ai-open-source-kimi-anthropic-openai">
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.axios.com/2026/07/18/china-ai-open-source-kimi-anthropic-openai" target="_blank">The AI race splits in two: China&rsquo;s open-weight insurgency</a></h3>
-            <p>Ten weeks after Anthropic&rsquo;s CEO put China 6&ndash;12 months behind, Moonshot shipped a rival model with open weights and lower prices &mdash; a different playbook to the closed US frontier labs.</p>
-            <div class="src">Axios &middot; 18 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">End of term: Wednesday 22 July, 1:45pm pick-up</a></h3>
+            <p>Summer 2 finishes with an early 1:45pm pick-up on the last day.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html">
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html" target="_blank">Chinese models win US business as frontier prices surge</a></h3>
-            <p>US companies are increasingly testing Chinese open-weight models as OpenAI and Anthropic usage costs climb.</p>
-            <div class="src">CNBC &middot; 7 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Autumn term starts Wednesday 2 September</a></h3>
+            <p>Children return on 2 September; Tuesday 1 September is an INSET day.</p>
           </div>
         </div>
-        <div class="row" data-url="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/">
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
           <div class="n">4</div>
           <div class="b">
-            <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank">Apple sues OpenAI over poached hardware staff</a></h3>
-            <p>Apple alleges OpenAI recruited former hardware employees and encouraged them to bring confidential designs, prototypes and supplier data.</p>
-            <div class="src">Tech Startups &middot; 17 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Autumn half term: Monday 19 &ndash; Friday 30 October</a></h3>
+            <p>A full two-week half term this year &mdash; worth planning ahead for.</p>
           </div>
         </div>
-        <div class="row" data-url="https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/07/17/ai-tech-brief-chinas-moonshot-ai/">
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/07/17/ai-tech-brief-chinas-moonshot-ai/" target="_blank">UK government lab finds universal jailbreaks in GPT-5.6&rsquo;s cyber safeguards</a></h3>
-            <p>The sharpest safety story of the week: testing after GPT-5.6&rsquo;s public release found its cybersecurity guardrails could be reliably bypassed.</p>
-            <div class="src">Washington Post &middot; 17 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Full 2026/27 term dates now published</a></h3>
+            <p>Spring term runs 5 January &ndash; 25 March 2027 (INSET 4 January); Summer term 12 April &ndash; 23 July 2027.</p>
           </div>
         </div>
-        <div class="row" data-url="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/">
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank">China flags a &lsquo;backdoor&rsquo; claim against Claude Code</a></h3>
-            <p>China&rsquo;s industry ministry warned Claude Code could send user location and identity to a remote server; Anthropic said the code exists to detect unauthorised &lsquo;distillation&rsquo; (copying a model by training on its outputs).</p>
-            <div class="src">Tech Startups &middot; 17 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/">
-          <div class="n">7</div>
-          <div class="b">
-            <h3><a href="https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/" target="_blank">Google delays Gemini 3.5 Pro by months</a></h3>
-            <p>Internal testing reportedly showed the flagship model falling short on coding and long-horizon reasoning, pushing back its broader release.</p>
-            <div class="src">Tech Startups &middot; 17 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.openaccessgovernment.org/key-takeaways-from-the-public-sector-ai-adoption-index-2026/204838/">
-          <div class="n">8</div>
-          <div class="b">
-            <h3><a href="https://www.openaccessgovernment.org/key-takeaways-from-the-public-sector-ai-adoption-index-2026/204838/" target="_blank">UK ranks sixth of ten on the Public Sector AI Adoption Index 2026</a></h3>
-            <p>Scoring 47/100 despite big strategic ambitions; fewer than two in five civil servants describe AI as empowering, and 88.9% of public sector workers say their organisation can&rsquo;t fully leverage it.</p>
-            <div class="src">Open Access Government</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.gov.uk/government/publications/ai-opportunities-action-plan-one-year-on/ai-opportunities-action-plan-one-year-on">
-          <div class="n">9</div>
-          <div class="b">
-            <h3><a href="https://www.gov.uk/government/publications/ai-opportunities-action-plan-one-year-on/ai-opportunities-action-plan-one-year-on" target="_blank">AI Opportunities Action Plan: five Growth Zones, &pound;28.2bn investment</a></h3>
-            <p>The government&rsquo;s progress report counts five designated AI Growth Zones across Great Britain, 15,000+ jobs and &pound;5m of targeted adoption funding per zone.</p>
-            <div class="src">GOV.UK</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.gov.uk/government/publications/ai-adoption-plan-financial-services/financial-services-ai-adoption-plan">
-          <div class="n">10</div>
-          <div class="b">
-            <h3><a href="https://www.gov.uk/government/publications/ai-adoption-plan-financial-services/financial-services-ai-adoption-plan" target="_blank">City leads UK AI adoption: ~75% of financial firms now use AI</a></h3>
-            <p>FCA and Bank of England survey data show finance far ahead of the wider economy &mdash; the government&rsquo;s new Financial Services AI Adoption Plan aims to push further.</p>
-            <div class="src">GOV.UK</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Subscribe to the school calendar</a></h3>
+            <p>Diary dates can be added straight to Google, Outlook or iPhone calendars via the school&rsquo;s feed.</p>
           </div>
         </div>
       </div>
@@ -762,6 +837,65 @@
             <h3><a href="https://www.exchangerates.org.uk/news/46542/2026-07-17-us-dollar-gains-on-consumer-confidence.html" target="_blank">US consumer confidence beat gives the dollar a lift</a></h3>
             <p>Stronger-than-expected US confidence data on Friday helped push GBP/USD back below 1.35 into the weekly close.</p>
             <div class="src">exchangerates.org.uk &middot; 17 Jul</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="panel" id="tab-career">
+
+    <div class="sec" id="career-openings">
+      <div class="sec-h"><h2>Roles</h2></div>
+      <div class="card">
+        <div class="row" data-url="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=1888492">
+          <div class="n">1</div>
+          <div class="b">
+            <h3><a href="https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=1888492" target="_blank">SEO Policy Adviser &mdash; AI Policy (AI Growth Zones), 4 posts</a></h3>
+            <div class="evm">
+              <div><b>Organisation:</b> Department for Science, Innovation &amp; Technology (DSIT)</div>
+              <div><b>Salary:</b> &pound;47,355 &ndash; &pound;52,090 (London)</div>
+              <div><b>Location:</b> Central London &mdash; within an hour&rsquo;s drive</div>
+              <div><b>Deadline:</b> <span class="dl">No closing date published in accessible sources &mdash; check the listing</span></div>
+            </div>
+            <p>Details of the role: shaping and delivering policy frameworks for the AI Growth Zones programme &mdash; the government&rsquo;s flagship AI infrastructure initiative &mdash; driving cross-government coordination and ensuring the zones deliver strategic outcomes. Policy, not coding. Civil Service pension with 28.97% employer contribution.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">2</div>
+          <div class="b">
+            <h3>AI adoption / change lead &mdash; local government</h3>
+            <div class="evm">
+              <div><b>Organisation:</b> Councils across London and Surrey (digital &amp; transformation teams)</div>
+              <div><b>Location:</b> Within an hour&rsquo;s drive</div>
+              <div><b>Deadline:</b> <span class="dl">Role-type to watch &mdash; openings appear on council career pages</span></div>
+            </div>
+            <p>Details of the role: helping council teams adopt AI tools safely &mdash; process mapping, training, vendor assessment and rollout. Strong fit for policy-plus-communication backgrounds.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">3</div>
+          <div class="b">
+            <h3>AI governance &amp; assurance roles &mdash; public bodies and regulators</h3>
+            <div class="evm">
+              <div><b>Organisation:</b> DSIT, regulators and arm&rsquo;s-length bodies (AISI listed no open roles this run)</div>
+              <div><b>Location:</b> Within an hour&rsquo;s drive</div>
+              <div><b>Deadline:</b> <span class="dl">Role-type to watch &mdash; check civilservicejobs weekly</span></div>
+            </div>
+            <p>Details of the role: assurance frameworks, risk registers and responsible-AI standards for public-sector AI deployments &mdash; non-technical, governance-first work.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="n">4</div>
+          <div class="b">
+            <h3>AI training &amp; enablement lead &mdash; public sector</h3>
+            <div class="evm">
+              <div><b>Organisation:</b> Government departments and NHS trusts building AI literacy programmes</div>
+              <div><b>Location:</b> Within an hour&rsquo;s drive</div>
+              <div><b>Deadline:</b> <span class="dl">Role-type to watch</span></div>
+            </div>
+            <p>Details of the role: designing and running AI upskilling for non-technical staff &mdash; a growing need given fewer than two in five civil servants currently find AI empowering.</p>
           </div>
         </div>
       </div>
