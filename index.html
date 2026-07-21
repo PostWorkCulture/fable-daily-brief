@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pete's Daily Brief &middot; Monday 20 July 2026</title>
+<title>Pete's Daily Brief &middot; Tuesday 21 July 2026</title>
 <style>
   :root{
     --bg:#f5f3ee; --card:#ffffff; --ink:#1c2024; --ink2:#5a626b; --ink3:#8a929b;
@@ -117,6 +117,11 @@
   }
 
   .bg-fx{position:fixed;inset:0;z-index:0;width:100vw;height:100vh;pointer-events:none;display:block}
+
+  /* Fact of the Day */
+  #guess-what .sec-h h2,#guess-what .row h3,#guess-what .row h3 a,#guess-what .b p{color:#c2185b}
+  #guess-what .card{border-color:#c2185b}
+  #guess-what .row[data-url]:hover{background:transparent}
 </style>
 <body>
 <canvas class="bg-fx" aria-hidden="true"></canvas>
@@ -215,7 +220,7 @@
 
   <header class="mast">
     <h1>Good morning, Pete</h1>
-    <div class="sub">Monday 20 July 2026</div>
+    <div class="sub">Tuesday 21 July 2026</div>
   </header>
 
   <nav class="tabs">
@@ -237,28 +242,31 @@
       <div class="card">
         <div class="pad wx">
           <div class="wx-now">
-            <svg class="wic"><use href="#i-psun"/></svg>
-            <div class="wx-t">24<sup>&deg;C</sup></div>
+            <svg class="wic"><use href="#i-sun"/></svg>
+            <div class="wx-t">28<sup>&deg;C</sup></div>
           </div>
-          <div class="wx-d"><b>Today: partly cloudy, 24&deg;C.</b> Hotter by Saturday; entropy always wins.</div>
+          <div class="wx-d"><b>Today: hot, 28&deg;C.</b> Rain by Sunday; entropy keeps its schedule.</div>
         </div>
-        <div class="wx-strip"><div class="wx-day today"><div class="d">Today</div><div class="dt">20 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">24&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">21 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Wed</div><div class="dt">22 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">23 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Fri</div><div class="dt">24 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Sat</div><div class="dt">25 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">27&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Sun</div><div class="dt">26 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">16&deg;</div></div></div>
+        <div class="wx-strip"><div class="wx-day today"><div class="d">Today</div><div class="dt">21 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">28&deg;</div><div class="lo">13&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">22 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">23 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Fri</div><div class="dt">24 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">30&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Sat</div><div class="dt">25 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">29&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Sun</div><div class="dt">26 Jul</div><svg class="wic"><use href="#i-storm"/></svg><div class="t">23&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Mon</div><div class="dt">27 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">27&deg;</div><div class="lo">12&deg;</div></div></div>
+      </div>
+    </div>
+
+    <div class="sec" id="guess-what">
+      <div class="sec-h"><h2>Fact of the Day</h2></div>
+      <div class="card">
+        <div class="row" data-url="https://www.worldatlas.com/articles/which-countries-are-situated-in-all-four-hemispheres.html">
+          <div class="b">
+            <h3><a href="https://www.worldatlas.com/articles/which-countries-are-situated-in-all-four-hemispheres.html" target="_blank">One tiny Pacific nation sits in all four hemispheres at once</a></h3>
+            <p>Kiribati&rsquo;s 33 atolls are scattered so widely across the equator and the International Date Line that its home territory touches the northern, southern, eastern and western hemispheres simultaneously &mdash; the only sovereign country whose own islands manage that (a few nations&rsquo; overseas territories can also claim it).</p>
+            <div class="src">WorldAtlas &middot; verified 21 Jul</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="sec" id="calendar">
       <div class="sec-h"><h2>Coming up this week</h2></div>
       <div class="card">
-        <div class="row">
-          <div class="n">Mon</div>
-          <div class="b">
-            <h3 style="color:#fbd75b">Kate</h3>
-            <div class="evm">
-              <div><b>When:</b> Today, Mon 20 Jul</div>
-              <div><b>Time:</b> All day</div>
-            </div>
-          </div>
-        </div>
         <div class="row">
           <div class="n">Mon</div>
           <div class="b">
@@ -300,7 +308,7 @@
           <div class="b">
             <h3 style="color:#7ae7bf">Patrick</h3>
             <div class="evm">
-              <div><b>When:</b> Fri 31 Jul &ndash; Sun 2 Aug</div>
+              <div><b>When:</b> Fri 31 Jul &ndash; Mon 3 Aug</div>
               <div><b>Time:</b> All day</div>
             </div>
           </div>
@@ -323,21 +331,7 @@
       </div>
     </div>
 
-    <div class="sec" id="guess-what">
-      <div class="sec-h"><h2>Guess what?</h2></div>
-      <div class="card">
-        <div class="row" data-url="https://en.wikipedia.org/wiki/.tv">
-          <div class="n">?</div>
-          <div class="b">
-            <h3><a href="https://en.wikipedia.org/wiki/.tv" target="_blank">Tuvalu earns a slice of its national income from two letters</a></h3>
-            <p>The Pacific nation of about 11,000 people licenses its internet country code &mdash; .tv &mdash; to television and streaming sites worldwide. By 2019 the royalties made up 8.4% of government revenue, roughly a twelfth of gross national income.</p>
-            <div class="src">Wikipedia &middot; verified 20 Jul</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
+      </section>
 
   <section class="panel" id="tab-tv">
     <div class="sec" id="tv">
@@ -399,12 +393,12 @@
             <div class="src">Chalkbeat &middot; 14 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html">
+        <div class="row" data-url="https://techcrunch.com/2026/07/09/anthropics-new-claude-feature-is-quietly-selling-you-on-ai/">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html" target="_blank">Export controls lifted on Claude Fable 5 &amp; Mythos 5</a></h3>
-            <p>Washington cleared Anthropic&rsquo;s newest frontier models for global availability, ending a month of restricted access outside the US.</p>
-            <div class="src">CNBC &middot; 30 Jun</div>
+            <h3><a href="https://techcrunch.com/2026/07/09/anthropics-new-claude-feature-is-quietly-selling-you-on-ai/" target="_blank">Claude Sonnet 5 becomes the default model worldwide</a></h3>
+            <p>Anthropic&rsquo;s most agentic Sonnet yet is now the default for every Free and Pro user, performing close to flagship Opus 4.8 on many tasks, with introductory pricing through 31 August.</p>
+            <div class="src">TechCrunch &middot; 9 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.axios.com/2026/07/09/ai-openai-gpt-release">
@@ -423,20 +417,20 @@
             <div class="src">Bloomberg &middot; 14 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/">
+        <div class="row" data-url="https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/" target="_blank">Google&rsquo;s Gemini 3.5 Pro slips as DeepMind loses stars</a></h3>
-            <p>The rebuilt flagship was pushed to mid-July while four senior DeepMind researchers left for rivals &mdash; roughly $225bn came off Alphabet&rsquo;s market value in the fallout.</p>
-            <div class="src">The Agent Report &middot; Jul</div>
+            <h3><a href="https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/" target="_blank">Google races to fix a Gemini delay with a new chip</a></h3>
+            <p>Alphabet shares wobbled on reports that Gemini 3.5 Pro is running months behind schedule, even as Google reveals &lsquo;Frozen v2&rsquo; &mdash; a server chip aiming for 6-10x the efficiency of its current AI silicon.</p>
+            <div class="src">TechCrunch &middot; 20 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.axios.com/2026/07/08/spacexai-grok-new-model">
+        <div class="row" data-url="https://dataconomy.com/2026/07/20/musk-xai-grok-4-6-2t-model-training-next-week/">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://www.axios.com/2026/07/08/spacexai-grok-new-model" target="_blank">xAI ships Grok 4.5</a></h3>
-            <p>Musk&rsquo;s first model release since SpaceXAI went public and bought Cursor: an Opus-class model pitched as faster, cheaper and stronger on agentic coding benchmarks.</p>
-            <div class="src">Axios &middot; 8 Jul</div>
+            <h3><a href="https://dataconomy.com/2026/07/20/musk-xai-grok-4-6-2t-model-training-next-week/" target="_blank">Musk teases a 2-trillion-parameter Grok 4.6</a></h3>
+            <p>xAI says the new model finishes training next week and is aimed squarely at beating Moonshot&rsquo;s Kimi K3; xAI has also open-sourced its Grok Build coding agent this week.</p>
+            <div class="src">Dataconomy &middot; 20 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.publictechnology.net/2026/07/09/education-and-skills/government-seeks-ai-innovation-leader/">
@@ -452,23 +446,23 @@
           <div class="b">
             <h3><a href="https://institute.global/insights/politics-and-governance/governing-in-the-age-of-ai-reimagining-local-government" target="_blank">Kingston trials AI note-taking for social workers</a></h3>
             <p>Kingston Council is piloting Beam&rsquo;s &lsquo;Magic Notes&rsquo; tool, cutting social-work admin time by around 63% with a human-in-the-loop checking every record.</p>
-            <div class="src">Tony Blair Institute &middot; verified 20 Jul</div>
+            <div class="src">Tony Blair Institute &middot; verified 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.tokencnn.com/blog/chinese-ai-models-2026-landscape">
+        <div class="row" data-url="https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/">
           <div class="n">9</div>
           <div class="b">
-            <h3><a href="https://www.tokencnn.com/blog/chinese-ai-models-2026-landscape" target="_blank">DeepSeek V4 goes official</a></h3>
-            <p>China&rsquo;s open-source champion moved its V4 series (284bn-parameter Flash and 1.6tn-parameter Pro, both MIT-licensed with 1m-token context) from preview to full release this month.</p>
-            <div class="src">AI Nexus &middot; Jul</div>
+            <h3><a href="https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/" target="_blank">Alibaba previews a 2.4-trillion-parameter Qwen3.8-Max</a></h3>
+            <p>The preview lands days after Moonshot&rsquo;s Kimi K3 &mdash; now the largest open-weight model in the world &mdash; as China&rsquo;s labs keep closing the gap with the US frontier.</p>
+            <div class="src">MarkTechPost &middot; 19 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://en.wikipedia.org/wiki/DeepSeek">
+        <div class="row" data-url="https://cybernews.com/ai-news/deepseek-and-alibaba-launch-fresh-assaults-on-frontier-ai/">
           <div class="n">10</div>
           <div class="b">
-            <h3><a href="https://en.wikipedia.org/wiki/DeepSeek" target="_blank">DeepSeek prepares an IPO</a></h3>
-            <p>Bloomberg and the FT report the Chinese lab has begun preparations to list publicly as soon as 2027 &mdash; a first for China&rsquo;s frontier-model firms.</p>
-            <div class="src">Bloomberg/FT via Wikipedia &middot; Jul</div>
+            <h3><a href="https://cybernews.com/ai-news/deepseek-and-alibaba-launch-fresh-assaults-on-frontier-ai/" target="_blank">DeepSeek V4 moves to general availability</a></h3>
+            <p>V4 went from preview to GA on 19 Jul with dynamic pricing &mdash; its Pro tier runs around 87 cents per million tokens off-peak, against roughly $50 for the same volume from Anthropic&rsquo;s Fable 5.</p>
+            <div class="src">Cybernews &middot; 19 Jul</div>
           </div>
         </div>
       </div>
@@ -611,15 +605,15 @@
             </div>
           </div>
         </div>
-        <div class="row" data-url="https://kingstonuponthames.info/discover/things-to-do/kingston-escape-rooms">
+        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://kingstonuponthames.info/discover/things-to-do/kingston-escape-rooms" target="_blank">Crack an escape room</a></h3>
+            <h3><a href="https://www.hrp.org.uk/hampton-court-palace/whats-on/" target="_blank">Quiet Sessions in The Magic Garden</a></h3>
             <div class="evm">
-              <div><b>Where:</b> The Rotunda, Kingston</div>
-              <div><b>When:</b> Open daily</div>
-              <div><b>Time:</b> Book a room online</div>
-              <div><b>Ages:</b> Code-breaking best suits the 12- and 13-year-old</div>
+              <div><b>Where:</b> Hampton Court Palace</div>
+              <div><b>When:</b> Tue 28 Jul &amp; Sun 2 Aug</div>
+              <div><b>Time:</b> Included with palace admission &mdash; pre-book recommended</div>
+              <div><b>Ages:</b> Calmer sessions for neurodivergent and learning-disabled children</div>
             </div>
           </div>
         </div>
@@ -655,32 +649,8 @@
     <div class="sec" id="uk-headlines">
       <div class="sec-h"><h2>UK Headlines</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026">
-          <div class="n">1</div>
-          <div class="b">
-            <h3><a href="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026" target="_blank">England&rsquo;s largest-ever wildlife investment announced</a></h3>
-            <p>More than 350 threatened species &mdash; including the swallowtail butterfly and white-clawed crayfish &mdash; are set to benefit from the record funding package.</p>
-            <div class="src">Good Good Good &middot; 18 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026">
-          <div class="n">2</div>
-          <div class="b">
-            <h3><a href="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026" target="_blank">Renewables hit a record 53.1% of UK electricity</a></h3>
-            <p>Wind led the way as renewables supplied more than half of Britain&rsquo;s power in the first quarter &mdash; up 7.4% on the same period last year.</p>
-            <div class="src">Good Good Good &middot; 18 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026">
-          <div class="n">3</div>
-          <div class="b">
-            <h3><a href="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026" target="_blank">Orkney&rsquo;s wildlife rebounds as stoat project pays off</a></h3>
-            <p>Ecologists report the most Orkney voles since 2019, with hen harriers and short-eared owls recovering too.</p>
-            <div class="src">Good Good Good &middot; 18 Jul</div>
-          </div>
-        </div>
         <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-29-of-2026/">
-          <div class="n">4</div>
+          <div class="n">1</div>
           <div class="b">
             <h3><a href="https://www.positive.news/society/good-news-stories-from-week-29-of-2026/" target="_blank">UK finally ratifies the high seas treaty</a></h3>
             <p>Britain joined 90+ countries formally adopting the global ocean treaty &mdash; called &lsquo;a major step forward for ocean protection&rsquo;.</p>
@@ -688,19 +658,27 @@
           </div>
         </div>
         <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-29-of-2026/">
-          <div class="n">5</div>
+          <div class="n">2</div>
           <div class="b">
             <h3><a href="https://www.positive.news/society/good-news-stories-from-week-29-of-2026/" target="_blank">Teen social-media trial boosts sleep and focus</a></h3>
             <p>A UK government trial across 309 households found every screen-limit group reported better sleep, mood, concentration and family time.</p>
             <div class="src">Positive News &middot; 17 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.theportugalnews.com/news/2026-07-18/inventor-of-malaria-vaccine-wins-top-honour/1055721">
-          <div class="n">6</div>
+        <div class="row" data-url="https://www.harwell-ic.co.uk/2026/07/14/his-majesty-the-king-officially-opens-the-uk-space-and-defence-gateway-at-harwell-science-and-innovation-campus/">
+          <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.theportugalnews.com/news/2026-07-18/inventor-of-malaria-vaccine-wins-top-honour/1055721" target="_blank">Oxford&rsquo;s malaria vaccine pioneer wins European Inventor Award</a></h3>
-            <p>Sir Adrian Hill&rsquo;s team developed the &pound;2.50-a-dose R21/Matrix-M vaccine now rolled out in about 20 countries.</p>
-            <div class="src">The Portugal News &middot; 18 Jul</div>
+            <h3><a href="https://www.harwell-ic.co.uk/2026/07/14/his-majesty-the-king-officially-opens-the-uk-space-and-defence-gateway-at-harwell-science-and-innovation-campus/" target="_blank">The King opens a new UK Space and Defence Gateway</a></h3>
+            <p>A co-working hub at Harwell Science and Innovation Campus aims to help UK space and defence start-ups collaborate with agencies, academia and industry, and scale up.</p>
+            <div class="src">Harwell Campus &middot; 14 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://pressat.co.uk/releases/94-of-young-people-felt-heard-through-library-co-creation-programme-report-finds-5e957c24bd719979714918003896ebc0/">
+          <div class="n">4</div>
+          <div class="b">
+            <h3><a href="https://pressat.co.uk/releases/94-of-young-people-felt-heard-through-library-co-creation-programme-report-finds-5e957c24bd719979714918003896ebc0/" target="_blank">94% of young people felt heard in library co-creation scheme</a></h3>
+            <p>Libraries Rising brought 236 young people together with 20 library services across England to shape services as equal partners &mdash; most said they now feel more welcome and would visit more often.</p>
+            <div class="src">Libraries Rising &middot; 15 Jul</div>
           </div>
         </div>
       </div>
@@ -714,9 +692,9 @@
         <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Term ends this Wednesday &mdash; early pick-up</a></h3>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Term ends tomorrow &mdash; early pick-up</a></h3>
             <p>Summer 2 finishes on Wednesday 22 July with a 1:45pm pick-up, per the school diary.</p>
-            <div class="src">School diary &middot; verified 20 Jul</div>
+            <div class="src">School diary &middot; verified 21 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
@@ -724,15 +702,15 @@
           <div class="b">
             <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Summer holidays start Thursday</a></h3>
             <p>With term closing 22 July, the summer break runs from Thursday 23 July.</p>
-            <div class="src">School diary &middot; verified 20 Jul</div>
+            <div class="src">School diary &middot; verified 21 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Autumn term dates &mdash; check the Term Dates page</a></h3>
-            <p>Next year&rsquo;s term dates weren&rsquo;t reachable on the site this morning; the Term Dates page is the place to confirm the September start.</p>
-            <div class="src">School site &middot; checked 20 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Autumn term starts Wednesday 2 September</a></h3>
+            <p>An INSET day falls on Tuesday 1 September, then the Autumn Term runs 2 September to 18 December, with half term 19&ndash;30 October.</p>
+            <div class="src">School Term Dates page &middot; verified 21 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
@@ -740,15 +718,15 @@
           <div class="b">
             <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Subscribe to the school calendar feed</a></h3>
             <p>The diary page offers an iCal feed you can add to Google Calendar or Outlook so INSET days and events land automatically.</p>
-            <div class="src">School diary &middot; verified 20 Jul</div>
+            <div class="src">School diary &middot; verified 21 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://orchard.surrey.sch.uk/News/Newsletters/">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://orchard.surrey.sch.uk/News/Newsletters/" target="_blank">End-of-year newsletter</a></h3>
-            <p>The latest newsletters are published on the school&rsquo;s Newsletters page &mdash; worth a look before the holidays for any end-of-term notices.</p>
-            <div class="src">School site &middot; checked 20 Jul</div>
+            <h3><a href="https://orchard.surrey.sch.uk/News/Newsletters/" target="_blank">Latest newsletter published Friday 10 July</a></h3>
+            <p>The most recent newsletter on the school&rsquo;s Newsletters page is dated Friday 10th July &mdash; worth a look before the holidays for any end-of-term notices.</p>
+            <div class="src">School site &middot; checked 21 Jul</div>
           </div>
         </div>
       </div>
@@ -759,75 +737,75 @@
     <div class="sec">
       <div class="card">
         <div class="prose">
-          <p>The pound starts the week above $1.35, propped up by sticky UK services inflation, a cautious Bank of England and a US dollar still capped by June&rsquo;s soft +57k payrolls print. It&rsquo;s a quiet Monday before the fireworks: UK jobs numbers Tuesday, then June CPI on Wednesday &mdash; the single biggest input into BoE rate pricing. A hot services-inflation reading would send cable toward 1.3650&ndash;1.37; a miss drags it back into the low-1.33s. Next week&rsquo;s Fed (29&ndash;30 Jul) and BoE (30 Jul) double-header then sets the tone for August.</p>
+          <p>GBP/USD is trading around 1.3430, having steadied after three straight days of losses that followed Andy Burnham&rsquo;s appointment as Prime Minister. Today&rsquo;s UK jobs data &mdash; unemployment held at 4.9%, better than the 5.0% expected &mdash; gave sterling a small lift but hasn&rsquo;t shifted the bigger picture: the pair remains capped by resistance at 1.3550 and boxed in while the Bank of England (decision 30 July) and the Federal Reserve (on hold at 3.50&ndash;3.75%, no meeting this week) both stay cautious. Middle East tensions and firm oil prices are the wildcard keeping the US dollar bid as a safe haven.</p>
         </div>
       </div>
     </div>
     <div class="sec" id="gu-drivers">
       <div class="sec-h"><h2>What&rsquo;s up with GU?</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios">
+        <div class="row" data-url="https://www.fxstreet.com/news/british-pound-struggles-as-traders-evaluate-boe-policy-uk-political-developments-202607210147">
           <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios" target="_blank">UK jobs data lands Tuesday</a></h3>
-            <p>The labour-market release on 21 July covers payrolls, wages and unemployment &mdash; the first of two big UK inputs into BoE pricing this week.</p>
-            <div class="src">EBC Financial Group &middot; Jul</div>
+            <h3><a href="https://www.fxstreet.com/news/british-pound-struggles-as-traders-evaluate-boe-policy-uk-political-developments-202607210147" target="_blank">New PM Andy Burnham reassures markets on fiscal rules</a></h3>
+            <p>Britain&rsquo;s seventh PM in a decade says he&rsquo;ll stick to the fiscal rules set by outgoing chancellor Rachel Reeves, while hinting at a personal-allowance rise; Shabana Mahmood is the frontrunner for chancellor.</p>
+            <div class="src">FXStreet &middot; 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios">
+        <div class="row" data-url="https://www.fxstreet.com/news/british-pound-attracts-bids-after-uk-employment-data-release-202607210622">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios" target="_blank">June CPI on Wednesday is the week&rsquo;s main event</a></h3>
-            <p>The 22 July inflation print is the single biggest input for Bank of England pricing; sticky services inflation would push GBP/USD toward 1.3650.</p>
-            <div class="src">EBC Financial Group &middot; Jul</div>
+            <h3><a href="https://www.fxstreet.com/news/british-pound-attracts-bids-after-uk-employment-data-release-202607210622" target="_blank">UK unemployment holds at 4.9%, beating forecasts</a></h3>
+            <p>The ILO unemployment rate for the three months to May came in at 4.9% versus 5.0% expected &mdash; the first big UK data test since the leadership change.</p>
+            <div class="src">FXStreet &middot; 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios">
+        <div class="row" data-url="https://www.fxstreet.com/news/pound-sterling-price-news-forecast-gbp-usd-could-further-depreciate-after-surging-toward-two-month-highs-202607210423">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios" target="_blank">BoE decision and Monetary Policy Report on 30 July</a></h3>
-            <p>The month closes with a fresh MPR &mdash; the market wants to know whether the Bank leans toward price risk or growth concern.</p>
-            <div class="src">EBC Financial Group &middot; Jul</div>
+            <h3><a href="https://www.fxstreet.com/news/pound-sterling-price-news-forecast-gbp-usd-could-further-depreciate-after-surging-toward-two-month-highs-202607210423" target="_blank">BoE&rsquo;s 30 July decision is &lsquo;finely balanced&rsquo;</a></h3>
+            <p>With inflation stickiness and labour-market strength pulling in different directions, traders are split on whether the Bank holds or leans toward easing.</p>
+            <div class="src">FXStreet &middot; 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios">
+        <div class="row" data-url="https://www.fxstreet.com/news/pound-sterling-price-news-forecast-gbp-usd-could-further-depreciate-after-surging-toward-two-month-highs-202607210423">
           <div class="n">4</div>
           <div class="b">
-            <h3><a href="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios" target="_blank">Fed decides 29&ndash;30 July</a></h3>
-            <p>A double-header with the BoE: energy-driven inflation keeps a hike on the table while slowing hiring keeps a cut in the conversation.</p>
-            <div class="src">EBC Financial Group &middot; Jul</div>
+            <h3><a href="https://www.fxstreet.com/news/pound-sterling-price-news-forecast-gbp-usd-could-further-depreciate-after-surging-toward-two-month-highs-202607210423" target="_blank">Fed on hold at 3.50&ndash;3.75%, no meeting this week</a></h3>
+            <p>With the Fed sidelined until its next meeting, UK data &mdash; not US &mdash; is doing most of the work moving the pair this week.</p>
+            <div class="src">FXStreet &middot; 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios">
+        <div class="row" data-url="https://www.fxstreet.com/news/wti-declines-toward-8200-as-traders-digest-us-iran-developments-202607210525">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios" target="_blank">Soft US payrolls still capping the dollar</a></h3>
-            <p>June&rsquo;s +57k payrolls print with unemployment at 4.2% knocked the dollar back and let sterling rally &mdash; the effect is still in the price.</p>
-            <div class="src">EBC Financial Group &middot; Jul</div>
+            <h3><a href="https://www.fxstreet.com/news/wti-declines-toward-8200-as-traders-digest-us-iran-developments-202607210525" target="_blank">US-Iran tensions keep oil &mdash; and inflation risk &mdash; elevated</a></h3>
+            <p>WTI crude is up around 21% this month on Middle East jitters, a fresh source of inflation risk that complicates the BoE&rsquo;s and Fed&rsquo;s rate calculus alike.</p>
+            <div class="src">FXStreet &middot; 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.dailyforex.com/forex-technical-analysis/2026/07/gbpusd-analysis-16-july-2026/247674">
+        <div class="row" data-url="https://www.fxstreet.com/news/gold-rises-cautiously-as-fed-hike-bets-us-iran-tensions-and-bullish-usd-cap-gains-202607210346">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://www.dailyforex.com/forex-technical-analysis/2026/07/gbpusd-analysis-16-july-2026/247674" target="_blank">Cable holding above 1.35</a></h3>
-            <p>DailyForex&rsquo;s technical read has GBP/USD building strength above 1.3500, with 1.3550 the trigger for a cleaner run at 1.3650.</p>
-            <div class="src">DailyForex &middot; 16 Jul</div>
+            <h3><a href="https://www.fxstreet.com/news/gold-rises-cautiously-as-fed-hike-bets-us-iran-tensions-and-bullish-usd-cap-gains-202607210346" target="_blank">Gold builds on strength above $4,050</a></h3>
+            <p>Safe-haven demand and Fed rate-cut bets are lifting gold for a third straight day &mdash; a reminder that risk appetite, not just rate differentials, is steering the dollar side of the pair.</p>
+            <div class="src">FXStreet &middot; 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.forex.com/en-us/news-and-analysis/british-pound-short-term-outlook-gbp-usd-breakout-attempts-major-trend-reversal-7-15-2026/">
+        <div class="row" data-url="https://www.fxstreet.com/news/british-pound-sterling-greets-a-new-prime-minister-with-a-three-day-slide-202607202344">
           <div class="n">7</div>
           <div class="b">
-            <h3><a href="https://www.forex.com/en-us/news-and-analysis/british-pound-short-term-outlook-gbp-usd-breakout-attempts-major-trend-reversal-7-15-2026/" target="_blank">Breakout attempt flags a possible trend reversal</a></h3>
-            <p>Forex.com&rsquo;s short-term outlook frames the current move as an attempted major trend reversal for the pair.</p>
-            <div class="src">Forex.com &middot; 15 Jul</div>
+            <h3><a href="https://www.fxstreet.com/news/british-pound-sterling-greets-a-new-prime-minister-with-a-three-day-slide-202607202344" target="_blank">1.3550 has hardened into a wall of resistance</a></h3>
+            <p>The level capped the pair in mid-June, repelled last week&rsquo;s push higher, and now marks the floor of a resistance zone running up to 1.3650.</p>
+            <div class="src">FXStreet &middot; 20 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios">
+        <div class="row" data-url="https://www.fxstreet.com/analysis/us-dollar-mid-year-outlook-exceptional-currency-exceptional-risks-202607201201">
           <div class="n">8</div>
           <div class="b">
-            <h3><a href="https://www.ebc.com/forex/gbp-usd-july-2026-outlook-three-price-scenarios" target="_blank">Downside marker: 1.3165</a></h3>
-            <p>A break below the June low would swing focus to 1.30&ndash;1.31; holding above 1.32 keeps the summer range intact.</p>
-            <div class="src">EBC Financial Group &middot; Jul</div>
+            <h3><a href="https://www.fxstreet.com/analysis/us-dollar-mid-year-outlook-exceptional-currency-exceptional-risks-202607201201" target="_blank">Dollar&rsquo;s mid-year outlook: exceptional currency, exceptional risks</a></h3>
+            <p>Persistent US inflation, shifting Fed rate-cut expectations and geopolitical tension have the dollar entering H2 stronger than a year ago &mdash; capping sterling&rsquo;s upside.</p>
+            <div class="src">FXStreet &middot; 20 Jul</div>
           </div>
         </div>
       </div>
@@ -899,7 +877,7 @@
   </section>
 
   <footer class="foot">
-    Compiled Monday 20 July 2026 &middot; Weather via WillyWeather (Met Office data); Sat 25 &amp; Sun 26 Jul blended from the Met Office outlook &middot; Markets via EBC, DailyForex &amp; Forex.com<br>
+    Compiled Tuesday 21 July 2026 &middot; Weather via TheWeatherOutlook (GFS model data) &middot; Markets via FXStreet<br>
     <b>Tap any news or event card to open the source.</b>
   </footer>
 

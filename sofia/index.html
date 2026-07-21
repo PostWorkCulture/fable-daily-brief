@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sofia's Daily Brief &middot; Monday 20 July 2026</title>
+<title>Sofia's Daily Brief &middot; Tuesday 21 July 2026</title>
 <style>
   :root{
     --bg:#f5f3ee; --card:#ffffff; --ink:#1c2024; --ink2:#5a626b; --ink3:#8a929b;
@@ -102,6 +102,11 @@
     .bm .when{display:none}
   }
   .bg-fx{position:fixed;inset:0;z-index:0;width:100vw;height:100vh;pointer-events:none;display:block}
+
+  /* Fact of the Day */
+  #guess-what .sec-h h2,#guess-what .row h3,#guess-what .row h3 a,#guess-what .b p{color:#c2185b}
+  #guess-what .card{border-color:#c2185b}
+  #guess-what .row[data-url]:hover{background:transparent}
 </style>
 <body>
 <canvas class="bg-fx" aria-hidden="true"></canvas>
@@ -200,19 +205,19 @@
 
   <header class="mast">
     <h1>Good morning, Sofia</h1>
-    <div class="sub">Monday 20 July 2026</div>
+    <div class="sub">Tuesday 21 July 2026</div>
   </header>
 
   <nav class="tabs">
     <button class="tab on" data-tab="brief">Brief</button>
     <button class="tab" data-tab="sweden">Sweden</button>
-    <button class="tab" data-tab="education">School</button>
+    <button class="tab" data-tab="tv">TV</button>
     <button class="tab" data-tab="local-news">Local News</button>
     <button class="tab" data-tab="local-events">Local Events</button>
     <button class="tab" data-tab="uk-news">UK News</button>
     <button class="tab" data-tab="ai">AI</button>
     <button class="tab" data-tab="career">Career</button>
-    <button class="tab" data-tab="tv">TV</button>
+    <button class="tab" data-tab="education">School</button>
   </nav>
 
   <section class="panel on" id="tab-brief">
@@ -222,28 +227,31 @@
       <div class="card">
         <div class="pad wx">
           <div class="wx-now">
-            <svg class="wic"><use href="#i-psun"/></svg>
-            <div class="wx-t">24<sup>&deg;C</sup></div>
+            <svg class="wic"><use href="#i-sun"/></svg>
+            <div class="wx-t">28<sup>&deg;C</sup></div>
           </div>
-          <div class="wx-d"><b>Today: partly cloudy, 24&deg;C.</b> Hotter by Saturday; entropy always wins.</div>
+          <div class="wx-d"><b>Today: hot, 28&deg;C.</b> Rain by Sunday; entropy keeps its schedule.</div>
         </div>
-        <div class="wx-strip"><div class="wx-day today"><div class="d">Today</div><div class="dt">20 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">24&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">21 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Wed</div><div class="dt">22 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">23 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Fri</div><div class="dt">24 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Sat</div><div class="dt">25 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">27&deg;</div><div class="lo">17&deg;</div></div><div class="wx-day"><div class="d">Sun</div><div class="dt">26 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">16&deg;</div></div></div>
+        <div class="wx-strip"><div class="wx-day today"><div class="d">Today</div><div class="dt">21 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">28&deg;</div><div class="lo">13&deg;</div></div><div class="wx-day"><div class="d">Tomorrow</div><div class="dt">22 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">26&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Thu</div><div class="dt">23 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">25&deg;</div><div class="lo">16&deg;</div></div><div class="wx-day"><div class="d">Fri</div><div class="dt">24 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">30&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Sat</div><div class="dt">25 Jul</div><svg class="wic"><use href="#i-psun"/></svg><div class="t">29&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Sun</div><div class="dt">26 Jul</div><svg class="wic"><use href="#i-storm"/></svg><div class="t">23&deg;</div><div class="lo">15&deg;</div></div><div class="wx-day"><div class="d">Mon</div><div class="dt">27 Jul</div><svg class="wic"><use href="#i-sun"/></svg><div class="t">27&deg;</div><div class="lo">12&deg;</div></div></div>
+      </div>
+    </div>
+
+    <div class="sec" id="guess-what">
+      <div class="sec-h"><h2>Fact of the Day</h2></div>
+      <div class="card">
+        <div class="row" data-url="https://www.worldatlas.com/articles/which-countries-are-situated-in-all-four-hemispheres.html">
+          <div class="b">
+            <h3><a href="https://www.worldatlas.com/articles/which-countries-are-situated-in-all-four-hemispheres.html" target="_blank">One tiny Pacific nation sits in all four hemispheres at once</a></h3>
+            <p>Kiribati&rsquo;s 33 atolls are scattered so widely across the equator and the International Date Line that its home territory touches the northern, southern, eastern and western hemispheres simultaneously &mdash; the only sovereign country whose own islands manage that (a few nations&rsquo; overseas territories can also claim it).</p>
+            <div class="src">WorldAtlas &middot; verified 21 Jul</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="sec" id="calendar">
       <div class="sec-h"><h2>Coming up this week</h2></div>
       <div class="card">
-        <div class="row">
-          <div class="n">Mon</div>
-          <div class="b">
-            <h3 style="color:#fbd75b">Kate</h3>
-            <div class="evm">
-              <div><b>When:</b> Today, Mon 20 Jul</div>
-              <div><b>Time:</b> All day</div>
-            </div>
-          </div>
-        </div>
         <div class="row">
           <div class="n">Mon</div>
           <div class="b">
@@ -285,7 +293,7 @@
           <div class="b">
             <h3 style="color:#7ae7bf">Patrick</h3>
             <div class="evm">
-              <div><b>When:</b> Fri 31 Jul &ndash; Sun 2 Aug</div>
+              <div><b>When:</b> Fri 31 Jul &ndash; Mon 3 Aug</div>
               <div><b>Time:</b> All day</div>
             </div>
           </div>
@@ -308,21 +316,7 @@
       </div>
     </div>
 
-    <div class="sec" id="guess-what">
-      <div class="sec-h"><h2>Guess what?</h2></div>
-      <div class="card">
-        <div class="row" data-url="https://en.wikipedia.org/wiki/.tv">
-          <div class="n">?</div>
-          <div class="b">
-            <h3><a href="https://en.wikipedia.org/wiki/.tv" target="_blank">Tuvalu earns a slice of its national income from two letters</a></h3>
-            <p>The Pacific nation of about 11,000 people licenses its internet country code &mdash; .tv &mdash; to television and streaming sites worldwide. By 2019 the royalties made up 8.4% of government revenue, roughly a twelfth of gross national income.</p>
-            <div class="src">Wikipedia &middot; verified 20 Jul</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
+      </section>
 
   <section class="panel" id="tab-sweden">
     <div class="sec" id="sweden-local">
@@ -336,12 +330,12 @@
             <div class="src">Str&ouml;mstads Tidning &middot; 20 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/har-ar-veckans-nojen-i-stromstad-tanum-vecka-30-.f5c0c12a-b041-4e39-88f2-490541108595">
+        <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/har-ar-veckans-nojen-i-stromstad-och-tanum-vecka-30-.f5c0c12a-b041-4e39-88f2-490541108595">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/har-ar-veckans-nojen-i-stromstad-tanum-vecka-30-.f5c0c12a-b041-4e39-88f2-490541108595" target="_blank">What&rsquo;s on in Str&ouml;mstad &amp; Tanum this week</a></h3>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/har-ar-veckans-nojen-i-stromstad-och-tanum-vecka-30-.f5c0c12a-b041-4e39-88f2-490541108595" target="_blank">What&rsquo;s on in Str&ouml;mstad &amp; Tanum this week</a></h3>
             <p>The week-30 guide (20&ndash;26 July) rounds up summer activities across Str&ouml;mstad and Tanum, from markets to music.</p>
-            <div class="src">Str&ouml;mstads Tidning &middot; 19 Jul</div>
+            <div class="src">Str&ouml;mstads Tidning &middot; 20 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/efter-20-ars-jobb-har-ar-nya-naturreservatet-i-stromstad-.15ec51a3-583c-4053-85f1-f39074e61dc2">
@@ -355,7 +349,7 @@
         <div class="row" data-url="https://www.stromstadstidning.se/nyheter/stromstad/eldningsforbud-i-stromstad-och-tanum.c5dc6508-101c-4545-b711-de3c1e91699f">
           <div class="n">4</div>
           <div class="b">
-            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/eldningsforbud-i-stromstad-och-tanum.c5dc6508-101c-4545-b711-de3c1e91699f" target="_blank">Fire ban in force across Str&ouml;mstad and Tanum</a></h3>
+            <h3><a href="https://www.stromstadstidning.se/nyheter/stromstad/eldningsforbud-i-stromstad-och-tanum.c5dc6508-101c-4545-b711-de3c1e91699f" target="_blank">Fire ban still in force across Str&ouml;mstad and Tanum</a></h3>
             <p>With the hot, dry spell continuing, an eldningsf&ouml;rbud (open-fire ban) has applied since midday on 14 July &mdash; the fire chief asks everyone to think twice about where the grill goes.</p>
             <div class="src">Str&ouml;mstads Tidning &middot; in force since 14 Jul</div>
           </div>
@@ -382,60 +376,60 @@
             <div class="src">The Local Sweden &middot; 15 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.thelocal.se/20260713/today-in-sweden-a-roundup-of-the-latest-news-on-monday-252/">
+        <div class="row" data-url="https://www.thelocal.se/20260717/today-in-sweden-a-roundup-of-the-latest-news-on-friday-235/">
           <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.thelocal.se/20260713/today-in-sweden-a-roundup-of-the-latest-news-on-monday-252/" target="_blank">High-summer heat &mdash; and high fire risk in Bohusl&auml;n</a></h3>
-            <p>SMHI forecast temperatures near 30C across southern Sweden, with wildfire risk rated extremely high around Bohusl&auml;n &mdash; Str&ouml;mstad&rsquo;s own backyard.</p>
-            <div class="src">The Local Sweden &middot; 13 Jul</div>
+            <h3><a href="https://www.thelocal.se/20260717/today-in-sweden-a-roundup-of-the-latest-news-on-friday-235/" target="_blank">Volvo Trucks posts a strong quarter</a></h3>
+            <p>Volvo Group&rsquo;s CEO highlighted solid figures, with vehicle sales up 6% and service sales up 7% &mdash; one of Sweden&rsquo;s biggest companies having a good summer.</p>
+            <div class="src">The Local Sweden &middot; 17 Jul</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="panel" id="tab-education">
-    <div class="sec" id="education">
-      <div class="sec-h"><h2>Updates</h2></div>
+  <section class="panel" id="tab-tv">
+    <div class="sec" id="tv">
+      <div class="sec-h"><h2>What to Watch</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
-          <div class="n">1</div>
+        <div class="row" data-url="https://www.bbc.co.uk/iplayer">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Term ends this Wednesday &mdash; early pick-up</a></h3>
-            <p>Summer 2 finishes on Wednesday 22 July with a 1:45pm pick-up, per the school diary.</p>
-            <div class="src">School diary &middot; verified 20 Jul</div>
+            <h3><a href="https://www.bbc.co.uk/iplayer" target="_blank">Murder 24/7 &mdash; BBC One &amp; iPlayer</a></h3>
+            <p>The observational series returns, following real murder investigations from the first emergency call to the breakthrough, with exclusive access to frontline police teams. Airs Tue 21 &amp; Wed 22 Jul, 9pm.</p>
+            <div class="src">BBC One &middot; airs 21&ndash;22 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
-          <div class="n">2</div>
+        <div class="row" data-url="https://www.netflix.com/tudum/articles/a-toxic-love-story-release-date-news">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Summer holidays start Thursday</a></h3>
-            <p>With term closing 22 July, the summer break runs from Thursday 23 July.</p>
-            <div class="src">School diary &middot; verified 20 Jul</div>
+            <h3><a href="https://www.netflix.com/tudum/articles/a-toxic-love-story-release-date-news" target="_blank">A Toxic Love Story &mdash; Netflix</a></h3>
+            <p>Feature documentary on the Anaheim &lsquo;Craigslist plot&rsquo; case: a newlywed&rsquo;s mystery harasser, an arrest that shocked a California suburb, and a story that keeps flipping who you think the victim is.</p>
+            <div class="src">Netflix &middot; premieres 22 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
-          <div class="n">3</div>
+        <div class="row" data-url="https://www.channel4.com/programmes/murder-case-the-digital-detectives">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Autumn term dates &mdash; check the Term Dates page</a></h3>
-            <p>Next year&rsquo;s term dates weren&rsquo;t reachable on the site this morning; the Term Dates page is the place to confirm the September start.</p>
-            <div class="src">School site &middot; checked 20 Jul</div>
+            <h3><a href="https://www.channel4.com/programmes/murder-case-the-digital-detectives" target="_blank">Murder Case: The Digital Detectives &mdash; Channel 4</a></h3>
+            <p>How digital-forensics teams crack murder cases through phone footprints, CCTV and online activity. Latest episode aired Thu 16 Jul; the next lands Thu 23 Jul, 9pm.</p>
+            <div class="src">Channel 4 &middot; aired 16 Jul &middot; next 23 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
-          <div class="n">4</div>
+        <div class="row" data-url="https://www.virginmedia.ie/about-us/press/2026/virgin-media-television-announces-the-showjumper-murder/">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Subscribe to the school calendar feed</a></h3>
-            <p>The diary page offers an iCal feed you can add to Google Calendar or Outlook so INSET days and events land automatically.</p>
-            <div class="src">School diary &middot; verified 20 Jul</div>
+            <h3><a href="https://www.virginmedia.ie/about-us/press/2026/virgin-media-television-announces-the-showjumper-murder/" target="_blank">The Showjumper Murder &mdash; Channel 4</a></h3>
+            <p>Two-part documentary on the death of showjumper Katie Simpson, the flawed initial investigation, and the detective who refused to let it go. UK broadcast Thu 23 Jul, 10pm.</p>
+            <div class="src">Channel 4 &middot; airs 23 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://orchard.surrey.sch.uk/News/Newsletters/">
-          <div class="n">5</div>
+        <div class="row" data-url="https://www.apple.com/tv-pr/originals/silo/">
+          <div class="n">&bull;</div>
           <div class="b">
-            <h3><a href="https://orchard.surrey.sch.uk/News/Newsletters/" target="_blank">End-of-year newsletter</a></h3>
-            <p>The latest newsletters are published on the school&rsquo;s Newsletters page &mdash; worth a look before the holidays for any end-of-term notices.</p>
-            <div class="src">School site &middot; checked 20 Jul</div>
+            <h3><a href="https://www.apple.com/tv-pr/originals/silo/" target="_blank">Silo &mdash; Season 3, Apple TV+</a></h3>
+            <p>The bunker saga&rsquo;s split-timeline season continues with new episodes every Friday &mdash; the next drops Fri 24 Jul, and the finale is due 4 Sep.</p>
+            <div class="src">Apple TV+ &middot; next episode 24 Jul</div>
           </div>
         </div>
       </div>
@@ -578,15 +572,15 @@
             </div>
           </div>
         </div>
-        <div class="row" data-url="https://kingstonuponthames.info/discover/things-to-do/kingston-escape-rooms">
+        <div class="row" data-url="https://www.hrp.org.uk/hampton-court-palace/whats-on/">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://kingstonuponthames.info/discover/things-to-do/kingston-escape-rooms" target="_blank">Crack an escape room</a></h3>
+            <h3><a href="https://www.hrp.org.uk/hampton-court-palace/whats-on/" target="_blank">Quiet Sessions in The Magic Garden</a></h3>
             <div class="evm">
-              <div><b>Where:</b> The Rotunda, Kingston</div>
-              <div><b>When:</b> Open daily</div>
-              <div><b>Time:</b> Book a room online</div>
-              <div><b>Ages:</b> Code-breaking best suits the 12- and 13-year-old</div>
+              <div><b>Where:</b> Hampton Court Palace</div>
+              <div><b>When:</b> Tue 28 Jul &amp; Sun 2 Aug</div>
+              <div><b>Time:</b> Included with palace admission &mdash; pre-book recommended</div>
+              <div><b>Ages:</b> Calmer sessions for neurodivergent and learning-disabled children</div>
             </div>
           </div>
         </div>
@@ -622,32 +616,8 @@
     <div class="sec" id="uk-headlines">
       <div class="sec-h"><h2>UK Headlines</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026">
-          <div class="n">1</div>
-          <div class="b">
-            <h3><a href="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026" target="_blank">England&rsquo;s largest-ever wildlife investment announced</a></h3>
-            <p>More than 350 threatened species &mdash; including the swallowtail butterfly and white-clawed crayfish &mdash; are set to benefit from the record funding package.</p>
-            <div class="src">Good Good Good &middot; 18 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026">
-          <div class="n">2</div>
-          <div class="b">
-            <h3><a href="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026" target="_blank">Renewables hit a record 53.1% of UK electricity</a></h3>
-            <p>Wind led the way as renewables supplied more than half of Britain&rsquo;s power in the first quarter &mdash; up 7.4% on the same period last year.</p>
-            <div class="src">Good Good Good &middot; 18 Jul</div>
-          </div>
-        </div>
-        <div class="row" data-url="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026">
-          <div class="n">3</div>
-          <div class="b">
-            <h3><a href="https://www.goodgoodgood.co/articles/good-news-this-week-july-18-2026" target="_blank">Orkney&rsquo;s wildlife rebounds as stoat project pays off</a></h3>
-            <p>Ecologists report the most Orkney voles since 2019, with hen harriers and short-eared owls recovering too.</p>
-            <div class="src">Good Good Good &middot; 18 Jul</div>
-          </div>
-        </div>
         <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-29-of-2026/">
-          <div class="n">4</div>
+          <div class="n">1</div>
           <div class="b">
             <h3><a href="https://www.positive.news/society/good-news-stories-from-week-29-of-2026/" target="_blank">UK finally ratifies the high seas treaty</a></h3>
             <p>Britain joined 90+ countries formally adopting the global ocean treaty &mdash; called &lsquo;a major step forward for ocean protection&rsquo;.</p>
@@ -655,19 +625,27 @@
           </div>
         </div>
         <div class="row" data-url="https://www.positive.news/society/good-news-stories-from-week-29-of-2026/">
-          <div class="n">5</div>
+          <div class="n">2</div>
           <div class="b">
             <h3><a href="https://www.positive.news/society/good-news-stories-from-week-29-of-2026/" target="_blank">Teen social-media trial boosts sleep and focus</a></h3>
             <p>A UK government trial across 309 households found every screen-limit group reported better sleep, mood, concentration and family time.</p>
             <div class="src">Positive News &middot; 17 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.theportugalnews.com/news/2026-07-18/inventor-of-malaria-vaccine-wins-top-honour/1055721">
-          <div class="n">6</div>
+        <div class="row" data-url="https://www.harwell-ic.co.uk/2026/07/14/his-majesty-the-king-officially-opens-the-uk-space-and-defence-gateway-at-harwell-science-and-innovation-campus/">
+          <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.theportugalnews.com/news/2026-07-18/inventor-of-malaria-vaccine-wins-top-honour/1055721" target="_blank">Oxford&rsquo;s malaria vaccine pioneer wins European Inventor Award</a></h3>
-            <p>Sir Adrian Hill&rsquo;s team developed the &pound;2.50-a-dose R21/Matrix-M vaccine now rolled out in about 20 countries.</p>
-            <div class="src">The Portugal News &middot; 18 Jul</div>
+            <h3><a href="https://www.harwell-ic.co.uk/2026/07/14/his-majesty-the-king-officially-opens-the-uk-space-and-defence-gateway-at-harwell-science-and-innovation-campus/" target="_blank">The King opens a new UK Space and Defence Gateway</a></h3>
+            <p>A co-working hub at Harwell Science and Innovation Campus aims to help UK space and defence start-ups collaborate with agencies, academia and industry, and scale up.</p>
+            <div class="src">Harwell Campus &middot; 14 Jul</div>
+          </div>
+        </div>
+        <div class="row" data-url="https://pressat.co.uk/releases/94-of-young-people-felt-heard-through-library-co-creation-programme-report-finds-5e957c24bd719979714918003896ebc0/">
+          <div class="n">4</div>
+          <div class="b">
+            <h3><a href="https://pressat.co.uk/releases/94-of-young-people-felt-heard-through-library-co-creation-programme-report-finds-5e957c24bd719979714918003896ebc0/" target="_blank">94% of young people felt heard in library co-creation scheme</a></h3>
+            <p>Libraries Rising brought 236 young people together with 20 library services across England to shape services as equal partners &mdash; most said they now feel more welcome and would visit more often.</p>
+            <div class="src">Libraries Rising &middot; 15 Jul</div>
           </div>
         </div>
       </div>
@@ -686,12 +664,12 @@
             <div class="src">Chalkbeat &middot; 14 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html">
+        <div class="row" data-url="https://techcrunch.com/2026/07/09/anthropics-new-claude-feature-is-quietly-selling-you-on-ai/">
           <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html" target="_blank">Claude&rsquo;s newest models now available worldwide</a></h3>
-            <p>The US had rules limiting where Anthropic&rsquo;s most powerful models could be offered. Those rules were lifted, so people everywhere can now use them.</p>
-            <div class="src">CNBC &middot; 30 Jun</div>
+            <h3><a href="https://techcrunch.com/2026/07/09/anthropics-new-claude-feature-is-quietly-selling-you-on-ai/" target="_blank">Claude Sonnet 5 is now the default for everyone</a></h3>
+            <p>Anthropic&rsquo;s newest &lsquo;Sonnet&rsquo; model (a mid-size, fast version of Claude) is now switched on by default for every free and paying user, and performs nearly as well as their most powerful model.</p>
+            <div class="src">TechCrunch &middot; 9 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.axios.com/2026/07/09/ai-openai-gpt-release">
@@ -710,20 +688,20 @@
             <div class="src">Bloomberg &middot; 14 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/">
+        <div class="row" data-url="https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/">
           <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/" target="_blank">Google delays its next big model</a></h3>
-            <p>Google pushed back Gemini 3.5 Pro to rebuild it from scratch. Meanwhile several of its top AI scientists left for rival labs, and Google&rsquo;s share price took a big hit.</p>
-            <div class="src">The Agent Report &middot; Jul</div>
+            <h3><a href="https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/" target="_blank">Google builds a new chip after a model delay</a></h3>
+            <p>Google&rsquo;s next big model (Gemini 3.5 Pro) is running months late, so investors got nervous. Google says a new computer chip called &lsquo;Frozen v2&rsquo; will make its AI up to 10 times more efficient.</p>
+            <div class="src">TechCrunch &middot; 20 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.axios.com/2026/07/08/spacexai-grok-new-model">
+        <div class="row" data-url="https://dataconomy.com/2026/07/20/musk-xai-grok-4-6-2t-model-training-next-week/">
           <div class="n">6</div>
           <div class="b">
-            <h3><a href="https://www.axios.com/2026/07/08/spacexai-grok-new-model" target="_blank">Elon Musk&rsquo;s xAI releases Grok 4.5</a></h3>
-            <p>Musk&rsquo;s AI company shipped its smartest model yet, saying it&rsquo;s faster and cheaper than rivals at coding-style tasks.</p>
-            <div class="src">Axios &middot; 8 Jul</div>
+            <h3><a href="https://dataconomy.com/2026/07/20/musk-xai-grok-4-6-2t-model-training-next-week/" target="_blank">Elon Musk teases a huge new Grok model</a></h3>
+            <p>Musk says Grok 4.6 &mdash; a massive 2-trillion-parameter model (parameters are like the &lsquo;dials&rsquo; a model tunes while learning) &mdash; finishes training next week, aiming to beat China&rsquo;s biggest open model.</p>
+            <div class="src">Dataconomy &middot; 20 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.publictechnology.net/2026/07/09/education-and-skills/government-seeks-ai-innovation-leader/">
@@ -739,23 +717,23 @@
           <div class="b">
             <h3><a href="https://institute.global/insights/politics-and-governance/governing-in-the-age-of-ai-reimagining-local-government" target="_blank">Kingston&rsquo;s council is testing AI note-taking</a></h3>
             <p>The local council is trialling an AI tool that writes up social workers&rsquo; notes, cutting paperwork time by about 63% &mdash; a human always checks each record.</p>
-            <div class="src">Tony Blair Institute &middot; verified 20 Jul</div>
+            <div class="src">Tony Blair Institute &middot; verified 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.tokencnn.com/blog/chinese-ai-models-2026-landscape">
+        <div class="row" data-url="https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/">
           <div class="n">9</div>
           <div class="b">
-            <h3><a href="https://www.tokencnn.com/blog/chinese-ai-models-2026-landscape" target="_blank">China&rsquo;s DeepSeek fully releases V4</a></h3>
-            <p>DeepSeek&rsquo;s new models are open source (free for anyone to use and build on) and can read about a million words of text in one go.</p>
-            <div class="src">AI Nexus &middot; Jul</div>
+            <h3><a href="https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/" target="_blank">Alibaba shows off a huge new Chinese model</a></h3>
+            <p>Qwen3.8-Max is a preview of Alibaba&rsquo;s newest AI, released just days after a rival Chinese lab, Moonshot, launched the world&rsquo;s biggest open-source (free to build on) model.</p>
+            <div class="src">MarkTechPost &middot; 19 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://en.wikipedia.org/wiki/DeepSeek">
+        <div class="row" data-url="https://cybernews.com/ai-news/deepseek-and-alibaba-launch-fresh-assaults-on-frontier-ai/">
           <div class="n">10</div>
           <div class="b">
-            <h3><a href="https://en.wikipedia.org/wiki/DeepSeek" target="_blank">DeepSeek plans to join the stock market</a></h3>
-            <p>The Chinese AI lab is preparing an IPO (selling shares to the public) possibly as soon as 2027, according to Bloomberg and the Financial Times.</p>
-            <div class="src">Bloomberg/FT via Wikipedia &middot; Jul</div>
+            <h3><a href="https://cybernews.com/ai-news/deepseek-and-alibaba-launch-fresh-assaults-on-frontier-ai/" target="_blank">DeepSeek&rsquo;s newest model goes fully live</a></h3>
+            <p>DeepSeek V4 moved from a preview to being available to everyone on 19 July, and it&rsquo;s much cheaper to run than rival models from Western companies.</p>
+            <div class="src">Cybernews &middot; 19 Jul</div>
           </div>
         </div>
       </div>
@@ -779,7 +757,7 @@
           <div class="b">
             <h3><a href="https://www.elementsofai.com/" target="_blank">Elements of AI</a></h3>
             <p>University of Helsinki&rsquo;s famous free course &mdash; no maths or programming needed, about 6&ndash;8 hours total, with a free certificate at the end. Over 2 million people have taken it.</p>
-            <div class="src">Free &middot; verified live 20 Jul</div>
+            <div class="src">Free &middot; verified live 21 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.coursera.org/learn/ai-for-everyone">
@@ -787,7 +765,7 @@
           <div class="b">
             <h3><a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank">AI For Everyone</a></h3>
             <p>Andrew Ng&rsquo;s classic non-technical introduction on Coursera &mdash; free to audit (you only pay if you want the certificate).</p>
-            <div class="src">Free to audit &middot; verified live 20 Jul</div>
+            <div class="src">Free to audit &middot; verified live 21 Jul</div>
           </div>
         </div>
         <div class="row" data-url="https://www.coursera.org/learn/generative-ai-for-everyone">
@@ -795,7 +773,7 @@
           <div class="b">
             <h3><a href="https://www.coursera.org/learn/generative-ai-for-everyone" target="_blank">Generative AI for Everyone</a></h3>
             <p>Also by Andrew Ng &mdash; explains how tools like Claude and ChatGPT actually work and how to prompt them well. No prior knowledge needed.</p>
-            <div class="src">Free to audit &middot; verified live 20 Jul</div>
+            <div class="src">Free to audit &middot; verified live 21 Jul</div>
           </div>
         </div>
       </div>
@@ -842,48 +820,48 @@
     </div>
   </section>
 
-  <section class="panel" id="tab-tv">
-    <div class="sec" id="tv">
-      <div class="sec-h"><h2>What to Watch</h2></div>
+  <section class="panel" id="tab-education">
+    <div class="sec" id="education">
+      <div class="sec-h"><h2>Updates</h2></div>
       <div class="card">
-        <div class="row" data-url="https://www.bbc.co.uk/iplayer">
-          <div class="n">&bull;</div>
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
+          <div class="n">1</div>
           <div class="b">
-            <h3><a href="https://www.bbc.co.uk/iplayer" target="_blank">Murder 24/7 &mdash; BBC One &amp; iPlayer</a></h3>
-            <p>The observational series returns, following real murder investigations from the first emergency call to the breakthrough, with exclusive access to frontline police teams. Airs Tue 21 &amp; Wed 22 Jul, 9pm.</p>
-            <div class="src">BBC One &middot; airs 21&ndash;22 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Term ends tomorrow &mdash; early pick-up</a></h3>
+            <p>Summer 2 finishes on Wednesday 22 July with a 1:45pm pick-up, per the school diary.</p>
+            <div class="src">School diary &middot; verified 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.netflix.com/tudum/articles/a-toxic-love-story-release-date-news">
-          <div class="n">&bull;</div>
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
+          <div class="n">2</div>
           <div class="b">
-            <h3><a href="https://www.netflix.com/tudum/articles/a-toxic-love-story-release-date-news" target="_blank">A Toxic Love Story &mdash; Netflix</a></h3>
-            <p>Feature documentary on the Anaheim &lsquo;Craigslist plot&rsquo; case: a newlywed&rsquo;s mystery harasser, an arrest that shocked a California suburb, and a story that keeps flipping who you think the victim is.</p>
-            <div class="src">Netflix &middot; premieres 22 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Summer holidays start Thursday</a></h3>
+            <p>With term closing 22 July, the summer break runs from Thursday 23 July.</p>
+            <div class="src">School diary &middot; verified 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.channel4.com/programmes/murder-case-the-digital-detectives">
-          <div class="n">&bull;</div>
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Term-Dates/">
+          <div class="n">3</div>
           <div class="b">
-            <h3><a href="https://www.channel4.com/programmes/murder-case-the-digital-detectives" target="_blank">Murder Case: The Digital Detectives &mdash; Channel 4</a></h3>
-            <p>How digital-forensics teams crack murder cases through phone footprints, CCTV and online activity. Latest episode aired Thu 16 Jul; the next lands Thu 23 Jul, 9pm.</p>
-            <div class="src">Channel 4 &middot; aired 16 Jul &middot; next 23 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Term-Dates/" target="_blank">Autumn term starts Wednesday 2 September</a></h3>
+            <p>An INSET day falls on Tuesday 1 September, then the Autumn Term runs 2 September to 18 December, with half term 19&ndash;30 October.</p>
+            <div class="src">School Term Dates page &middot; verified 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.virginmedia.ie/about-us/press/2026/virgin-media-television-announces-the-showjumper-murder/">
-          <div class="n">&bull;</div>
+        <div class="row" data-url="https://www.orchard.surrey.sch.uk/Diary/">
+          <div class="n">4</div>
           <div class="b">
-            <h3><a href="https://www.virginmedia.ie/about-us/press/2026/virgin-media-television-announces-the-showjumper-murder/" target="_blank">The Showjumper Murder &mdash; Channel 4</a></h3>
-            <p>Two-part documentary on the death of showjumper Katie Simpson, the flawed initial investigation, and the detective who refused to let it go. UK broadcast Thu 23 Jul, 10pm.</p>
-            <div class="src">Channel 4 &middot; airs 23 Jul</div>
+            <h3><a href="https://www.orchard.surrey.sch.uk/Diary/" target="_blank">Subscribe to the school calendar feed</a></h3>
+            <p>The diary page offers an iCal feed you can add to Google Calendar or Outlook so INSET days and events land automatically.</p>
+            <div class="src">School diary &middot; verified 21 Jul</div>
           </div>
         </div>
-        <div class="row" data-url="https://www.apple.com/tv-pr/originals/silo/">
-          <div class="n">&bull;</div>
+        <div class="row" data-url="https://orchard.surrey.sch.uk/News/Newsletters/">
+          <div class="n">5</div>
           <div class="b">
-            <h3><a href="https://www.apple.com/tv-pr/originals/silo/" target="_blank">Silo &mdash; Season 3, Apple TV+</a></h3>
-            <p>The bunker saga&rsquo;s split-timeline season continues with new episodes every Friday &mdash; the next drops Fri 24 Jul, and the finale is due 4 Sep.</p>
-            <div class="src">Apple TV+ &middot; next episode 24 Jul</div>
+            <h3><a href="https://orchard.surrey.sch.uk/News/Newsletters/" target="_blank">Latest newsletter published Friday 10 July</a></h3>
+            <p>The most recent newsletter on the school&rsquo;s Newsletters page is dated Friday 10th July &mdash; worth a look before the holidays for any end-of-term notices.</p>
+            <div class="src">School site &middot; checked 21 Jul</div>
           </div>
         </div>
       </div>
@@ -891,7 +869,7 @@
   </section>
 
   <footer class="foot">
-    Compiled Monday 20 July 2026 &middot; Weather via WillyWeather (Met Office data); Sat 25 &amp; Sun 26 Jul blended from the Met Office outlook &middot; Sweden via Str&ouml;mstads Tidning &amp; The Local<br>
+    Compiled Tuesday 21 July 2026 &middot; Weather via TheWeatherOutlook (GFS model data) &middot; Sweden via Str&ouml;mstads Tidning &amp; The Local<br>
     <b>Tap any news or event card to open the source.</b>
   </footer>
 
