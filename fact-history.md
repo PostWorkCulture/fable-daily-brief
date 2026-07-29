@@ -26,3 +26,4 @@ RULES FOR THE daily-briefs-refresh TASK:
 | 2026-07-26 | Cambodia | language / alphabets | The world's longest alphabet has 74 letters - and it is Cambodia's |
 | 2026-07-27 | Nicaragua (Managua) | postal / addressing systems | A capital city where nobody uses street addresses - and the landmarks often no longer exist |
 | 2026-07-28 | Norway (via Edinburgh Zoo) | military tradition / animal mascots | Norway's army has a penguin for a general - and he lives in Scotland |
+| 2026-07-29 | Bolivia (La Paz) | transport / urban infrastructure | The world's biggest cable-car network isn't at a ski resort - it's a city bus service in Bolivia |
