@@ -10,7 +10,7 @@
    --rule is the much lighter divider between rows inside a card. */
 :root{--ink:#171a1f;--ink2:#6b7280;--mute:#99a1ad;
  --line:#d6dbe3;--rule:#ecEFF3;--accent:#1668d9;--card:#fff;
- --wash:#f7f8fa;--bg:#f5f5f6;--amber:#b8770f;--sun:#f0a500;--up:#5fae78;--down:#d97b7b}
+ --wash:#f7f8fa;--bg:#f5f5f6;--amber:#b8770f;--sun:#f0a500;--sun-wash:#fdf4e6;--up:#5fae78;--down:#d97b7b}
 /* Static "Daybreak" background (replaced the animated canvas constellation,
    29 Jul 2026): a faint blue wash behind the masthead settling to neutral.
    The gradient occupies the top 1100px of the document and its final stop is
@@ -72,9 +72,11 @@ header.mast .dt{margin-top:7px;color:var(--ink2);font-size:14.5px;font-weight:40
  align-items:flex-start;transition:background .12s}
 .row:last-child{border-bottom:0}
 .row[data-url]{cursor:pointer}
-/* Hover is a pale accent tint, not the old dull grey wash — it should read as
-   highlighting the row you're pointing at (Pete, 29 Jul 2026). */
-.row[data-url]:hover{background:#e9f1fd}
+/* Hover is a pastel amber wash derived from --sun, the weather sun colour
+   (Pete, 29 Jul 2026 — replaced the dull grey, then the pale blue). Ties the
+   hover to the same warm accent as the Fact of the Day border. Kept light enough
+   that --ink2 body text still clears 4.5:1 on it. */
+.row[data-url]:hover{background:var(--sun-wash)}
 /* Numbered chips are an OUTLINE, not a solid fill (Pete, 29 Jul 2026) — the
    solid blue block was too heavy. box-sizing:border-box keeps the 25px box. */
 .row .n{flex:0 0 25px;height:25px;border-radius:8px;background:#fff;
