@@ -28,3 +28,4 @@ RULES FOR THE daily-briefs-refresh TASK:
 | 2026-07-28 | Norway (via Edinburgh Zoo) | military tradition / animal mascots | Norway's army has a penguin for a general - and he lives in Scotland |
 | 2026-07-29 | Bolivia (La Paz) | transport / urban infrastructure | The world's biggest cable-car network isn't at a ski resort - it's a city bus service in Bolivia |
 | 2026-07-30 | Denmark | unusual laws / naming rules | In Denmark you can't just pick any baby name - it has to be on a government-approved list |
+| 2026-07-31 | Peru | agriculture / crop biodiversity | Peru grows more than 4,000 different kinds of potato |
