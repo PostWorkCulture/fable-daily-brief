@@ -30,3 +30,4 @@ RULES FOR THE daily-briefs-refresh TASK:
 | 2026-07-30 | Denmark | unusual laws / naming rules | In Denmark you can't just pick any baby name - it has to be on a government-approved list |
 | 2026-07-31 | Peru | agriculture / crop biodiversity | Peru grows more than 4,000 different kinds of potato |
 | 2026-08-01 | Australia | scale comparison / astronomy | Australia is wider than the Moon |
+| 2026-08-02 | Switzerland | civil defence / shelter infrastructure | Switzerland has nuclear shelter space for everyone in the country |
