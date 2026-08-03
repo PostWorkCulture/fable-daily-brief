@@ -31,3 +31,4 @@ RULES FOR THE daily-briefs-refresh TASK:
 | 2026-07-31 | Peru | agriculture / crop biodiversity | Peru grows more than 4,000 different kinds of potato |
 | 2026-08-01 | Australia | scale comparison / astronomy | Australia is wider than the Moon |
 | 2026-08-02 | Switzerland | civil defence / shelter infrastructure | Switzerland has nuclear shelter space for everyone in the country |
+| 2026-08-03 | Iceland | wildlife / species range shift | Until last year, Iceland was one of only two places on Earth with no mosquitoes |
