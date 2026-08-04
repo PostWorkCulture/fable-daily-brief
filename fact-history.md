@@ -32,3 +32,4 @@ RULES FOR THE daily-briefs-refresh TASK:
 | 2026-08-01 | Australia | scale comparison / astronomy | Australia is wider than the Moon |
 | 2026-08-02 | Switzerland | civil defence / shelter infrastructure | Switzerland has nuclear shelter space for everyone in the country |
 | 2026-08-03 | Iceland | wildlife / species range shift | Until last year, Iceland was one of only two places on Earth with no mosquitoes |
+| 2026-08-04 | Japan | cartography / mapping methods | Japan has 14,125 islands - more than twice what it thought |
