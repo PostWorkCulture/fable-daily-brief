@@ -33,3 +33,4 @@ RULES FOR THE daily-briefs-refresh TASK:
 | 2026-08-02 | Switzerland | civil defence / shelter infrastructure | Switzerland has nuclear shelter space for everyone in the country |
 | 2026-08-03 | Iceland | wildlife / species range shift | Until last year, Iceland was one of only two places on Earth with no mosquitoes |
 | 2026-08-04 | Japan | cartography / mapping methods | Japan has 14,125 islands - more than twice what it thought |
+| 2026-08-06 | Canada (Bay of Fundy) | hydrology / tides | Canada's Bay of Fundy tide rises as high as a four-storey building, twice a day |
