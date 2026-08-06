@@ -1,0 +1,1 @@
+Written by the Fable brief pipeline to verify the Zapier publishing route while the sandbox git proxy blocks direct pushes. Safe to delete.
